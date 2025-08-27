@@ -1,0 +1,80 @@
+// @component form-checkbox form-flat-component
+
+$form-checkbox-check-character: "\2713";
+@mixin form-checkbox_variant_default {
+	// we don't want to size to the full width, otherwise our checkbox might be floating all the way on the right if we order reverse
+	// even if we order "normally", our label would have a large invisible hit target
+	align-self: flex-start;
+	position: relative;
+	display: inline-block;
+	input {
+		opacity: 0;
+		position: absolute;
+	}
+	label {
+		cursor: pointer;
+	}
+	input + label {
+		cursor: pointer;
+		line-height: 1.5rem;
+		margin-left: calc(#{$font-size-large} * 1.7);
+		display: inline-block;
+		// incorporate both the height and the top
+		min-height: calc(#{$font-size-large} * 1.12);
+		// the check itself is positioned "too low", but can't seem to make it move higher
+		// a solution is to also use the :after (which was done initially) but this conflicts with inserting a mandatory * which also uses the after
+		&:before {
+			border: solid 1px $color-neutral-darker;
+			display: inline-block;
+			content: "";
+			height: $font-size-large;
+			width: $font-size-large;
+			position: absolute;
+			left: 0;
+			top: calc(#{$font-size-large} * 0.12);
+			background-color: $color-neutral-lightest;
+		}
+		
+	}
+	input:checked + label {
+		&:before {
+			content: $form-checkbox-check-character;
+			font-size: $font-size-medium;
+			text-align: center;
+			border: solid 1px $color-neutral-darker;
+			background-color: $color-neutral-lightest;
+			color: $color-neutral-darkest;
+		}
+	}
+	input:disabled + label {
+		&:before {
+			background-color: $color-neutral-lighter;
+			color: $color-neutral-dark;
+		}
+	}
+}
+
+@mixin form-checkbox_order_reverse {
+	input + label {
+		margin-left: 0;
+		margin-right: calc(#{$font-size-large} * 2);
+		&:before {
+			left: unset;
+			right: calc(0px - (#{$font-size-large} * 2));
+		}
+		&:after {
+			left: unset;
+			right: calc(0px - (#{$font-size-large} * 1.9));
+		}
+	}
+}
+
+@mixin form-checkbox-list_variant_default {
+	.is-form-checkbox {
+		display: block;
+	}
+}
+
+@mixin form-checkbox-default_modifier_non-interactive {
+	pointer-events: none;
+}

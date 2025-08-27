@@ -1,0 +1,42 @@
+// ----------------------------------------- VARIANTS
+// a card approach where each cell is a card, this is often used in dashboards
+// sometimes you have a root grid (e.g. root page), but in one particular cell you want to route another grid (another page)
+// you don't want to have the margin applied at both levels, the root row should be a plain one then, the embedded can be a card container
+// at the page/grid level you probably want to configure a "default" variant for each row which is applied unless a specific variant is indicated for a given row
+// it should be possible to send along a particular default variant to a page when rendering it, in most cases the included page should itself be a card container (because it is likely just an embedded page for reuse)
+// in some cases however, you might want to render a page within the content of a cell (or e.g. a table with detail view) and at that point you don't want the card container styling
+@mixin row_variant_cards {
+	@include component_spacing_medium;
+	@media only screen and (max-width: map-get($breakpoints, "below-tablet")) {
+		@include component_spacing_small;
+	}
+}
+
+@mixin row_variant_cards-vertical {
+	@include row_variant_cards;
+	align-items: stretch;
+}
+
+
+@mixin column_variant_card {
+	@include component_shadow_xsmall;
+	@include component_spacing_large;
+	@include component_color_background;
+	@media only screen and (max-width: map-get($breakpoints, "below-tablet")) {
+		@include component_spacing_small;
+	}
+}
+
+@mixin layout_variant_card-header {
+	align-items: center;
+	justify-content: space-between;
+}
+
+@mixin layout_variant_card-content {
+	flex-direction: column;
+}
+
+@mixin layout_variant_card-contrast {
+	background-color: $color-uses-body;
+	@include component_spacing_large;
+}

@@ -1,0 +1,8 @@
+@mixin content_rotate_90deg {
+	writing-mode: vertical-rl;
+}
+
+@mixin content_rotate_90deg-reverse {
+	writing-mode: vertical-rl;
+	transform: rotate(180deg);
+}

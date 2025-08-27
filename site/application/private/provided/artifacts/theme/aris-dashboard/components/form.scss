@@ -1,0 +1,6 @@
+@mixin button_variant_form-button-ok {
+	@include button_variant_primary;
+}
+@mixin button_variant_form-button-cancel {
+	@include button_variant_link;
+}

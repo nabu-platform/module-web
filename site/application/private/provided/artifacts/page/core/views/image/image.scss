@@ -1,0 +1,29 @@
+.page-image.is-editing {
+	position: relative;
+	.is-inline-image-menu {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 0.7rem;
+		.n-input-file {
+			flex-grow: 1;
+			padding: 0.7rem;
+			text-align: center;
+			.drag-drop {
+				border: dashed 1px $color-primary-base;
+			}
+			.drag-over {
+				background-color: rgba($color-primary-light, 0.9);
+			}
+		}
+		background-color: rgba($color-primary-lightest, 0.9);
+		border-bottom: solid 1px $color-primary-base;
+	}	
+	&:hover {
+		.is-inline-image-menu {
+			display: flex;
+		}
+	}
+}

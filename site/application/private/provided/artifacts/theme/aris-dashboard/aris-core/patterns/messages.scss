@@ -1,0 +1,12 @@
+// @component messages column
+@mixin messages_variant_default {
+	display: flex;
+	display-direction: column;
+
+	.is-message {
+		font-size: $font-size-small;
+	}
+	.is-severity-error {
+		color: $color-danger-dark;
+	}
+}

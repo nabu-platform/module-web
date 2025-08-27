@@ -1,0 +1,207 @@
+// @extension form-component layout
+// form component is at the root of all form components, not all components have these parts, but they might
+// <div class="is-form-component">
+// 		<div class="is-label-wrapper">contains label, perhaps an info icon</div>
+//		<div class="is-content-before">contains content that should appear before the input, usually a description of the form element</div>
+//		<div class="is-content-wrapper">contains the actual input element, maybe spinners, is-suffix, is-prefix,..</div>
+//		<div class="messages">error messages here</div>
+//		<div class="is-content-after">contains content that should appear after the element</div>
+// </div>
+
+// @component form-labelled-component form-component
+// a labelled component expects a label separate from the form input, for instance a text component, date component... we can float the label anywhere relative to the actual input
+// a counterexample to this is the checkbox, we can't really float the label away from the input because they should remain together
+
+// @component form-flat-component form-component
+// an extension that groups all form compnents where the label is hard coupled to the input (radio, checkbox, switch...)
+// they should only have a is-content-wrapper
+
+// @component form-text form-labelled-component
+// @component form-image-uploader form-labelled-component
+// @component form-checkbox-list form-labelled-component
+// @component form-radio-list form-labelled-component
+
+// component form-richtext form-labelled-component
+
+// ----------------------------------------- SIZE
+
+$form-component-border-color: $color-neutral-base !default;
+$form-component-border-color-focused: $color-neutral-dark !default;
+$form-component-border-radius: $border-radius-default !default;
+$form-component-color-mandatory: $color-danger-base !default;
+
+@mixin template_form-component_size {
+	input {
+		line-height: $font-size-medium;
+		height: calc(#{$font-size-medium} * 2.5);
+		font-size: $font-size-medium;
+		padding: 0 $spacing-medium;
+	}
+	.is-prefix, .is-suffix {
+		line-height: $font-size-medium;
+		font-size: $font-size-medium;
+		padding: 0 $spacing-medium;
+	}
+}
+
+@mixin form-component_size_xsmall {
+	input {
+		line-height: $font-size-xsmall;
+		height: $font-size-small;
+		font-size: $font-size-xsmall;
+		padding: 0 $spacing-2xsmall;
+	}
+	.is-prefix, .is-suffix {
+		line-height: $font-size-xsmall;
+		font-size: $font-size-xsmall;
+		padding: 0 $spacing-2xsmall;
+	}
+}
+
+@mixin form-component_size_small {
+	.is-label {
+		font-size: $font-size-xsmall;
+	}
+	input {
+		line-height: $font-size-xsmall;
+		height: calc(#{$font-size-small} * 2);
+		font-size: $font-size-xsmall;
+		padding: 0 $spacing-medium;
+	}
+	.is-prefix, .is-suffix {
+		line-height: $font-size-xsmall;
+		font-size: $font-size-xsmall;
+		padding: 0 $spacing-medium;
+	}
+}
+
+@mixin form-component_size_medium {
+	input {
+		line-height: $font-size-medium;
+		height: calc(#{$font-size-medium} * 2.5);
+		font-size: $font-size-small;
+		padding: 0 $spacing-medium;
+	}
+	.is-prefix, .is-suffix {
+		line-height: $font-size-medium;
+		font-size: $font-size-small;
+		padding: 0 $spacing-medium;
+	}
+}
+@mixin form-component_size_large {
+	input {
+		line-height: $font-size-large;
+		height: calc(#{$font-size-large} * 2.5);
+		font-size: $font-size-small;
+		padding: 0 $spacing-large;
+	}
+	.is-prefix, .is-suffix {
+		line-height: $font-size-large;
+		font-size: $font-size-small;
+		padding: 0 $spacing-large;
+	}
+}
+
+// ----------------------------------------- COLORS
+@mixin form-component_color_default {
+	input, textarea {
+		color: $color-neutral-darkest;
+		border-color: $color-neutral-light;
+		&::placeholder {
+			color: $color-neutral-base;
+		}
+		&:focus, &:focus-visible, &:active {
+			border-color: $color-neutral-base;
+			outline-width: 0;
+		}
+	}
+}
+@mixin form-component_color_transparent {
+	input, textarea {
+		color: $color-neutral-darkest;
+		border-color: transparent;
+		background-color: transparent;
+		&::placeholder {
+			color: $color-neutral-base;
+		}
+		&:focus, &:focus-visible, &:active {
+			border-color: transparent;
+			outline-width: 0;
+		}
+	}
+}
+
+// ----------------------------------------- BORDERS
+@mixin form-component_border_none {
+	input, textarea {
+		border-width: 0px;
+	}
+}
+
+@mixin form-component_border_default {
+	input, textarea {
+		border-width: 1px;
+		border-style: solid;
+		border-radius: $form-component-border-radius;
+	}
+}
+
+@mixin form-component_border_underline {
+	input, textarea {
+		border-width: 1px;
+		border-style: none none solid none;
+		border-radius: 0;
+		padding: 0 $spacing-2xsmall;
+	}
+}
+
+@mixin form-component_variant_default {
+	@include form-component_size_medium;
+	@include form-component_color_default;
+	@include form-component_border_default;
+}
+
+@mixin form-component_variant_underline {
+	@include form-component_size_small;
+	@include form-component_color_default;
+	@include form-component_border_underline;
+}
+
+@mixin form-component_variant_inline {
+	@include form-component_size_small;
+	@include form-component_color_default;
+	@include form-component_border_none;
+	@include form-component_color_transparent;
+}
+
+:is-form-labelled-component {
+	&.has-suffix {
+		input {
+			padding-right: calc(4 * #{$font-size-medium});
+		}
+	}
+	&.has-prefix {
+		input {
+			padding-left: calc(4 * #{$font-size-medium});
+		}
+	}
+	.is-content-wrapper {
+		position: relative;
+		.is-suffix, .is-prefix {
+			position: absolute;
+			bottom: 2px;
+			height: calc(100% - 4px);
+			display: flex;
+			align-items: center;
+			color: $color-neutral-base;
+		}
+		.is-suffix {
+			border-left: solid 1px $color-neutral-light;
+			right: 2px;
+		}
+		.is-prefix {
+			left: 2px;
+			border-right: solid 1px $color-neutral-light;
+		}
+	}
+}

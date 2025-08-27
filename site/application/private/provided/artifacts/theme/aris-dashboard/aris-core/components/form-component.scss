@@ -1,0 +1,23 @@
+// a form component consists of a label and content though there are some wrappers for additional logic
+// the general layout is
+// .is-form-component
+// 		.n-form-label-wrapper
+// 				label.n-form-label (.n-form-input-required)
+//				n-info.n-form-label-info
+//		.n-form-component-before: contains any content after the label but before the text
+// 		.n-form-input-wrapper: wraps the actual input
+// 		.n-form-read-only: this is visible _instead_ of the input-wrapper when we are displaying the read-only mode
+//		.n-messages: the validation messages or anything else related to the component
+// 		.n-form-component-after: any content that comes after the component like a description
+
+@mixin template-form-component-layout {
+
+}
+
+
+// the label is inline, it acts more as a placeholder
+.is-form-component-layout-inline {
+	&::placeholder {
+		content: attr(label);
+	}
+}

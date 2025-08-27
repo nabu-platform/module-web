@@ -1,0 +1,85 @@
+// ---------------------------------------------------------------------------------------------------------------------------
+// ----------------------------------------- ALERT
+// ---------------------------------------------------------------------------------------------------------------------------
+// an alert is assumed to be one of these:
+// <div>some text</div>
+// <div><span class="is-icon"></span></div>
+// <div><span class="is-label"></span></div>
+// <div><span class="is-icon"></span><span class="is-label"></span></div>
+
+@mixin template_alert_color {
+	background-color: $color-neutral-lighter;
+	border-color: $color-neutral-light;
+	color: $color-neutral-darker;
+}
+@mixin alert_color_neutral {
+	@include template_alert_color;
+}
+@mixin alert_color_danger {
+	background-color: $color-danger-lightest;
+	border-color: $color-danger-lighter;
+	color: $color-danger-darker;
+}
+@mixin alert_color_warning {
+	background-color: $color-warning-lightest;
+	border-color: $color-warning-lighter;
+	color: $color-warning-darker;
+}
+@mixin alert_color_info {
+	background-color: $color-info-lightest;
+	border-color: $color-info-lighter;
+	color: $color-info-darker;
+}
+@mixin alert_color_success {
+	background-color: $color-success-lightest;
+	border-color: $color-success-lighter;
+	color: $color-success-darker;
+}
+@mixin alert_color_primary {
+	background-color: $color-primary-lightest;
+	border-color: $color-primary-lighter;
+	color: $color-primary-darker;
+}
+@mixin alert_color_secondary {
+	background-color: $color-secondary-lightest;
+	border-color: $color-secondary-lighter;
+	color: $color-secondary-darker;
+}
+@mixin alert_color_primary-outline {
+	background-color: $color-neutral-lightest;
+}
+@mixin alert_color_secondary-outline {
+	background-color: $color-neutral-lightest;
+}
+@mixin alert_color_success-outline {
+	background-color: $color-neutral-lightest;
+}
+@mixin alert_color_danger-outline {
+	background-color: $color-neutral-lightest;
+}
+@mixin alert_color_info-outline {
+	background-color: $color-neutral-lightest;
+}
+@mixin alert_color_warning-outline {
+	background-color: $color-neutral-lightest;
+}
+
+@mixin alert_variant_default {
+	display: flex;
+	width: 100%;
+	@include padded-content_size_medium;
+	@include component_border_full;
+	@include component_color_neutral-lighter;
+}
+
+// some tiny corrections
+.is-alert {
+	> .is-icon {
+		line-height: 100%;
+		// scale back images...
+		max-width: 15%;
+	}
+	> .is-text {
+		flex-grow: 1;
+	}
+}

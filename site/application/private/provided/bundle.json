@@ -1,0 +1,26 @@
+{
+        "name": "page-builder-v2-site",
+        "version": "1.0",
+        "resources": {
+        		"theme": {
+						"aris-dashboard.json": {
+							"type": "bundle",
+							"url": "https://raw.githubusercontent.com/nablex/aris-dashboard/master/bundle.json"
+						}
+        		},
+                "modules": {
+                        "page-builderv2.json": {
+                                "type": "bundle",
+                                "url": "https://raw.githubusercontent.com/nablex/web-modules/master/page-builderv2.json"
+                        },
+                        "icon.json": {
+                                "type": "bundle",
+                                "url": "https://raw.githubusercontent.com/nablex/web-components/aris/bundle-fontawesome5-free.json"
+                        },
+                        "image-uploader.json": {
+                                "type": "bundle",
+                                "url": "https://raw.githubusercontent.com/nablex/web-components/aris/image-uploader-bundle.json"
+                        }
+                }
+        }
+}

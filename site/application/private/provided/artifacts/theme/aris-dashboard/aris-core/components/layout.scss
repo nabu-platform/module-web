@@ -1,0 +1,159 @@
+// ----------------------------------------- PATTERN
+@mixin layout_pattern_basic-alternating {
+	> :nth-child(even) {
+		background-color: $color-uses-body;
+	}
+	> :nth-child(odd) {
+		background-color: $color-uses-background;
+	}
+	> .is-selected {
+		background-color: $color-primary-lightest;
+	}
+}
+@mixin layout_pattern_underline {
+	> :not(:last-child) {
+		@include component_border_underline;
+	}
+}
+
+// ----------------------------------------- WIDTH of the layout itself
+@mixin template_row_width {
+	width: unset;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// this is in sync with content-width dimension
+@mixin row_width_small {
+	// TODO: when used in combination with overflow auto, a horizontal scrollbar will always appear!
+	// for now we hard disable overflow x
+	// I investiged the scrollbar, there were no hidden elements, _every_ element was pixel perfect the size of the container
+	// the only thing that made the scrollbar disappear was by setting an additional padding on the element, for some reason padding of 20 (on large) did the trick
+	// but if i then reduced the width by 1px, the scrollbar would reappear, reduced again by 1px and it would vanish (while maintaining the padding)
+	// the behavior was decidedly odd, in general it is advised to use content-width
+	// the additional advantage of content-width (in combination with overflow) is that the scrollbar appears on the side of the page rather than the side of the element
+	overflow-x: hidden;
+	width: 1024px;
+	// once we go below this, just take up max width
+	// I rather not use vw unless absolutely necessary
+	@media only screen and (max-width: 1023px) {
+		width: 100%;
+	}
+}
+@mixin row_width_medium {
+	overflow-x: hidden;
+	width: 1280px;
+	@media only screen and (max-width: 1279px) {
+		width: 100%;
+	}
+}
+@mixin row_width_large {
+	overflow-x: hidden;
+	width: 1536px;
+	@media only screen and (max-width: 1535px) {
+		width: 100%;
+	}
+}
+
+// ----------------------------------------- WRAPPING
+@mixin template_layout_wrap {
+	flex-wrap: nowrap;
+}
+@mixin layout_wrap_none {
+	flex-wrap: nowrap;
+}
+@mixin layout_wrap_wrap {
+	flex-wrap: wrap;
+}
+@mixin layout_wrap_reverse {
+	flex-wrap: wrap-reverse;
+}
+
+// ----------------------------------------- ALIGN
+@mixin layout_align_main-start {
+	justify-content: flex-start;
+}
+@mixin layout_align_main-center {
+	justify-content: center;
+}
+@mixin layout_align_main-end {
+	justify-content: flex-end;
+}
+@mixin layout_align_main-stretch {
+	justify-content: stretch;
+}
+@mixin layout_align_main-baseline {
+	justify-content: baseline;
+}
+@mixin layout_align_cross-start {
+	align-items: flex-start;
+}
+@mixin layout_align_cross-center {
+	align-items: center;
+}
+@mixin layout_align_cross-end {
+	align-items: flex-end;
+}
+@mixin layout_align_cross-stretch {
+	align-items: stretch;
+}
+@mixin layout_align_cross-baseline {
+	align-items: baseline;
+}
+@mixin layout_align_space-between {
+	justify-content: space-between;
+}
+@mixin layout_align_space-around {
+	justify-content: space-around;
+}
+@mixin layout_align_space-evenly {
+	justify-content: space-evenly;
+}
+@mixin layout_align_start {
+	@include layout_align_main-start;
+	@include layout_align_cross-start;
+}
+@mixin layout_align_center {
+	@include layout_align_main-center;
+	@include layout_align_cross-center;
+}
+@mixin layout_align_end {
+	@include layout_align_main-end;
+	@include layout_align_cross-end;
+}
+@mixin layout_align_stretch {
+	@include layout_align_main-stretch;
+	@include layout_align_cross-stretch;
+}
+@mixin layout_align_baseline {
+	@include layout_align_main-baseline;
+	@include layout_align_cross-baseline;
+}
+@mixin layout_align_bottom {
+	vertical-align: bottom;
+}
+
+@mixin layout_variant_inline-detail {
+	border: 1px solid $color-neutral-base;
+	border-radius: $border-radius-default; 
+	background-color: $color-neutral-lighter;
+}
+
+@mixin layout_variant_key-value {
+	flex-direction: column;
+	row-gap: $spacing-small;
+}
+
+@mixin layout_variant_key-value-list {
+	flex-direction: column;
+	row-gap: $spacing-large;
+	padding: $spacing-large;
+}
+
+@mixin layout_variant_code-container {
+	background-color: $color-neutral-lightest;
+	padding: $spacing-medium;
+	:where(code) {
+		background-color: $color-neutral-lightest;
+	}
+}

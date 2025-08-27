@@ -1,0 +1,49 @@
+<structure comment="Nabu Page Builder configuration options" name="configuration" superType="nabu.web.page.core.types.rest.configurationInput">
+    <field minOccurs="0" name="title" type="java.lang.String"/>
+    <field minOccurs="0" name="home" type="java.lang.String"/>
+    <field minOccurs="0" name="homeUser" type="java.lang.String"/>
+    <field minOccurs="0" name="googleSiteVerification" type="java.lang.String"/>
+    <field comment="Amount of hours to wait before asking again after the user explicitly refused." minOccurs="0" name="geoRefusalTimeout" type="java.lang.Integer"/>
+    <field minOccurs="0" name="theme" type="java.lang.String"/>
+    <field minOccurs="0" name="defaultLocale" type="java.lang.String"/>
+    <structure minOccurs="0" name="branding">
+        <field comment="The location of the favicon in your application." minOccurs="0" name="favicon" type="java.lang.String"/>
+        <field comment="A title for your website (that iffers from the title in the top bar)" minOccurs="0" name="title" type="java.lang.String"/>
+        <field minOccurs="0" name="description" type="java.lang.String"/>
+        <field minOccurs="0" name="image" type="java.lang.String"/>
+        <field minOccurs="0" name="imageAlt" type="java.lang.String"/>
+        <field minOccurs="0" name="facebookAppId" type="java.lang.String"/>
+        <field minOccurs="0" name="twitterUserName" type="java.lang.String"/>
+        <field minOccurs="0" name="siteName" type="java.lang.String"/>
+    </structure>
+    <structure maxOccurs="unbounded" minOccurs="0" name="properties">
+        <field minOccurs="0" name="key" type="java.lang.String"/>
+        <field minOccurs="0" name="value" type="java.lang.String"/>
+        <field minOccurs="0" name="key" type="java.lang.String"/>
+        <field minOccurs="0" name="value" type="java.lang.String"/>
+        <field name="key" nillable="false" type="java.lang.String"/>
+        <field minOccurs="0" name="value" type="java.lang.String"/>
+    </structure>
+    <structure maxOccurs="unbounded" minOccurs="0" name="devices">
+        <field name="name" type="java.lang.String"/>
+        <field minOccurs="0" name="width" type="java.lang.Long"/>
+    </structure>
+    <structure maxOccurs="unbounded" minOccurs="0" name="imports">
+        <field name="link" type="java.lang.String"/>
+        <field name="type" type="java.lang.String"/>
+        <field name="async" type="java.lang.Boolean"/>
+    </structure>
+    <structure maxOccurs="unbounded" minOccurs="0" name="state">
+        <field name="name" type="java.lang.String"/>
+        <field name="operation" type="java.lang.String"/>
+    </structure>
+    <structure comment="User specific settings" maxOccurs="unbounded" minOccurs="0" name="users">
+        <field maxOccurs="unbounded" minOccurs="0" name="roles" type="java.lang.String"/>
+        <field comment="The home page for this user" minOccurs="0" name="home" type="java.lang.String"/>
+    </structure>
+    <structure minOccurs="0" name="providers">
+        <field minOccurs="0" name="getAllContent" type="java.lang.String"/>
+        <field minOccurs="0" name="setContent" type="java.lang.String"/>
+        <field minOccurs="0" name="translationProvider" type="java.lang.String"/>
+    </structure>
+</structure>

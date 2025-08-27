@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<virtualHost>
+    <server>moduleWeb.shared.server</server>
+    <useAcme>false</useAcme>
+    <enableHsts>false</enableHsts>
+    <hstsPreload>false</hstsPreload>
+    <hstsSubDomains>false</hstsSubDomains>
+    <enableRangeSupport>false</enableRangeSupport>
+    <enableCompression>true</enableCompression>
+    <internalServer>false</internalServer>
+    <captureErrors>false</captureErrors>
+    <captureSuccessful>false</captureSuccessful>
+    <defaultHost>false</defaultHost>
+    <heartbeat>true</heartbeat>
+</virtualHost>

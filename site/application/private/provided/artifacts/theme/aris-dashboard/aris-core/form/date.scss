@@ -1,0 +1,85 @@
+// @component form-date form-component
+@mixin form-date_variant_default {
+	position: relative;
+	.is-suffix.is-open {
+		background-color: $color-danger-base;
+		color: $color-danger-lightest;
+	}
+	.n-input-date-legend {
+		display: none;
+	}
+	.n-input-date {
+		z-index: 10;
+		@include component_shadow_xsmall;
+		@include component_border_radius-xlarge;
+		
+		padding: $spacing-medium;
+		
+		position: absolute;
+		top: 100%;
+		background-color: $color-neutral-lightest;
+		.year-selection {
+			th {
+				padding-top: $spacing-medium;
+			}
+		}
+		.days {
+			th {
+				padding: $spacing-medium;	
+				padding-top: $spacing-large;
+				height: 3rem;
+				width: 3rem;
+				font-size: $font-size-small;
+			}
+		}
+		
+		tbody {
+			td {
+				text-align: center;
+				border: solid 1px transparent;
+				@include component_border_radius-large;
+				.is-button {
+					min-height: $font-size-medium;
+					min-width: $font-size-medium;
+					justify-content: center;
+				}
+				&.is-active {
+					border-color: $color-primary-dark;
+					background-color: $color-primary-base;
+					.is-text {
+						color: $color-primary-lightest;
+					}
+				}
+				&.is-unavailable {
+					.is-text {
+						color: $color-neutral-base;
+					}
+				}
+				&.is-today:not(.is-active) {
+					border-color: $color-neutral-base;
+				}
+				.is-button {
+					font-size: $font-size-small;
+				}
+			}
+		}
+	}
+	.time {
+	    display: flex;
+	    column-gap: $spacing-small;
+	    margin-top: 1rem;
+	    input {
+	    	height: 2rem;
+	    	font-size: 0.7rem;
+	    	flex-grow: 1;
+	    	flex-basis: 0;
+	    }
+	}
+		// in read-only we want it to work mostly like a normal label
+		&.is-read-only {
+			input {
+				background-color: $color-neutral-lightest;
+				border: none;
+			}
+		}
+}

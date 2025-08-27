@@ -1,0 +1,18 @@
+// the fit is only for "external objects" like image, video,...
+// the definition means any object that is (internally) unaware of the css rules, only their overall display can be managed
+
+@mixin external-content_fit_fill {
+	object-fit: fill;
+}
+@mixin external-content_fit_contain {
+	object-fit: contain;
+}
+@mixin external-content_fit_cover {
+	object-fit: cover;
+}
+@mixin external-content_fit_none {
+	object-fit: none;
+}
+@mixin external-content_fit_scale-down {
+	object-fit: scale-down;
+}

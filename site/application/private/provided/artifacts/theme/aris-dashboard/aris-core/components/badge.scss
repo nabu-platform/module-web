@@ -1,0 +1,30 @@
+// ---------------------------------------------------------------------------------------------------------------------------
+// ----------------------------------------- BADGE
+// ---------------------------------------------------------------------------------------------------------------------------
+
+// ----------------------------------------- POSITIONING
+@mixin template_badge_position {
+	position: static;
+	top: 0;
+	left: 0;
+}
+@mixin badge_position_top-right {
+	position: absolute;
+	top: -0.5rem;
+	left: 90%;
+}
+
+@mixin badge_variant_default {
+	display: inline-flex;
+	@include content-fix-icon;
+	@include content_size_xsmall;
+	@include padded-content_size_xsmall;
+	@include component_border_full;
+	@include component_color_neutral-outline;
+	align-items: center;
+}
+
+// if a parent has a badge, it might need positioning to position the badge
+.has-badge {
+	position: relative;
+}

@@ -1,0 +1,209 @@
+{
+	"name": "aris-core", 
+	"resources": {
+		"variables": {
+			"color.scss": {
+				"url": "variables/color.scss"
+			}, 
+			"font.scss": {
+				"url": "variables/font.scss"
+			},
+			"spacing.scss": {
+				"url": "variables/spacing.scss"
+			},
+			"border.scss": {
+				"url": "variables/border.scss"
+			},
+			"layer.scss": {
+				"url": "variables/layer.scss"
+			}
+		}, 
+		"dimensions": {
+			"active.scss": {
+				"url": "dimensions/active.scss"
+			},
+			"border.scss": {
+				"url": "dimensions/border.scss"
+			},
+			"color.scss": {
+				"url": "dimensions/color.scss"
+			},
+			"content-width.scss": {
+				"url": "dimensions/content-width.scss"
+			},
+			"decoration.scss": {
+				"url": "dimensions/decoration.scss"
+			},
+			"direction.scss": {
+				"url": "dimensions/direction.scss"
+			},
+			"disabled.scss": {
+				"url": "dimensions/disabled.scss"
+			},
+			"fill.scss": {
+				"url": "dimensions/fill.scss"
+			},
+			"fit.scss": {
+				"url": "dimensions/fit.scss"
+			},
+			"height.scss": {
+				"url": "dimensions/height.scss"
+			},
+			"highlight.scss": {
+				"url": "dimensions/highlight.scss"
+			},
+			"spacing.scss": {
+				"url": "dimensions/spacing.scss"
+			},
+			"position.scss": {
+				"url": "dimensions/position.scss"
+			},
+			"size.scss": {
+				"url": "dimensions/size.scss"
+			},
+			"width.scss": {
+				"url": "dimensions/width.scss"
+			},
+			"overflow.scss": {
+				"url": "dimensions/overflow.scss"
+			},
+			"layer.scss": {
+				"url": "dimensions/layer.scss"
+			},
+			"shadow.scss": {
+				"url": "dimensions/shadow.scss"
+			},
+			"ratio.scss": {
+				"url": "dimensions/ratio.scss"
+			},
+			"rotate.scss": {
+				"url": "dimensions/rotate.scss"
+			}
+		},
+		"components": {
+			"hierarchy.scss": {
+				"url": "components/hierarchy.scss"
+			},
+			"component.scss": {
+				"url": "components/component.scss"
+			},
+			"content.scss": {
+				"url": "components/content.scss"
+			},
+			"external-content.scss": {
+				"url": "components/external-content.scss"
+			},
+			"image.scss": {
+				"url": "components/image.scss"
+			},
+			"layout.scss": {
+				"url": "components/layout.scss"
+			},
+			"button.scss": {
+				"url": "components/button.scss"
+			}, 
+			"grid.scss": {
+				"url": "components/grid.scss"
+			},
+			"alert.scss": {
+				"url": "components/alert.scss"
+			},
+			"line.scss": {
+				"url": "components/line.scss"
+			},
+			"badge.scss": {
+				"url": "components/badge.scss"
+			},
+			"tag.scss": {
+				"url": "components/tag.scss"
+			},
+			"tooltip.scss": {
+				"url": "components/tooltip.scss"
+			},
+			"typography.scss": {
+				"url": "components/typography.scss"
+			}, 
+			"info.scss": {
+				"url": "components/info.scss"
+			},
+			"form-component.scss": {
+				"url": "components/form-component.scss"
+			}, 
+			"form-text.scss": {
+				"url": "components/form-text.scss"
+			},
+			"icon.scss": {
+				"url": "components/icon.scss"
+			}
+		},
+		"form": {
+			"base.scss": {
+				"url": "form/base.scss"
+			},
+			"form.scss": {
+				"url": "form/form.scss"
+			},
+			"checkbox.scss": {
+				"url": "form/checkbox.scss"
+			},
+			"switch.scss": {
+				"url": "form/switch.scss"
+			},
+			"radio.scss": {
+				"url": "form/radio.scss"
+			},
+			"text.scss": {
+				"url": "form/text.scss"
+			},
+			"ace.scss": {
+				"url": "form/ace.scss"
+			},
+			"combo.scss": {
+				"url": "form/combo.scss"
+			},
+			"date.scss": {
+				"url": "form/date.scss"
+			},
+			"file.scss": {
+				"url": "form/file.scss"
+			}
+		},
+		"patterns": {
+			"menu.scss": {
+				"url": "patterns/menu.scss"
+			},
+			"modal.scss": {
+				"url": "patterns/modal.scss"
+			},
+			"sidebar.scss": {
+				"url": "patterns/sidebar.scss"
+			},
+			"pane.scss": {
+				"url": "patterns/pane.scss"
+			},
+			"collapsible.scss": {
+				"url": "patterns/collapsible.scss"
+			},
+			"page.scss": {
+				"url": "patterns/page.scss"
+			},
+			"messages.scss": {
+				"url": "patterns/messages.scss"
+			}
+		},
+		"templates": {
+			"two-cell-row.npt": {
+				"url": "templates/two-cell-row.npt"
+			},
+			"three-cell-row.npt": {
+				"url": "templates/three-cell-row.npt"
+			},
+			"nabu-templates.npt": {
+				"url": "templates/nabu-templates.npt"
+			}
+		},
+		"initialize.scss": {
+			"url": "initialize.scss"
+		}
+	}
+}

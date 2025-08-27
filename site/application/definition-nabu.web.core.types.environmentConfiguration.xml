@@ -1,0 +1,6 @@
+<structure name="environmentConfiguration">
+    <field comment="The service id that implements the language selection procedure" minOccurs="0" name="environmentLanguageProvider" type="java.lang.String"/>
+    <field comment="The pattern used to deduce the language from the URL. This can be &quot;/1&quot; for example. The leading slash says it is the path, the number says which numbered part. It can be &quot;?language&quot; where ? indicates that it is a query parameter and then the name of the parameter. It can be &quot;.1&quot; at which point we will check the domain and again the part of the domain." minOccurs="0" name="languagePattern" type="java.lang.String"/>
+    <field comment="Whether or not we should update the persisted language in case of a " minOccurs="0" name="synchronizePersistedLanguage" type="java.lang.Boolean"/>
+    <field comment="By default query language choices are used as suggestion" minOccurs="0" name="enforceQueryLanguageChoice" type="java.lang.Boolean"/>
+</structure>

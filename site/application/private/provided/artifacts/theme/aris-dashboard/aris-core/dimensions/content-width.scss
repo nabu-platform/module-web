@@ -1,0 +1,38 @@
+// where width is concerned with the size of the element itself
+// content width is concerned with the size of the content inside the element
+// a classic example is a top menu where you want a background color across the entire width but the content should be limited in size
+// below that you might have a container which centers content with a max width
+
+// we use content width to get predictable sizes which means it is not simply a calculation based on vw
+// if your site looks good with 1024px width, it shouldn't be randomly stretched to 2048px just because someone has a widescreen
+
+// we want the widths to stay stable as long as possible which is why we don't use the "normal" breakpoints but instead break at exact the moment the settings would start to break
+// after that we don't want an equivalent "small" content width, we just should take up as much space as possible
+
+@mixin layout_content-width_small {
+	// 512 / 1024
+	padding-left: calc(50% - 512px);
+	padding-right: calc(50% - 512px);
+	@media only screen and (max-width: 1023px) {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+}
+@mixin layout_content-width_medium {
+	// 640 / 1280
+	padding-left: calc(50% - 640px);
+	padding-right: calc(50% - 640px);
+	@media only screen and (max-width: 1279px) {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+}
+@mixin layout_content-width_large {
+	// 768 / 1536
+	padding-left: calc(50% - 768px);
+	padding-right: calc(50% - 768px);
+	@media only screen and (max-width: 1535px) {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+}

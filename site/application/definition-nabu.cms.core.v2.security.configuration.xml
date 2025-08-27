@@ -1,0 +1,6 @@
+<structure name="configuration">
+    <field comment="How long is the token valid if it goes unused" minOccurs="0" name="tokenTimeout" type="be.nabu.libs.types.base.Duration"/>
+    <field comment="How long is the token valid for (default 1 day)" minOccurs="0" name="tokenDuration" type="be.nabu.libs.types.base.Duration"/>
+    <field comment="How long should the remember token be valid, defaults to 1M" minOccurs="0" name="rememberDuration" type="be.nabu.libs.types.base.Duration"/>
+    <field minOccurs="0" name="impersonationEndpoint" type="java.lang.String"/>
+</structure>

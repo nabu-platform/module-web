@@ -1,0 +1,856 @@
+if (!nabu) { var nabu = {} }
+if (!nabu.page) { nabu.page = {} }
+if (!nabu.page.views) { nabu.page.views = {} }
+
+nabu.page.views.PageFieldsEdit = Vue.component("page-fields-edit", {
+	template: "#page-fields-edit",
+	props: {
+		page: {
+			type: Object,
+			required: true
+		},
+		cell: {
+			type: Object,
+			required: true
+		},
+		allowMultiple: {
+			type: Boolean,
+			required: false,
+			default: true
+		},
+		keys: {
+			type: Array,
+			required: false
+		},
+		allowEditable: {
+			type: Boolean,
+			required: false,
+			default: false
+		},
+		localState: {
+			type: Object,
+			required: false
+		},
+		fieldsName: {
+			type: String,
+			required: false,
+			default: "fields"
+		},
+		basic: {
+			type: Boolean,
+			required: false,
+			default: false
+		},
+		allowArbitrary: {
+			type: Boolean,
+			required: false,
+			default: true
+		},
+		allowEvents: {
+			type: Boolean,
+			default: true
+		}
+	},
+	data: function() {
+		return {
+			addAllSelector: null
+		}
+	},
+	created: function() {
+		if (!this.cell.state[this.fieldsName]) {
+			Vue.set(this.cell.state, this.fieldsName, []);
+		}
+		if (!this.allowMultiple && !this.cell.state[this.fieldsName].length) {
+			this.addField();
+		}
+		this.normalize();
+	},
+	computed: {
+		fragmentTypes: function() {
+			var provided = nabu.page.providers("page-field-fragment");
+			// if we don't allow editable fields (because we have nowhere to update them to), ignore the update types (e.g. form)
+			if (!this.allowEditable) {
+				provided = provided.filter(function(x) { return !x.editable });
+			}
+			provided = provided.map(function(x) {
+				 return x.name;
+			});
+			provided.sort();
+			return provided;
+		}
+	},
+	methods: {
+		addAll: function() {
+			if (this.addAllSelector) {
+				var self = this;
+				this.getKeys(this.addAllSelector).forEach(function(x) {
+					var field = self.addField(false);
+					// set the key
+					field.fragments[0].key = x;
+					var parts = x.split(".");
+					var name = parts[parts.length - 1];
+					field.label = "%" + "{" + name.substring(0, 1).toUpperCase() + name.substring(1).replace(/([A-Z])/g, " $1") + "}";
+				})
+				// unset
+				this.addAllSelector = null;
+			}
+		},
+		getProvidedConfiguration: function(fragmentType) {
+			var provided = nabu.page.providers("page-field-fragment").filter(function(x) {
+				 return x.name == fragmentType;
+			})[0];
+			return provided ? provided.configure : null;
+		},
+		normalize: function() {
+			this.cell.state[this.fieldsName].map(function(field) {
+				if (!field.label) {
+					Vue.set(field, "label", null);
+				}
+				if (!field.fragments) {
+					Vue.set(field, "fragments", []);
+				}
+				if (!field.styles) {
+					Vue.set(field, "styles", []);
+				}
+				if (!field.hidden) {
+					Vue.set(field, "hidden", null);
+				}
+				field.fragments.map(function(fragment) {
+					if (!fragment.type) {
+						Vue.set(fragment, "type", "data");
+					}
+					if (!fragment.content) {
+						Vue.set(fragment, "content", null);
+					}
+					if (!fragment.format) {
+						Vue.set(fragment, "format", null);
+					}
+					if (!fragment.javascript) {
+						Vue.set(fragment, "javascript", null);
+					}
+					if (!fragment.template) {
+						Vue.set(fragment, "template", null);
+					}
+					if (!fragment.class) {
+						Vue.set(fragment, "class", null);
+					}
+					if (!fragment.key) {
+						Vue.set(fragment, "key", null);
+					}
+					if (!fragment.form) {
+						Vue.set(fragment, "form", {});
+					}
+				});
+			});
+		},
+		addStyle: function(field) {
+			field.styles.push({
+				class: null,
+				condition: null
+			});
+		},
+		fieldUp: function(field) {
+			var index = this.cell.state[this.fieldsName].indexOf(field);
+			if (index > 0) {
+				var replacement = this.cell.state[this.fieldsName][index - 1];
+				this.cell.state[this.fieldsName].splice(index - 1, 1, field);
+				this.cell.state[this.fieldsName].splice(index, 1, replacement);
+			}
+		},
+		fieldDown: function(field) {
+			var index = this.cell.state[this.fieldsName].indexOf(field);
+			if (index < this.cell.state[this.fieldsName].length - 1) {
+				var replacement = this.cell.state[this.fieldsName][index + 1];
+				this.cell.state[this.fieldsName].splice(index + 1, 1, field);
+				this.cell.state[this.fieldsName].splice(index, 1, replacement);
+			}
+		},
+		fieldBeginning: function(field) {
+			var index = this.cell.state[this.fieldsName].indexOf(field);
+			if (index > 0) {
+				this.cell.state[this.fieldsName].splice(index, 1);
+				this.cell.state[this.fieldsName].unshift(field);
+			}
+		},
+		fieldEnd: function(field) {
+			var index = this.cell.state[this.fieldsName].indexOf(field);
+			if (index < this.cell.state[this.fieldsName].length - 1) {
+				this.cell.state[this.fieldsName].splice(index, 1);
+				this.cell.state[this.fieldsName].push(field);
+			}
+		},
+		up: function(field, fragment) {
+			var index = field.fragments.indexOf(fragment);
+			if (index > 0) {
+				var replacement = field.fragments[index - 1];
+				field.fragments.splice(index - 1, 1, fragment);
+				field.fragments.splice(index, 1, replacement);
+			}
+		},
+		down: function(field, fragment) {
+			var index = field.fragments.indexOf(fragment);
+			if (index < field.fragments.length - 1) {
+				var replacement = field.fragments[index + 1];
+				field.fragments.splice(index + 1, 1, fragment);
+				field.fragments.splice(index, 1, replacement);
+			}
+		},
+		addField: function(arbitrary) {
+			var field = {
+				label: null,
+				info: null,
+				infoIcon: null,
+				fragments: [],
+				hidden: null,
+				styles: [],
+				arbitrary: !!arbitrary
+			};
+			this.cell.state[this.fieldsName].push(field);
+			// already add a fragment, a field is generally useless without it...
+			this.addFragment(field);
+			return field;
+		},
+		addFragment: function(field) {
+			// default to a data fragment (generally the case)
+			var fragment = {
+				type: "data",
+				content: null,
+				format: null,
+				javascript: null,
+				template: null,
+				class: null,
+				key: null,
+				disabled: null,
+				hidden: null,
+				form: {}
+			};
+			field.fragments.push(fragment);
+			return fragment;
+		},
+		getKeys: function(value) {
+			var keys;
+			// you can provide external keys
+			if (this.keys) {
+				keys = this.keys;
+			}
+			else {
+				// otherwise we just try to get the default ones available to you
+				var parameters = this.$services.page.getAvailableParameters(this.page, this.cell, true);
+				keys = this.$services.page.getSimpleKeysFor({properties:parameters}, true);
+			}
+			return value ? keys.filter(function(x) { return x.toLowerCase().indexOf(value.toLowerCase()) >= 0 }) : keys;
+		}
+	}
+});
+
+Vue.component("page-fields-edit-main", {
+	template: "#page-fields-edit-main",
+	props: {
+		page: {
+			type: Object,
+			required: true
+		},
+		parameters: {
+			type: Object,
+			required: false
+		},
+		cell: {
+			type: Object,
+			required: true
+		},
+		edit: {
+			type: Boolean,
+			required: true
+		},
+		data: {
+			required: false
+		},
+		shouldStyle: {
+			type: Boolean,
+			required: false,
+			default: true
+		},
+		label: {
+			type: Boolean,
+			required: false,
+			default: null
+		},
+		localState: {
+			type: Object,
+			required: false
+		},
+		fieldsName: {
+			type: String,
+			required: false,
+			default: "fields"
+		}
+	}
+})
+
+nabu.page.views.PageFields = Vue.component("page-fields", {
+	template: "#page-fields",
+	props: {
+		page: {
+			type: Object,
+			required: true
+		},
+		parameters: {
+			type: Object,
+			required: false
+		},
+		cell: {
+			type: Object,
+			required: true
+		},
+		edit: {
+			type: Boolean,
+			required: true
+		},
+		data: {
+			required: false
+		},
+		shouldStyle: {
+			type: Boolean,
+			required: false,
+			default: true
+		},
+		label: {
+			type: Boolean,
+			required: false,
+			default: null
+		},
+		localState: {
+			type: Object,
+			required: false
+		},
+		fieldsName: {
+			type: String,
+			required: false,
+			default: "fields"
+		}
+	},
+	data: function() {
+		return {
+			configuring: false
+		}
+	},
+	created: function() {
+		this.normalize(this.cell.state);
+	},
+	methods: {
+		/*
+		configure: function() {
+			this.configuring = true;	
+		},
+		*/
+		configurator: function() {
+			return "page-fields-edit-main";
+		},
+		normalize: function(state) {
+			if (!state.class) {
+				Vue.set(state, "class", null);
+			}
+		},
+		getEvents: function() {
+			var result = {};
+			var self = this;
+			if (this.cell.state[this.fieldsName]) {
+				this.cell.state[this.fieldsName].forEach(function(field) {
+					if (field.fragments) {
+						field.fragments.forEach(function(fragment) {
+							if (fragment.clickEvent) {
+								if (typeof(fragment.clickEvent) == "string") {
+									result[fragment.clickEvent] = {};
+								}
+								else if (nabu.page.event.getName(fragment, "clickEvent") && nabu.page.event.getName(fragment, "clickEvent") != "$close") {
+									var type = nabu.page.event.getType(fragment, "clickEvent");
+									if (type.properties && Object.keys(type.properties).length == 0 && self.cell.on) {
+										type = self.cell.on;
+									}
+									result[nabu.page.event.getName(fragment, "clickEvent")] = type;
+								}
+							}	
+						});
+					}	
+				});
+			}
+			return result;
+		}
+	}
+});
+
+nabu.page.views.PageFieldsTable = Vue.component("page-fields-table", {
+	template: "#page-fields-table",
+	props: {
+		page: {
+			type: Object,
+			required: true
+		},
+		parameters: {
+			type: Object,
+			required: false
+		},
+		cell: {
+			type: Object,
+			required: true
+		},
+		edit: {
+			type: Boolean,
+			required: true
+		},
+		data: {
+			required: false
+		},
+		shouldStyle: {
+			type: Boolean,
+			required: false,
+			default: true
+		},
+		label: {
+			type: Boolean,
+			required: false,
+			default: null
+		},
+		localState: {
+			type: Object,
+			required: false
+		},
+		fieldsName: {
+			type: String,
+			required: false,
+			default: "fields"
+		}
+	},
+	data: function() {
+		return {
+			configuring: false
+		}
+	},
+	created: function() {
+		this.normalize(this.cell.state);
+	},
+	methods: {
+		configure: function() {
+			this.configuring = true;	
+		},
+		normalize: function(state) {
+			if (!state.class) {
+				Vue.set(state, "class", null);
+			}
+			if (!state.display) {
+				Vue.set(state, "class", "row");
+			}
+		},
+		getEvents: function() {
+			var result = {};
+			var self = this;
+			if (this.cell.state[this.fieldsName]) {
+				this.cell.state[this.fieldsName].forEach(function(field) {
+					if (field.fragments) {
+						field.fragments.forEach(function(fragment) {
+							if (fragment.clickEvent) {
+								if (typeof(fragment.clickEvent) == "string") {
+									result[fragment.clickEvent] = {};
+								}
+								else if (nabu.page.event.getName(fragment, "clickEvent") && nabu.page.event.getName(fragment, "clickEvent") != "$close") {
+									var type = nabu.page.event.getType(fragment, "clickEvent");
+									if (type.properties && Object.keys(type.properties).length == 0 && self.cell.on) {
+										type = self.cell.on;
+									}
+									result[nabu.page.event.getName(fragment, "clickEvent")] = type;
+								}
+							}	
+						});
+					}	
+				});
+			}
+			return result;
+		}
+	}
+});
+
+Vue.component("page-field", {
+	template: "#page-field",
+	props: {
+		page: {
+			type: Object,
+			required: true
+		},
+		cell: {
+			type: Object,
+			required: true
+		},
+		data: {
+			type: Object,
+			required: true
+		},
+		field: {
+			type: Object,
+			required: true
+		},
+		shouldStyle: {
+			type: Boolean,
+			required: false
+		},
+		label: {
+			type: Boolean,
+			required: false
+		},
+		edit: {
+			type: Boolean,
+			required: false
+		},
+		actions: {
+			type: Array,
+			required: false,
+			default: function() {
+				return [];
+			}
+		}
+	},
+	computed: {
+		// the action that applies to the entire field (if any)
+		fieldAction: function() {
+			return this.actions.filter(function(x) {
+				return !x.icon && !x.label;
+			})[0];
+		},
+		otherActions: function() {
+			return this.actions.filter(function(x) {
+				return x.icon || x.label;
+			})
+		}
+	},
+	methods: {
+		trigger: function(action) {
+			if (action) {
+				if (!action.condition || this.$services.page.isCondition(action.condition, {record:this.data}, this)) {
+					var pageInstance = this.$services.page.getPageInstance(this.page, this);
+					return pageInstance.emit(action.name, this.data);
+				}
+			}
+		},
+		hasClickEvent: function(fragment) {
+			if (!fragment.clickEvent) {
+				return false;
+			}
+			else if (typeof(fragment.clickEvent) == "string") {
+				return true;
+			}
+			else {
+				return nabu.page.event.getName(fragment, "clickEvent");
+			}	
+		},
+		handleClick: function(fragment) {
+			if (this.hasClickEvent(fragment)) {
+				var self = this;
+				var pageInstance = self.$services.page.getPageInstance(self.page, self);
+				pageInstance.emit(
+					nabu.page.event.getName(fragment, "clickEvent"),
+					nabu.page.event.getInstance(fragment, "clickEvent", self.page, self)
+				);
+			}	
+		},
+		getDynamicClasses: function(field) {
+			var classes = null;
+			if (this.shouldStyle) {
+				classes = this.$services.page.getDynamicClasses(field.styles, this.data, this);
+			}
+			else {
+				classes = [];
+			}
+			if (this.label) {
+				classes.push("with-label");
+			}
+			if (this.fieldAction) {
+				classes.push("with-action");
+			}
+			return classes;
+		},
+		getProvidedComponent: function(fragmentType) {
+			var provided = nabu.page.providers("page-field-fragment").filter(function(x) {
+				 return x.name == fragmentType;
+			})[0];
+			return provided ? provided.component : null;
+		},
+		isHidden: function(fragment) {
+			if (!!fragment.hidden) {
+				return this.$services.page.isCondition(fragment.hidden, {record:this.data}, this); 
+			}
+			return false;
+		}
+	}
+});
+
+Vue.component("page-formatted-configure", {
+	template: "#page-formatted-configure",
+	props: {
+		page: {
+			type: Object,
+			required: true,
+		},
+		cell: {
+			type: Object,
+			required: true
+		},
+		fragment: {
+			type: Object,
+			required: true
+		},
+		allowHtml: {
+			type: Boolean,
+			required: false,
+			default: false
+		},
+		keys: {
+			type: Array,
+			required: false
+		}
+	},
+	created: function() {
+		this.normalize(this.fragment);
+	},
+	computed: {
+		nativeTypes: function() {
+			var types = ['date', 'number', 'masterdata', 'javascript', 'text', 'literal'];
+			if (this.allowHtml) {
+				types.push('link');
+				types.push('html');
+				types.push('checkbox');
+			}
+			return types;
+		},
+		types: function() {
+			var types = [];
+			nabu.utils.arrays.merge(types, this.nativeTypes);
+			nabu.utils.arrays.merge(types, nabu.page.providers("page-format").map(function(x) { return x.name }));
+			types.sort();
+			return types;
+		},
+		skipCompile: function() {
+			var self = this;
+			// don't compile literals
+			if (this.fragment.format == "literal") {
+				return true;
+			}
+			var formatter = nabu.page.providers("page-format").filter(function(x) { return x.name == self.fragment.format })[0];
+			return formatter && formatter.skipCompile;
+		}
+	},
+	methods: {
+		isProvided: function(type) {
+			return this.nativeTypes.indexOf(type) < 0;
+		},
+		getConfiguration: function(type) {
+			var provider = nabu.page.providers("page-format").filter(function(x) { return x.name == type })[0];
+			return provider ? provider.configure : null;
+		},
+		normalize: function(fragment) {
+			if (!fragment.dateFormat) {
+				Vue.set(fragment, "dateFormat", null);
+			}
+			if (!fragment.tag) {
+				Vue.set(fragment, "tag", null);
+			}
+			if (!fragment.html) {
+				Vue.set(fragment, "html", null);
+			}
+			if (!fragment.javascript) {
+				Vue.set(fragment, "javascript", null);
+			}
+			if (!fragment.amountOfDecimals) {
+				Vue.set(fragment, "amountOfDecimals", null);
+			}
+		}
+	}
+});
+
+/**
+ * For v2, we changed sanitization rules etc
+ * From now on, the "default" is text, this was already the case in most places except specifically in the "plain" option of v-content
+ * With the plain option now turned on in the default setting, we will get verbatim what you typed if we do nothing (so for example verbatim <b>test</b> rather than a bolded "test")
+ * 
+ * We will now _always_ sanitize, even for html-based components. There has not yet been a valid usecase (even for power-users) to actually inject javascript through script tags or href or...
+ * If a usecase pops up in the future, we can add an _explicit_ skipSanitize option.
+ * 
+ * Because of how widespread this component is used, this should severely reduce accidental XSS bugs
+ */
+Vue.component("page-formatted", {
+	template: "<component :is='tag' v-content.parameterized=\"{value:formatted,plain:isPlain, sanitize: !skipSanitize, compile: (mustCompile || fragment.compile) && !skipCompile, allowDataAttributes: allowDataAttributes, allowLinkIds: allowLinkIds }\"/>",
+	props: {
+		page: {
+			type: Object,
+			required: true,
+		},
+		cell: {
+			type: Object,
+			required: true
+		},
+		value: {
+			required: false
+		},
+		fragment: {
+			type: Object,
+			required: true
+		},
+		state: {
+			required: false,
+			default: function() {
+				return {};
+			}
+		},
+		// called when we receive an update (?)
+		updater: {
+			required: false,
+			type: Function
+		},
+		allowDataAttributes: {
+			required: false,
+			default: false
+		},
+		allowLinkIds: {
+			required: false,
+			default: false
+		}
+	},
+	computed: {
+		nativeTypes: function() {
+			var types = ['date', 'number', 'masterdata', 'javascript', 'literal'];
+			types.push('link');
+			types.push('html');
+			types.push('checkbox');
+			return types;
+		},
+		tag: function() {
+			if (this.fragment.tag) {
+				return this.fragment.tag;	
+			}
+			else {
+				return "span";
+			}
+		},
+		// we must skip sanitize because we use a vue component!
+		// this must be compiled before it can be sanitized...
+		// could also update the order in which it is compiled? or add a mandatory post-sanitize
+		skipSanitize: function() {
+			if (this.fragment.format == "checkbox") {
+				return true;
+			}
+			else if (this.fragment.skipSanitize) {
+				return true;
+			}
+			var self = this;
+			var formatter = nabu.page.providers("page-format").filter(function(x) { return x.name == self.fragment.format })[0];
+			return formatter && formatter.skipSanitize;
+		},
+		isHtml: function() {
+			if (!this.fragment.format) {
+				return false;
+			}
+			if (["link", "html", "checkbox"].indexOf(this.fragment.format) >= 0) {
+				return true;
+			}
+			var self = this;
+			var formatter = nabu.page.providers("page-format").filter(function(x) { return x.name == self.fragment.format })[0];
+			return formatter && formatter.html;
+		},
+		skipCompile: function() {
+			var self = this;
+			// don't compile literals
+			if (this.fragment.format == "literal") {
+				return true;
+			}
+			var formatter = nabu.page.providers("page-format").filter(function(x) { return x.name == self.fragment.format })[0];
+			return formatter && formatter.skipCompile;
+		},
+		mustCompile: function() {
+			if (this.fragment.format == "checkbox") {
+				return true;
+			}
+			var self = this;
+			var formatter = nabu.page.providers("page-format").filter(function(x) { return x.name == self.fragment.format })[0];
+			return formatter && formatter.mustCompile;
+		},
+		isPlain: function() {
+			var self = this;
+			if (!this.fragment.format || this.fragment.format == 'text') {
+				return true;
+			}
+			else if (this.nativeTypes.indexOf(this.fragment.format) >= 0) {
+				return false;
+			}
+			else {
+				var provider =  nabu.page.providers("page-format").filter(function(x) { return x.name == self.fragment.format })[0];
+				// if we can't find the provider, we want to treat it as text
+				return !provider;
+			}
+		},
+		formatted: function() {
+			// slow retrofit for array support
+			// unsure if we always simply take the first or concat them all or...
+			var value = this.value;
+			if (value instanceof Array && value.length == 1) {
+				value = value[0];
+			}
+			else if (value instanceof Array && value.length == 0) {
+				return null;
+			}
+			if (this.fragment.format == "checkbox") {
+				if (this.fragment.inverse) {
+					return "<n-form-checkbox :value='!value' />";	
+				}
+				else {
+					return "<n-form-checkbox :value='value' />";
+				}
+			}
+			else if (value == null || typeof(value) == "undefined") {
+				return null;
+			}
+			// formatting is optional
+			else if (this.fragment.format == null || this.fragment.format == "text") {
+				if (this.fragment.maxLength && this.value) {
+					var result = ("" + this.value);
+					if (result.length > parseInt(this.fragment.maxLength)) {
+						result = result.substring(0, parseInt(this.fragment.maxLength)) + "...";
+					}
+					return result;
+				}
+				return this.value;
+			}
+			else if (this.fragment.format == "literal") {
+				return this.value.replace ? this.value.replace(/</g, "&lt;").replace(/>/g, "&gt;") : null;
+			}
+			else if (this.fragment.format == "html") {
+				return this.fragment.html ? this.fragment.html : this.value;
+			}
+			else if (this.fragment.format == "link") {
+				var label = this.fragment.label;
+				if (!label) {
+					label = value.replace(/http[s]*:\/\/([^/]+).*/, "$1");
+				}
+				label = this.$services.page.translate(this.$services.page.interpret(label, this));
+				return "<a target='_blank' class='is-button is-variant-link is-spacing-none' ref='noopener noreferrer nofollow' href='" + value + "'>" + label + "</a>";
+			}
+			// if it is native, format it that way
+			else if (this.nativeTypes.indexOf(this.fragment.format) >= 0) {
+				// did some retrofitting magic to get the state into the javascript object
+				// this allows us to evaluate against the actual record state in a data list
+				var fraggy = this.fragment ? nabu.utils.objects.clone(this.fragment) : {};
+				fraggy.state = this.state;
+				fraggy.$value = this.$value;
+				return this.$services.formatter.format(this.value, fraggy, this.page, this.cell, this.state, this);
+			}
+			// otherwise we are using a provider
+			else {
+				var self = this;
+				// if the provider is not known, we still want to provide the basic content
+				var provider =  nabu.page.providers("page-format").filter(function(x) { return x.name == self.fragment.format })[0];
+				if (!provider) {
+					return this.value;
+				}
+				var result = provider.format(this.value, this.fragment, this.page, this.cell, this.state, this, this.updater);
+				return result;
+			}
+		}
+	}
+});

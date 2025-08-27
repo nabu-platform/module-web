@@ -1,0 +1,3 @@
+<structure name="translationConfiguration">
+    <field comment="The default context to load when the application starts. Defaults to &quot;copy&quot;" maxOccurs="unbounded" minOccurs="0" name="defaultContext" type="java.lang.String"/>
+</structure>

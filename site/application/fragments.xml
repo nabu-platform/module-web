@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<webFragmentConfigurations>
+    <parts>
+        <configuration>
+            <property key="title">Nabu Modules</property>
+            <property key="home">module-list</property>
+            <property key="homeUser">module-list</property>
+            <property key="devices[0]/name">phone</property>
+            <property key="devices[1]/name">tablet</property>
+            <property key="devices[2]/name">desktop</property>
+            <property key="devices[3]/name">wide</property>
+        </configuration>
+        <environmentSpecific>false</environmentSpecific>
+        <type>nabu.web.page.core.types.configuration</type>
+    </parts>
+    <parts>
+        <configuration/>
+        <environmentSpecific>false</environmentSpecific>
+        <type>nabu.cms.attachment.configuration</type>
+    </parts>
+    <parts>
+        <configuration/>
+        <environmentSpecific>false</environmentSpecific>
+        <type>nabu.web.core.types.environmentConfiguration</type>
+    </parts>
+    <parts>
+        <configuration/>
+        <environmentSpecific>false</environmentSpecific>
+        <type>nabu.cms.core.v2.translation.translationConfiguration</type>
+    </parts>
+    <parts>
+        <configuration/>
+        <environmentSpecific>false</environmentSpecific>
+        <type>nabu.web.core.types.passwordProtect</type>
+    </parts>
+    <parts>
+        <configuration/>
+        <environmentSpecific>false</environmentSpecific>
+        <type>nabu.authentication.temporary.providers.configuration</type>
+    </parts>
+    <parts>
+        <configuration/>
+        <environmentSpecific>true</environmentSpecific>
+        <type>nabu.web.page.core.types.environmentConfiguration</type>
+    </parts>
+    <parts>
+        <configuration>
+            <property key="passwordRegex">^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}</property>
+            <property key="caseInsensitive">true</property>
+            <property key="masterdata/preloadedCategories[0]">language</property>
+            <property key="masterdata/preloadedCategories[1]">attachmentGroup</property>
+        </configuration>
+        <environmentSpecific>false</environmentSpecific>
+        <type>nabu.cms.core.configuration</type>
+    </parts>
+    <parts>
+        <configuration/>
+        <environmentSpecific>false</environmentSpecific>
+        <type>nabu.cms.core.v2.security.configuration</type>
+    </parts>
+    <parts>
+        <configuration/>
+        <environmentSpecific>false</environmentSpecific>
+        <type>nabu.web.events.configuration</type>
+    </parts>
+</webFragmentConfigurations>

@@ -1,0 +1,30 @@
+@mixin template_content_decoration {
+	font-weight: normal;
+	text-decoration: inherit;
+	font-style: normal;
+	text-transform: inherit;
+}
+@mixin content_decoration_normal {
+	font-weight: normal;
+	text-decoration: inherit;
+	font-style: normal;
+	text-transform: inherit;
+}
+@mixin content_decoration_italic {
+	text-decoration: italic;
+}
+@mixin content_decoration_upper {
+	text-transform: uppercase;
+}
+@mixin content_decoration_lower {
+	text-transform: lowercase;
+}
+@mixin content_decoration_emphasis {
+	font-weight: bold;
+}
+@mixin content_decoration_link {
+	text-decoration: underline;
+}
+@mixin content_decoration_strike {
+	text-decoration: line-through;
+}

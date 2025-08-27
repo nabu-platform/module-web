@@ -1,0 +1,28 @@
+{
+	"name": "page-builder",
+	"version": "1.0",
+	"resources": {
+		"vendor": {
+			"vue.json": {
+				"type": "bundle",
+				"url": "https://raw.githubusercontent.com/nablex/js-vue-utils/aris/bundle.json",
+				"includes": ["vue"]
+			}
+		},
+		"nabu": {
+			"js-utils.json": {
+				"type": "bundle",
+				"url": "https://raw.githubusercontent.com/nablex/js-utils/aris/bundle.json"
+			},
+			"js-vue-utils.json": {
+				"type": "bundle",
+				"url": "https://raw.githubusercontent.com/nablex/js-vue-utils/aris/bundle.json",
+				"excludes": ["vue"]
+			},
+			"web-components.json": {
+				"type": "bundle",
+				"url": "https://raw.githubusercontent.com/nablex/web-components/aris/bundle.json"
+			}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+// set shadow on a component
+@mixin component_shadow_xsmall {
+	box-shadow: 0px 1px 3px $color-neutral-dark;
+	border-radius: $border-radius-default;
+}
+@mixin component_shadow_small {
+	box-shadow: 0px 1px 3px 4px $color-neutral-light;
+	border-radius: $border-radius-default;
+}
+@mixin component_shadow_medium {
+	box-shadow: 0px 1px 8px 6px $color-neutral-light;
+	border-radius: $border-radius-default;
+}
+@mixin component_shadow_large {
+	box-shadow: 0px 1px 8px 8px $color-neutral-light;
+	border-radius: $border-radius-default;
+}
+@mixin component_shadow_xlarge {
+	box-shadow: 0px 1px 10px 10px $color-neutral-light;
+	border-radius: $border-radius-default;
+}
+@mixin component_shadow_right {
+	box-shadow: 3px -2px 4px 2px $color-neutral-light;
+	border-radius: $border-radius-default;
+}
+@mixin component_shadow_left {
+	box-shadow: -3px -2px 4px 2px $color-neutral-light;
+	border-radius: $border-radius-default;
+}

@@ -1,0 +1,18 @@
+@mixin image_variant_default {
+	// too much impact to do this standard!
+	// both for variants like the background that need to unset it
+	// but if you set a fixed width on an image, it can still become smaller thanks to this rule if the parent is squished
+	//max-width: 100%;
+}
+
+// set as centered background image
+@mixin image_variant_background {
+    background-size: contain;
+	min-height: 100%;
+	min-width: 100%;
+    opacity: 20%;
+	position: fixed;
+	top: 50%;
+    transform: translate(-50%,-50%);
+	left: 50%;
+}

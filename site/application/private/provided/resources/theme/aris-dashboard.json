@@ -1,0 +1,44 @@
+{
+	"name": "aris-dashboard", 
+	"resources": {
+		"base": {
+			"variables.scss": {
+				"url": "base/variables.scss"
+			}
+		},
+		"aris-core.json": {
+			"type": "bundle",
+			"url": "https://raw.githubusercontent.com/nablex/aris-core/master/bundle.json"
+		},
+		"components": {
+			"form.scss": {
+				"url": "components/form.scss"
+			}, 
+			"cards.scss": {
+				"url": "components/cards.scss"
+			}, 
+			"menu.scss": {
+				"url": "components/menu.scss"
+			}
+		},
+		"patterns" :{
+			"table.scss": {
+				"url": "patterns/table.scss"
+			},
+			"article.scss": {
+				"url": "patterns/article.scss"
+			}
+		},
+		"templates": {
+			"skeleton-menu-left.npt": {
+				"url": "templates/skeleton-menu-left.npt"
+			},
+			"skeleton-menu-top-left.npt": {
+				"url": "templates/skeleton-menu-top-left.npt"
+			},
+			"skeleton-menu-top.npt": {
+				"url": "templates/skeleton-menu-top.npt"
+			}
+		}
+	}
+}

@@ -1,0 +1,237 @@
+// color deals with text color, background color, border color etc
+
+// Generic uses
+@mixin component_color_background {
+	background-color: $color-uses-background;
+	color: $font-color-default;
+	border-color: $color-neutral-base;
+}
+@mixin component_color_body {
+	background-color: $color-uses-body;
+	color: $font-color-default;
+	border-color: $color-neutral-base;
+}
+
+// Primary
+@mixin component_color_primary {
+	background-color: $color-primary-base;
+	color: $color-neutral-lightest;
+	border-color: $color-primary-base;	
+}
+@mixin component_color_primary-lighter {
+	background-color: $color-primary-lighter;
+	color: $color-neutral-darker;
+	border-color: $color-primary-lighter;
+}
+@mixin component_color_primary-darker {
+	background-color: $color-primary-darker;
+	color: $color-neutral-lightest;
+	border-color: $color-primary-darker;	
+}
+@mixin component_color_primary-outline {
+	background-color: transparent;
+	color: $color-primary-base;
+	border-color: $color-primary-base;
+}
+@mixin component_color_primary-lighter-outline {
+	background-color: transparent;
+	color: $color-primary-lighter;
+	border-color: $color-primary-lighter;
+}
+@mixin component_color_primary-darker-outline {
+	background-color: transparent;
+	color: $color-primary-darker;
+	border-color: $color-primary-darker;
+}
+
+// Secondary
+@mixin component_color_secondary {
+	background-color: $color-secondary-base;
+	color: $color-neutral-lightest;
+	border-color: $color-secondary-base;	
+}
+@mixin component_color_secondary-lighter {
+	background-color: $color-secondary-lighter;
+	color: $color-neutral-darker;
+	border-color: $color-secondary-lighter;	
+}
+@mixin component_color_secondary-darker {
+	background-color: $color-secondary-darker;
+	color: $color-neutral-lightest;
+	border-color: $color-secondary-darker;	
+}
+@mixin component_color_secondary-outline {
+	background-color: transparent;
+	color: $color-secondary-base;
+	border-color: $color-secondary-base;
+}
+@mixin component_color_secondary-lighter-outline {
+	background-color: transparent;
+	color: $color-secondary-lighter;
+	border-color: $color-secondary-lighter;
+}
+@mixin component_color_secondary-darker-outline {
+	background-color: transparent;
+	color: $color-secondary-darker;
+	border-color: $color-secondary-darker;
+}
+
+// Neutral
+@mixin component_color_neutral {
+	background-color: $color-neutral-base;
+	color: $color-neutral-lightest;
+	border-color: $color-neutral-base;	
+}
+@mixin component_color_neutral-lighter {
+	background-color: $color-neutral-lighter;
+	color: $color-neutral-darker;
+	border-color: $color-neutral-lighter;	
+}
+@mixin component_color_neutral-darker {
+	background-color: $color-neutral-darker;
+	color: $color-neutral-lightest;
+	border-color: $color-neutral-darker;	
+}
+@mixin component_color_neutral-outline {
+	background-color: transparent;
+	color: $color-neutral-base;
+	border-color: $color-neutral-base;
+}
+@mixin component_color_neutral-lighter-outline {
+	background-color: transparent;
+	color: $color-neutral-lighter;
+	border-color: $color-neutral-lighter;
+}
+@mixin component_color_neutral-darker-outline {
+	background-color: transparent;
+	color: $color-neutral-darker;
+	border-color: $color-neutral-darker;
+}
+
+// Danger
+@mixin component_color_danger {
+	background-color: $color-danger-base;
+	color: $color-neutral-lightest;
+	border-color: $color-danger-base;	
+}
+@mixin component_color_danger-lighter {
+	background-color: $color-danger-lighter;
+	color: $color-neutral-darker;
+	border-color: $color-danger-lighter;	
+}
+@mixin component_color_danger-darker {
+	background-color: $color-danger-darker;
+	color: $color-neutral-lightest;
+	border-color: $color-danger-darker;	
+}
+@mixin component_color_danger-outline {
+	background-color: transparent;
+	color: $color-danger-base;
+	border-color: $color-danger-base;
+}
+@mixin component_color_danger-lighter-outline {
+	background-color: transparent;
+	color: $color-danger-lighter;
+	border-color: $color-danger-lighter;
+}
+@mixin component_color_danger-darker-outline {
+	background-color: transparent;
+	color: $color-danger-darker;
+	border-color: $color-danger-darker;
+}
+
+// Warning
+@mixin component_color_warning {
+	background-color: $color-warning-base;
+	color: $color-neutral-lightest;
+	border-color: $color-warning-base;	
+}
+@mixin component_color_warning-lighter {
+	background-color: $color-warning-lighter;
+	color: $color-neutral-darker;
+	border-color: $color-warning-lighter;	
+}
+@mixin component_color_warning-darker {
+	background-color: $color-warning-darker;
+	color: $color-neutral-lightest;
+	border-color: $color-warning-darker;	
+}
+@mixin component_color_warning-outline {
+	background-color: transparent;
+	color: $color-warning-base;
+	border-color: $color-warning-base;
+}
+@mixin component_color_warning-lighter-outline {
+	background-color: transparent;
+	color: $color-warning-lighter;
+	border-color: $color-warning-lighter;
+}
+@mixin component_color_warning-darker-outline {
+	background-color: transparent;
+	color: $color-warning-darker;
+	border-color: $color-warning-darker;
+}
+
+// Info
+@mixin component_color_info {
+	background-color: $color-info-base;
+	color: $color-neutral-lightest;
+	border-color: $color-info-base;	
+}
+@mixin component_color_info-lighter {
+	background-color: $color-info-lighter;
+	color: $color-neutral-darker;
+	border-color: $color-info-lighter;	
+}
+@mixin component_color_info-darker {
+	background-color: $color-info-darker;
+	color: $color-neutral-lightest;
+	border-color: $color-info-darker;	
+}
+@mixin component_color_info-outline {
+	background-color: transparent;
+	color: $color-info-base;
+	border-color: $color-info-base;
+}
+@mixin component_color_info-lighter-outline {
+	background-color: transparent;
+	color: $color-info-lighter;
+	border-color: $color-info-lighter;
+}
+@mixin component_color_info-darker-outline {
+	background-color: transparent;
+	color: $color-info-darker;
+	border-color: $color-info-darker;
+}
+
+// Success
+@mixin component_color_success {
+	background-color: $color-success-base;
+	color: $color-neutral-lightest;
+	border-color: $color-success-base;	
+}
+@mixin component_color_success-lighter {
+	background-color: $color-success-lighter;
+	color: $color-neutral-darker;
+	border-color: $color-success-lighter;	
+}
+@mixin component_color_success-darker {
+	background-color: $color-success-darker;
+	color: $color-neutral-lightest;
+	border-color: $color-success-darker;	
+}
+@mixin component_color_success-outline {
+	background-color: transparent;
+	color: $color-success-base;
+	border-color: $color-success-base;
+}
+@mixin component_color_success-lighter-outline {
+	background-color: transparent;
+	color: $color-success-lighter;
+	border-color: $color-success-lighter;
+}
+@mixin component_color_success-darker-outline {
+	background-color: transparent;
+	color: $color-success-darker;
+	border-color: $color-success-darker;
+}

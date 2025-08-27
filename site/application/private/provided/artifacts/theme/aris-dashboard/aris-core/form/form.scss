@@ -1,0 +1,150 @@
+// label is positioned above the field
+
+@mixin form-section_variant_default {
+	display: flex;
+	flex-direction: column;
+}
+
+@mixin form_variant_default {
+	display: flex;
+	flex-direction: column;
+	:is-label {
+		font-size: $font-size-small;
+		@include component_color_neutral-darker-outline;
+	}
+	:is-info {
+		margin-left: $spacing-small;
+	}
+	:is-form-component {
+		&.is-required {
+			> .is-label-wrapper > :is-label {
+				&:after {
+					content: "*";
+					margin-left: $spacing-small;
+					color: $form-component-color-mandatory;
+				}
+			}
+		}
+	}
+	.is-content-after {
+		font-size: $font-size-xsmall;
+		color: $color-neutral-base;
+	}
+	:is-label-wrapper {
+		display: flex;
+	}
+}
+
+@mixin form-default_modifier_small {
+	@include form-component_size_small;	
+}
+
+// the equivalent of "row" in the previous version
+// if we use is-row, it conflicts way too much
+@mixin form-group_variant_row {
+	display: flex;
+	@include component_direction_horizontal;
+	@include component_spacing_horizontal-gap-medium;
+	> :is-form-section {
+		flex-grow: 1;
+		flex-basis: 0;
+	}
+}
+
+@mixin form_variant_vertical {
+	// we want the labels to float at the top
+	:is-form-component {
+		display: flex;
+		@include component_direction_vertical;
+		@include component_spacing_vertical-gap-small;
+		.is-label-wrapper {
+			font-weight: bold;
+		}
+	}
+	// we exclude sections that are form groups
+	:is-form-section:not(.is-form-group) {
+		display: flex;
+		@include component_spacing_vertical-gap-large;
+	}
+	:is-form-section:not(.is-form-group):not(.is-form-main-content) {
+		@include component_direction_vertical;
+	}
+}
+
+@mixin form_variant_floating-labels {
+	:is-form-component {
+		display: flex;
+		@include component_direction_vertical;
+		@include component_spacing_vertical-gap-small;
+		
+		position: relative;
+		.is-label-wrapper {
+			position: absolute;
+			// we add the margin of the content-wrapper to the top offset, otherwise it is floating way above the field
+			top: calc(0px - (#{$font-size-small} * 1.3) + #{$spacing-medium});
+			background-color: $color-primary-lightest;
+			border: solid 1px $color-primary-light;
+			padding: $spacing-2xsmall $spacing-small;
+			border-radius: $border-radius-default;
+			.is-label {
+				font-size: $font-size-xsmall;
+				color: $color-primary-dark;
+			}
+		}
+		// we want to offset the content IF we have a label because the label is absolutely positioned
+		// however, if we don't have a label, we don't want to offset the content (e.g. placeholder only fields)
+		.is-content-wrapper:not(:first-child) {
+			margin-top: $spacing-medium;
+		}
+	}
+	
+}
+
+@mixin form_variant_floating-labels-underline {
+	:is-form-component {
+		display: flex;
+		@include component_direction_vertical;
+		@include component_spacing_vertical-gap-small;
+		position: relative;
+		.is-label-wrapper {
+			position: absolute;
+			top: calc(0px - #{$font-size-small} + #{$spacing-medium});
+			padding: $spacing-2xsmall 0;
+			border-radius: $border-radius-default;
+			.is-label {
+				text-transform: uppercase;
+				font-size: $font-size-2xsmall;
+				color: $color-neutral-base;
+			}
+		}
+		.is-content-wrapper:not(:first-child) {
+			margin-top: $spacing-medium;
+		}
+		@include form-component_color_default;
+		@include form-component_border_underline;
+	}
+}
+
+// horizontal labels
+@mixin form_variant_horizontal {
+	:is-form-component {
+		display: flex;
+		.is-label-wrapper {
+			padding: 0 $spacing-medium;
+			align-items: center;
+			border: solid 1px $color-neutral-light;
+			border-right: none;
+			background-color: $color-neutral-lighter;
+			border-top-left-radius: $border-radius-default;
+			border-bottom-left-radius: $border-radius-default;
+		}
+		.is-content-wrapper {
+			flex-grow: 1;
+			input {
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+		}
+	}
+}
+

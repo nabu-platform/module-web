@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jdbcPool>
+    <poolProxy>moduleImpl.databases.main.connection</poolProxy>
+    <driverClassName>org.h2.Driver</driverClassName>
+    <jdbcUrl>jdbc:h2:file:~/nabu/databases/moduleImpl.databases.main.connection-8fe93343aafb4dcfaa96cd2d115221ef</jdbcUrl>
+    <autoCommit>false</autoCommit>
+    <dialect>be.nabu.eai.module.jdbc.dialects.h2.H2Dialect</dialect>
+    <managedModels>nabu.cms.core.types.dataModel</managedModels>
+    <managedModels>nabu.authentication.temporary.types.database.model</managedModels>
+    <managedModels>nabu.frameworks.tasks.types.dataModel</managedModels>
+    <managedModels>nabu.frameworks.process.database.model</managedModels>
+</jdbcPool>

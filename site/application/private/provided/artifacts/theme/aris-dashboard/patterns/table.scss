@@ -1,0 +1,188 @@
+// @component data component
+// @component table data
+// @component table-column column
+
+@mixin table_variant_default {
+	font-size: $font-size-small;
+	border-spacing: 0;
+    border-collapse: collapse;
+	thead {
+		th, td {
+			padding: $spacing-small $spacing-medium;
+			font-weight: normal;
+			border: solid 1px $color-neutral-light;
+			border-style: none solid solid none;
+			border-bottom-color: $color-neutral-darker;
+			&:last-child {
+				border-right: none;
+			}
+		}
+	}
+	tbody {
+		td {
+			border: solid 1px $color-neutral-light;
+			border-style: none solid solid none;
+			padding: $spacing-small $spacing-medium;
+			&:last-child {
+				border-right: none;
+			}
+		}
+		tr:last-child {
+			td {
+				border-bottom: none;
+			}
+		}
+	}
+	td, th {
+		// we actually want min-height but that doesn't work on tables
+		// if children are actually bigger, it will still get resized
+		// some components (e.g. checkboxes) take up slightly more space than for example plain text
+		// we want to avoid variable-height rows as much as possible
+		height: calc(#{$font-size-large} * 2);
+		&.is-border-none {
+			border-bottom: none;
+			border-top: none;
+			border-right: none;
+		}
+		// th is autoaligned as center in some browsers
+		text-align: left;
+	}
+	tr.is-selectable {
+		cursor: pointer;
+		&:hover:not(.is-selected) {
+			> td:not(.is-border-none) {
+				background-color: $color-secondary-lightest;
+				color: $color-secondary-darkest;
+			}
+		}
+		&.is-selected {
+			> td:not(.is-border-none) {
+				background-color: $color-primary-lightest;
+				color: $color-primary-darkest;
+			}
+		}
+	}
+}
+@mixin table-default_modifier_mobile {
+	display: flex;
+	flex-direction: column;
+	thead {
+		display: none;
+	}
+	tbody {
+		display: flex;
+		flex-direction: column;
+		row-gap: $spacing-medium;
+		tr {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			border: solid 1px $color-neutral-light;
+			border-style: solid none none solid;
+			// reintroduce the border we throw away in normal view
+			&:last-child {
+				td {
+					border-bottom: solid 1px $color-neutral-light;
+				}
+			}
+			td {
+				height: auto;
+				width: 100%;
+				&[label]:before {
+					content: attr(label);
+					font-weight: bold;
+					text-transform: uppercase;
+					font-size: $font-size-xsmall;
+					display: block;
+					margin-bottom: $spacing-small;
+				}
+				// we _do_ want a border in this case!
+				&.is-border-none {
+					border-width: 1px;
+					border-style: none solid solid none;
+					border-color: $color-neutral-light;
+					display: flex;
+					justify-content: end;
+				}
+				// reintroduce border that we throw away in normal view
+				&:last-child {
+					border-right: solid 1px $color-neutral-light;
+				}
+				// builds on the modifier
+				&.is-empty {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+@mixin table-default_modifier_pattern-alternating {
+	tbody {
+		@include layout_pattern_basic-alternating;
+	}
+}
+@mixin table-default_modifier_fill {
+	width: 100%;
+}
+@mixin table-default_modifier_center-content {
+	text-align: center;
+}
+
+@mixin button_variant_data-table-inline-button {
+	@include padded-content_size_xsmall;
+	@include content_size_xsmall;
+}
+@mixin table-column_variant_data-table-header {
+	@include content_align_left;
+	@include content_size_xsmall;
+	@include content_decoration_upper;
+}
+@mixin table-column_variant_data-table-cell {
+	@include content_size_xsmall;
+}
+
+@mixin menu_variant_data-button-container {
+	@include menu_variant_toolbar;
+	@include layout_align_end;
+	@include component_spacing_vertical-top-medium;
+}
+ 
+@mixin menu_variant_table-button-container {
+	@include menu_variant_toolbar;
+}
+
+@mixin table-column_variant_default {
+	// nothing to see here...
+}
+// we want as small as possible
+@mixin table-column-default_modifier_small {
+	width: 0px;
+}
+@mixin table-column-default_modifier_empty {
+	// used to mark a column as empty, in a default scenario we don't actually apply special styling to it (currently)
+	// however, when in mobile mode, we want to hide it
+}
+
+@mixin table-default_modifier_has-local-actions {
+	td:not([slot]), th:not([slot]) {
+		&:last-child {
+			border-left: none;
+			// as small as possible
+			width: 0;
+			.is-tooltip {
+				@include tooltip_position_top-reverse;
+			}
+			// center any content
+			// and don't overflow
+			.is-page-row {
+				align-items: center;
+				flex-wrap: nowrap;
+			}
+			// make sure text doesn't overflow either
+			.is-text {
+				white-space: nowrap;
+			}
+		}
+	}
+}

@@ -1,0 +1,24 @@
+@mixin info_variant_default {
+	display: inline-block;
+	position: relative;
+	.is-info-content-wrapper {
+		text-align: left;
+		top: 100%;
+		z-index: 10;
+		position: absolute;
+		background-color: $color-neutral-darkest;
+		color: $color-neutral-light;
+		padding: $spacing-small $spacing-medium;
+		width: max-content;
+		max-width: calc(#{$font-size-medium} * 20);
+		border-radius: $border-radius-default;
+		font-size: $font-size-xsmall;
+		line-height: $font-size-medium;
+	}
+}
+
+@mixin info_position_left {
+	.is-info-content-wrapper {
+		right: 0;
+	}
+}

@@ -1,0 +1,13 @@
+.big-ace {
+	width: 60%;
+	height: 90%;
+	position: fixed;
+	top: 5%;
+	right: 5%;
+	background-color: white;
+	z-index: 1000;
+	.n-ace {
+		height: 100%;
+		width: 100%;
+	}
+}

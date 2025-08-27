@@ -1,0 +1,335 @@
+// Primary
+@mixin component_active_primary {
+	&.is-active {
+		background-color: $color-primary-dark;
+		color: $color-neutral-lightest;
+		border-color: $color-primary-dark;
+	}
+}
+@mixin component_active_primary-lighter {
+	&.is-active {
+		background-color: $color-primary-lighter;
+		color: $color-neutral-darker;
+		border-color: $color-primary-lighter;
+	}
+}
+@mixin component_active_primary-light {
+	&.is-active {
+		background-color: $color-primary-light;
+		color: $color-neutral-darker;
+		border-color: $color-primary-light;
+	}
+}
+@mixin component_active_primary-darker {
+	&.is-active {
+		background-color: $color-primary-darker;
+		color: $color-neutral-lightest;
+		border-color: $color-primary-darker;
+	}
+}
+@mixin component_active_primary-darkest {
+	&.is-active {
+		background-color: $color-primary-darkest;
+		color: $color-neutral-lightest;
+		border-color: $color-primary-darkest;
+	}
+}
+@mixin component_active_primary-outline {
+	&.is-active {
+		background-color: transparent;
+		color: $color-primary-dark;
+		border-color: $color-primary-dark;
+	}
+}
+@mixin component_active_primary-lighter-outline {
+	&.is-active {
+		background-color: transparent;
+		color: $color-primary-lighter;
+		border-color: $color-primary-lighter;
+	}
+}
+@mixin component_active_primary-light-outline {
+	&.is-active {
+		background-color: transparent;
+		color: $color-primary-light;
+		border-color: $color-primary-light;
+	}
+}
+@mixin component_active_primary-darker-outline {
+	&.is-active {
+		background-color: transparent;
+		color: $color-primary-darker;
+		border-color: $color-primary-darker;
+	}
+}
+@mixin component_active_primary-darkest-outline {
+	&.is-active {
+		background-color: transparent;
+		color: $color-primary-darkest;
+		border-color: $color-primary-darkest;
+	}
+}
+
+// Secondary
+@mixin component_active_secondary {
+	&.is-active {
+		background-color: $color-secondary-dark;
+		color: $color-neutral-lightest;
+		border-color: $color-secondary-dark;
+	}
+}
+@mixin component_active_secondary-lighter {
+	&.is-active {
+		background-color: $color-secondary-light;
+		color: $color-neutral-darker;
+		border-color: $color-secondary-light;
+	}
+}
+@mixin component_active_secondary-darker {
+	&.is-active {
+		background-color: $color-secondary-darkest;
+		color: $color-neutral-lightest;
+		border-color: $color-secondary-darkest;
+	}
+}
+@mixin component_active_secondary-outline {
+	&.is-active {
+		background-color: transparent;
+		color: $color-secondary-dark;
+		border-color: $color-secondary-dark;
+	}
+}
+@mixin component_active_secondary-lighter-outline {
+	&.is-active {
+		background-color: transparent;
+		color: $color-secondary-light;
+		border-color: $color-secondary-light;
+	}
+}
+@mixin component_active_secondary-darker-outline {
+	&.is-active {
+		background-color: transparent;
+		color: $color-secondary-darkest;
+		border-color: $color-secondary-darkest;
+	}
+}
+
+// Neutral
+@mixin component_active_neutral {
+	&.is-active {
+		background-color: $color-neutral-dark;
+		color: $color-neutral-lightest;
+		border-color: $color-neutral-dark;
+	}
+}
+@mixin component_active_neutral-lighter {
+	&.is-active {
+		background-color: $color-neutral-light;
+		color: $color-neutral-darker;
+		border-color: $color-neutral-light;
+	}
+}
+@mixin component_active_neutral-darker {
+	&.is-active {
+		background-color: $color-neutral-darkest;
+		color: $color-neutral-lightest;
+		border-color: $color-neutral-darkest;
+	}
+}
+@mixin component_active_neutral-outline {
+	&.is-active {
+		background-color: transparent;
+		color: $color-neutral-dark;
+		border-color: $color-neutral-dark;
+	}
+}
+@mixin component_active_neutral-lighter-outline {
+	&.is-active {
+		background-color: transparent;
+		color: $color-neutral-light;
+		border-color: $color-neutral-light;
+	}
+}
+@mixin component_active_neutral-darker-outline {
+	&.is-active {
+		background-color: transparent;
+		color: $color-neutral-darkest;
+		border-color: $color-neutral-darkest;
+	}
+}
+
+// Danger
+@mixin component_active_danger {
+	&.is-active {
+		background-color: $color-danger-dark;
+		color: $color-neutral-lightest;
+		border-color: $color-danger-dark;
+	}
+}
+@mixin component_active_danger-lighter {
+	&.is-active {
+		background-color: $color-danger-light;
+		color: $color-neutral-darker;
+		border-color: $color-danger-light;
+	}
+}
+@mixin component_active_danger-darker {
+	&.is-active {
+		background-color: $color-danger-darkest;
+		color: $color-neutral-lightest;
+		border-color: $color-danger-darkest;
+	}
+}
+@mixin component_active_danger-outline {
+	&.is-active {
+		background-color: transparent;
+		color: $color-danger-dark;
+		border-color: $color-danger-dark;
+	}
+}
+@mixin component_active_danger-lighter-outline {
+	&.is-active {
+		background-color: transparent;
+		color: $color-danger-light;
+		border-color: $color-danger-light;
+	}
+}
+@mixin component_active_danger-darker-outline {
+	&.is-active {
+		background-color: transparent;
+		color: $color-danger-darkest;
+		border-color: $color-danger-darkest;
+	}
+}
+
+// Warning
+@mixin component_active_warning {
+	&.is-active {
+		background-color: $color-warning-dark;
+		color: $color-neutral-lightest;
+		border-color: $color-warning-dark;
+	}
+}
+@mixin component_active_warning-lighter {
+	&.is-active {
+		background-color: $color-warning-light;
+		color: $color-neutral-darker;
+		border-color: $color-warning-light;
+	}
+}
+@mixin component_active_warning-darker {
+	&.is-active {
+		background-color: $color-warning-darkest;
+		color: $color-neutral-lightest;
+		border-color: $color-warning-darkest;
+	}
+}
+@mixin component_active_warning-outline {
+	&.is-active {
+		background-color: transparent;
+		color: $color-warning-dark;
+		border-color: $color-warning-dark;
+	}
+}
+@mixin component_active_warning-lighter-outline {
+	&.is-active {
+		background-color: transparent;
+		color: $color-warning-light;
+		border-color: $color-warning-light;
+	}
+}
+@mixin component_active_warning-darker-outline {
+	&.is-active {
+		background-color: transparent;
+		color: $color-warning-darkest;
+		border-color: $color-warning-darkest;
+	}
+}
+
+// Info
+@mixin component_active_info {
+	&.is-active {
+		background-color: $color-info-dark;
+		color: $color-neutral-lightest;
+		border-color: $color-info-dark;
+	}
+}
+@mixin component_active_info-lighter {
+	&.is-active {
+		background-color: $color-info-light;
+		color: $color-neutral-darker;
+		border-color: $color-info-light;
+	}
+}
+@mixin component_active_info-darker {
+	&.is-active {
+		background-color: $color-info-darkest;
+		color: $color-neutral-lightest;
+		border-color: $color-info-darkest;
+	}
+}
+@mixin component_active_info-outline {
+	&.is-active {
+		background-color: transparent;
+		color: $color-info-dark;
+		border-color: $color-info-dark;
+	}
+}
+@mixin component_active_info-lighter-outline {
+	&.is-active {
+		background-color: transparent;
+		color: $color-info-light;
+		border-color: $color-info-light;
+	}
+}
+@mixin component_active_info-darker-outline {
+	&.is-active {
+		background-color: transparent;
+		color: $color-info-darkest;
+		border-color: $color-info-darkest;
+	}
+}
+
+// Success
+@mixin component_active_success {
+	&.is-active {
+		background-color: $color-success-dark;
+		color: $color-neutral-lightest;
+		border-color: $color-success-dark;
+	}
+}
+@mixin component_active_success-lighter {
+	&.is-active {
+		background-color: $color-success-light;
+		color: $color-neutral-darker;
+		border-color: $color-success-light;
+	}
+}
+@mixin component_active_success-darker {
+	&.is-active {
+		background-color: $color-success-darkest;
+		color: $color-neutral-lightest;
+		border-color: $color-success-darkest;
+	}
+}
+@mixin component_active_success-outline {
+	&.is-active {
+		background-color: transparent;
+		color: $color-success-dark;
+		border-color: $color-success-dark;
+	}
+}
+@mixin component_active_success-lighter-outline {
+	&.is-active {
+		background-color: transparent;
+		color: $color-success-light;
+		border-color: $color-success-light;
+	}
+}
+@mixin component_active_success-darker-outline {
+	&.is-active {
+		background-color: transparent;
+		color: $color-success-darkest;
+		border-color: $color-success-darkest;
+	}
+}

@@ -1,0 +1,84 @@
+body {
+	background-color: white !important;
+}
+@mixin button_variant_namespace {
+	background-color: transparent;
+	color: steelblue;
+	border: none;
+	padding: 0;
+	&:hover {
+		background-color: transparent !important;
+		text-decoration: underline !important;
+		color: lighten(steelblue, 15%) !important;
+	}
+}
+
+@mixin layout_variant_header {
+	background-color: #333333;
+	padding: 0.7rem 32px;
+	input {
+		background-color: #666666;
+		border: 0;
+		color: #efefef;
+		height: 2rem;
+	}
+	.n-input-combo2-input-container {
+		border: none;
+	}
+	.is-h1 {
+//		font-size: 1rem;
+		color: white;
+	}
+	.is-form-checkbox {
+		.is-label {
+			&:before {
+				background-color: #666666;	
+				border: 0;
+			}
+			.is-label-content {
+				color: #ffffff;
+				font-size: 0.65rem;
+				text-transform: uppercase;
+			}
+		}
+		input+label {
+			margin-left: 1.7rem;
+		}
+		input:checked + label::before {
+			color: #ffffff;
+		}
+	}
+}
+
+@mixin layout_variant_subheader {
+	background-color: #aaaaaa;
+	padding: 0.7rem 32px;
+	input {
+		background-color: #cccccc;
+		border: 0;
+		color: #333333;
+		height: 2rem;
+	}
+}
+
+
+@mixin menu_variant_paging-menu {
+	@include layout_align_center;
+}
+@mixin button_variant_paging-button {
+	@include button_variant_neutral-outline;
+	@include content_variant_neutral-outline;
+	@include padded-content_size_small;
+	@include content_size_small;
+}
+
+.is-code.is-variant-article {
+	// always starts with linefeed
+	padding-top: 0;
+	border-radius: 0.75rem;
+}
+
+.is-internal-detail {
+	font-size: $font-size-small;
+	color: $color-neutral-base;
+}

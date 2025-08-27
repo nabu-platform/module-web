@@ -1,0 +1,241 @@
+// @component form-combo form-labelled-component
+
+@mixin form-combo_variant_default {
+	@include form-component_variant_default;
+
+	.is-show-values {
+		input {
+			border-radius: $form-component-border-radius $form-component-border-radius 0 0;
+		}
+	}
+	.n-input-combo, .n-input-combo2 {
+		display: flex;
+		.n-input-combo-label-container {
+			// we don't want the icon to be floating to the next row
+			.n-input-combo-label {
+				white-space: nowrap;
+			}
+			cursor: pointer;
+			padding: $spacing-small $spacing-medium;
+			background-color: $color-neutral-lighter;
+			color: $color-neutral-darker;
+			position: relative;
+			font-size: $font-size-small;
+			border: solid 1px $color-neutral-light;
+			border-right: 0;
+			border-top-left-radius: $form-component-border-radius;
+			border-bottom-left-radius: $form-component-border-radius;
+			.n-input-combo-dropdown-labels {
+				position: absolute;
+				margin: 0;
+				padding: 0;
+				z-index: 15;
+				top: 100%;
+				left: 0;
+				background-color: $color-neutral-lightest;
+				border-width: 1px;
+				border-style: solid solid solid solid;
+				border-radius: 0 0 $form-component-border-radius $form-component-border-radius;
+				border-color: $form-component-border-color;
+				white-space: nowrap;
+				.is-icon {
+					margin-left: $spacing-small;
+				}
+				li {
+					cursor: pointer;
+					list-style: none;
+					padding: $spacing-small $spacing-medium;
+					font-size: $font-size-small;
+					&:hover {
+						background-color: $color-neutral-light;
+					}
+					&.is-active {
+						background-color: $color-primary-lightest;
+						color: $color-primary-darker;
+					}
+					&.is-pondering:not(.is-active) {
+						background-color: $color-secondary-lightest;
+						color: $color-secondary-darker;
+					}
+				}
+			}
+		}
+	}
+	.n-input-combo-label-container + .n-input-combo-input-container {
+		input {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+	}
+	.is-icon {
+		width: $font-size-large;
+		font-size: $font-size-small;
+		text-align: right;
+	}
+	.n-input-combo-label-container {
+		.n-input-combo-dropdown-labels {
+			max-height: calc(#{$font-size-large} * 15);
+			overflow-y: auto;
+		}
+	}
+	.n-input-combo-input-container {
+		flex-grow: 1;
+		position: relative;
+		input {
+			// we want to keep some room on the right to show the dropdown icon
+			width: calc(100% - #{$font-size-large});
+		}
+	}
+	.n-input-combo-dropdown-values {
+		max-height: calc(#{$font-size-large} * 15);
+		z-index: 15;
+		overflow-y: auto;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		min-width: calc(100% - #{$font-size-large});
+		top: 100%;
+		background-color: $color-neutral-lightest;
+		border-width: 1px;
+		border-style: none solid solid solid;
+		border-radius: 0 0 $form-component-border-radius $form-component-border-radius;
+		border-color: $form-component-border-color;
+		text-align: left;
+		li {
+			cursor: pointer;
+			list-style: none;
+			padding: $spacing-small $spacing-medium;
+			font-size: $font-size-small;
+			&:hover {
+				background-color: $color-neutral-lighter;
+			}
+			&.is-active {
+				background-color: $color-primary-lightest;
+				color: $color-primary-darker;
+			}
+			&.is-pondering:not(.is-active) {
+				background-color: $color-secondary-lightest;
+				color: $color-secondary-darker;
+			}
+		}
+	}
+	// in read-only we want it to work mostly like a normal label
+	&.is-read-only {
+		.n-input-combo2-input-container {
+			border: none;
+			input:disabled {
+				color: $color-neutral-darkest;
+				background-color: $color-neutral-lightest;
+				&::placeholder {
+					color: $color-neutral-base;
+				}
+			}
+			&:after {
+				display: none;
+			}
+		}
+	}
+	.n-input-combo2 {
+		// if an input is disabled, it will not propagate mouse clicks
+		// however, we have a mouse listener on the parent div
+		input:disabled {
+			pointer-events: none;
+		}
+		.n-input-combo-dropdown-values {
+			li {
+				display: flex;
+    			align-items: center;
+    			overflow: hidden;
+			}
+		}
+	}
+	// might have tags and counters etc
+	.n-input-combo2-input-container {
+		flex-grow: 1;
+		display: flex;
+		column-gap: $spacing-xsmall;
+		align-items: center;
+		background-color: white;
+		// keep in sync with definition of input components in base
+		border-width: 1px;
+		border-style: solid;
+		border-radius: $form-component-border-radius;
+		color: $color-neutral-darkest;
+		border-color: $form-component-border-color;
+		width: 100%;
+		&:focus, &:focus-visible, &:active {
+			border-color: $form-component-border-color-focused;
+			outline-width: 0;
+		}
+		input {
+			border: none;
+			flex-grow: 1;
+			&:disabled {
+				background-color: white;
+				&::placeholder {
+					color: $font-color-default;
+				}
+			}
+		}
+		.n-input-combo-tag-container {
+			display: flex;
+			column-gap: $spacing-xsmall;
+			padding: $spacing-xsmall;
+		}
+		.is-pretty-value {
+			width: 100%;
+			line-height: $font-size-medium;
+			font-size: $font-size-small;
+			padding: 0 $spacing-medium;
+			height: calc(#{$font-size-medium} * 2.5);
+			display: flex;
+			align-items: center;
+		}
+	}
+}
+@mixin form-combo-default_modified_full-width {
+	li {
+		white-space: nowrap;
+	}
+}
+@mixin form-combo-default_modifier_limit-dropdown-width {
+	.n-input-combo-input-container {
+		.n-input-combo-dropdown-values {
+			max-width: calc(100% - #{$font-size-large});
+		}
+	}
+}
+@mixin form-combo_size_small {
+	.n-input-combo {
+		.is-icon {
+			font-size: $font-size-2xsmall;
+		}
+		.n-input-combo-input-container .n-input-combo-dropdown-values li {
+			font-size: $font-size-xsmall;
+		}
+	}
+}
+@mixin form-combo-default_modifier_pattern-alternating {
+	.n-input-combo-dropdown-values {
+		@include layout_pattern_basic-alternating;
+	}
+}
+@mixin form-combo_size_xsmall {
+	.n-input-combo {
+		.is-icon {
+			font-size: $font-size-2xsmall;
+		}
+	}
+}
+
+/*
+.n-input-combo2-input-container {
+	&:not(.has-suffix):after {
+		content: '▾';
+		position: absolute;
+		right: 1rem;
+		top: 25%;
+		color: $color-neutral-base;
+	}
+}
+*/

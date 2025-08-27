@@ -1,0 +1,32 @@
+// this defines how you fill up your parent (flex) component
+@mixin component_fill_triple {
+	flex-grow: 3;
+	flex-basis: 0;
+}
+@mixin component_fill_double {
+	flex-grow: 2;
+	flex-basis: 0;
+}
+@mixin component_fill_normal {
+	flex-grow: 1;
+	flex-basis: 0;
+}
+@mixin component_fill_half {
+	flex-grow: 0.5;
+	flex-basis: 0;
+}
+@mixin component_fill_third {
+	flex-grow: 0.34;
+	flex-basis: 0;
+}
+@mixin component_fill_quarter {
+	flex-grow: 0.25;
+	flex-basis: 0;
+}
+@mixin component_fill_fifth {
+	flex-grow: 0.20;
+	flex-basis: 0;
+}
+@mixin component_fill_none {
+	flex-grow: unset;
+}

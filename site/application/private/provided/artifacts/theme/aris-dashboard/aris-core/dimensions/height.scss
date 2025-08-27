@@ -1,0 +1,128 @@
+
+// more complex layouts will need dedicated css, but we do want to support some basic layouting
+// for width, we use a column based system
+// for height, we assume you mostly want to target borders
+// for instance you might want a menu at the top with everything else below it with an autoscroll
+// or you might want a menu at the bottom
+// or both the top and the bottom
+// in the current approach, we support a "min" range which ranges from 1 to 6, each entry is a multiple of the default font size
+// we also support a max range from 1 to 6 which means 100vh minus the multiple of the font size
+// this means you can currently combine any combination of 6 min (e.g. 2 at the top, 4 at the bottom) with a max6
+@mixin layout_height_fixed-1 {
+	height: 1rem;
+	min-height: 1rem;
+	max-height: 1rem;
+}
+@mixin layout_height_fixed-2 {
+	height: 2rem;
+	min-height: 2rem;
+	max-height: 2rem;
+}
+@mixin layout_height_fixed-3 {
+	height: 3rem;
+	min-height: 3rem;
+	max-height: 3rem;
+}
+@mixin layout_height_fixed-4 {
+	height: 4rem;
+	min-height: 4rem;
+	max-height: 4rem;
+}
+@mixin layout_height_fixed-5 {
+	height: 5rem;
+	min-height: 5rem;
+	max-height: 5rem;
+}
+@mixin layout_height_fixed-6 {
+	height: 6rem;
+	min-height: 6rem;
+	max-height: 6rem;
+}
+@mixin layout_height_fixed-max {
+	height: 100vh;
+	min-height: 100vh;
+	max-height: 100vh;
+}
+
+@mixin layout_height_remainder-1 {
+	height: calc(100vh - 1rem);
+	min-height: calc(100vh - 1rem);
+	max-height: calc(100vh - 1rem);
+}
+@mixin layout_height_remainder-2 {
+	height: calc(100vh - 2rem);
+	min-height: calc(100vh - 2rem);
+	max-height: calc(100vh - 2rem);
+}
+@mixin layout_height_remainder-3 {
+	height: calc(100vh - 3rem);
+	min-height: calc(100vh - 3rem);
+	max-height: calc(100vh - 3rem);
+}
+@mixin layout_height_remainder-4 {
+	height: calc(100vh - 4rem);
+	min-height: calc(100vh - 4rem);
+	max-height: calc(100vh - 4rem);
+}
+@mixin layout_height_remainder-5 {
+	height: calc(100vh - 5rem);
+	min-height: calc(100vh - 5rem);
+	max-height: calc(100vh - 5rem);
+}
+@mixin layout_height_remainder-6 {
+	height: calc(100vh - 6rem);
+	min-height: calc(100vh - 6rem);
+	max-height: calc(100vh - 6rem);
+}
+
+@mixin component_height_max {
+	height: 100%;
+}
+@mixin component_height_max-xlarge {
+	max-height: 72rem;
+}
+@mixin component_height_max-large {
+	max-height: 60rem;
+}
+@mixin component_height_max-medium {
+	max-height: 48rem;
+}
+@mixin component_height_max-small {
+	max-height: 36rem;
+}
+@mixin component_height_max-xsmall {
+	max-height: 24rem;
+}
+@mixin component_height_max-2xsmall {
+	max-height: 12rem;
+}
+@mixin component_height_max-3xsmall {
+	max-height: 6rem;
+}
+@mixin component_height_max-4xsmall {
+	max-height: 3rem;
+}
+@mixin component_height_min-xlarge {
+	min-height: 72rem;
+}
+@mixin component_height_min-large {
+	min-height: 60rem;
+}
+@mixin component_height_min-medium {
+	min-height: 48rem;
+}
+@mixin component_height_min-small {
+	min-height: 36rem;
+}
+@mixin component_height_min-xsmall {
+	min-height: 24rem;
+}
+@mixin component_height_min-2xsmall {
+	min-height: 12rem;
+}
+@mixin component_height_min-3xsmall {
+	min-height: 6rem;
+}
+@mixin component_height_min-4xsmall {
+	min-height: 3rem;
+}

@@ -1,0 +1,211 @@
+$page-sidebar-width-large: 25rem;
+$page-sidebar-width-small: 3rem;
+
+.nabu-pages {
+	flex-grow: 1;
+}
+
+body[page-editing="small"] {
+	padding-left: $page-sidebar-width-small;
+}
+body[page-editing="large"] {
+	padding-left: $page-sidebar-width-large;
+}
+
+.is-badge.shortkey {
+	margin-left: 0.3rem;
+	margin-right: 0.3rem;
+	border: none;
+}
+
+.is-sidebar.is-page-editing {
+	.is-page-editing-small-menu {
+		overflow: visible;
+	}
+	.breadcrumbs {
+		position: absolute;
+		bottom: 0;
+		left: 100%;
+		button:not(:last-child):after {
+			content: '>';
+			margin-left: 0.3rem;
+		}
+	}
+	&.is-page-editing-small {
+		width: $page-sidebar-width-small;
+		min-width: $page-sidebar-width-small !important;
+		.breadcrumbs {
+			width: calc(100vw - #{$page-sidebar-width-small});
+		}
+	}
+	&.is-page-editing-large {
+		width: $page-sidebar-width-large;
+		.breadcrumbs {
+			width: calc(100vw - #{$page-sidebar-width-large});
+		}
+	}
+	header, footer {
+		display: none;
+	}
+	main {
+		overflow: unset;
+		height: 100vh;
+	}
+	.is-page-editing-small-menu {
+		height: 100vh;
+		background-color: #252a2a;
+		.page-name {
+			rotate: -90deg;
+			color: $color-neutral-lightest;
+		    position: absolute;
+		    bottom: 5rem;
+		    white-space: nowrap;
+		    transform-origin: bottom left;
+		    left: 2rem;
+		}
+		button {
+			color: $color-neutral-lightest;
+			border: none;
+			background-color: transparent;
+			&.is-active {
+				background-color: #666;
+			}
+		}
+		.bottom-container {
+			margin-top: auto;
+			margin-bottom: 1rem;
+		}
+	}
+	.is-tooltip {
+		pointer-events: none;
+	}
+	.menu-content {
+		max-height: 100vh;
+		overflow: auto;
+	    overflow-x: hidden;
+	}
+	.breadcrumbs {
+		background-color: #252a2a;
+		button {
+			color: $color-neutral-lightest;
+			border: none;
+			background-color: transparent;
+			&.has-renderer {
+				color: $color-primary-base;
+			}
+		}
+		&.is-active {
+			background-color: #666;
+		}
+	}
+	
+	.tabbed-menu {
+		height: 2rem;
+		background-color: #252a2a;
+		button {
+			color: white;
+			border-radius: 0;
+			background-color: transparent;
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+			&.is-active {
+				background-color: #666;
+			}
+			border: none;
+		}
+		position: fixed;
+		width: calc(#{$page-sidebar-width-large} - #{$page-sidebar-width-small});
+		z-index: 20;
+		+ * {
+			margin-top: 2rem;
+		}
+	}
+	
+	h2.section-title {
+		&:first-child {
+			border-top: none;
+		}
+    	margin: 0;
+		margin-top: 1rem;
+    	font-size: 0.7rem;
+    	text-transform: uppercase;
+    	padding: 12px 16px;
+    	
+    	color: #333;
+    	border-top: solid 1px #333;
+    	font-weight: bold;
+    	
+    	//font-weight: normal;
+    	//border: solid 1px #333;
+	    //background-color: white; // #3a3a3a
+    	//border-style: solid none solid none;
+    	//background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(236,236,236,1) 100%);
+	}
+	p.section-description {
+		font-size: 0.8rem;
+		color: #666;
+		margin: 0;
+		padding: 0;
+	}
+	.is-info {
+		position: static;
+		.is-info-content-wrapper {
+			left: 0;
+			max-width: calc(#{$page-sidebar-width-large} - 5rem);
+		}
+	}
+	
+	.is-variant-floating-labels {
+		.is-label-wrapper {
+			border-radius: 0;
+			label {
+				color: $color-primary-dark; // indianred
+				font-size: 0.7rem;
+				// we position a 1px line exactly over the border of the input field below it
+				// the alternative is that we give the full label a white background which works very well if everything is white
+				// but for instance in a grey box it looks off
+				&:before {
+				    content: 'test';
+				    width: 100%;
+				    height: 1px;
+				    background-color: white;
+				    min-width: 100%;
+				    position: absolute;
+				    color: transparent;
+				    left: 0;
+				    top: 9px;
+				    z-index: -1;
+				}
+			}
+		    background-color: transparent;
+		    left: 10px;
+		    border: none;
+		    top: 7px;
+    		z-index: 10;
+		}
+		.is-form-ace {
+			.is-label-wrapper {
+			    top: -5px;
+    			background-color: transparent;
+			}
+		}
+	}
+	.contextmenu {
+		position:absolute;
+		background-color: #252a2a;
+		border: solid 1px #CCC;
+		z-index: 20;
+		button {
+			color: white;
+			white-space: nowrap;
+		}
+		.shortkey {
+			margin-left: auto;
+		}
+	}
+	.layout {
+		.is-row {
+			position: relative;
+		}
+	}
+}

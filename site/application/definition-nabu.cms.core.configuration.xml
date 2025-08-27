@@ -1,0 +1,80 @@
+<structure comment="Core configuration for the Nabu CMS" name="core">
+    <field minOccurs="0" name="connectionId" type="java.lang.String"/>
+    <field minOccurs="0" name="roleProviderId" type="java.lang.String"/>
+    <field comment="Defaults to &quot;true&quot;" minOccurs="0" name="allowNewDevices" type="java.lang.Boolean"/>
+    <field minOccurs="0" name="allowAnonymousDevices" type="java.lang.Boolean"/>
+    <field comment="Defaults to &quot;true&quot;" minOccurs="0" name="allowRemember" type="java.lang.Boolean"/>
+    <field minOccurs="0" name="allowDisabledNodes" type="java.lang.Boolean"/>
+    <field minOccurs="0" name="allowAnonymousLogin" type="java.lang.Boolean"/>
+    <field minOccurs="0" name="allowExternalEmailChange" type="java.lang.Boolean"/>
+    <field minOccurs="0" name="disableLocalAccounts" type="java.lang.Boolean"/>
+    <field minOccurs="0" name="inviteOnly" type="java.lang.Boolean"/>
+    <field comment="Defaults to 10" minOccurs="0" name="maxAmountOfDevices" type="java.lang.Integer"/>
+    <field minOccurs="0" name="maxAmountOfLocations" type="java.lang.Integer"/>
+    <field comment="Defaults to &quot;en&quot;" minOccurs="0" name="defaultLanguage" type="java.lang.String"/>
+    <field comment="A regex which is matched against the target of a request to see if an action should be logged" minOccurs="0" name="accessLogBlackList" type="java.lang.String"/>
+    <field comment="The regex that the user-provided password must match" minOccurs="0" name="passwordRegex" type="java.lang.String"/>
+    <structure minOccurs="0" name="security">
+        <field comment="The algorithm used" minOccurs="0" name="algorithm" type="be.nabu.utils.security.DigestAlgorithm"/>
+        <field comment="You can set a whitelist of roles that are allowed to log into this application" maxOccurs="unbounded" minOccurs="0" name="allowedRoles" type="java.lang.String"/>
+        <field maxOccurs="unbounded" minOccurs="0" name="allowedAliases" type="java.lang.String"/>
+        <structure comment="The information necessary to update an alias after it has been verified" minOccurs="0" name="updateAlias">
+            <field name="keystoreId" type="java.lang.String"/>
+            <field name="keyAlias" type="java.lang.String"/>
+        </structure>
+        <field comment="After how much time the password reset is no longer valid" minOccurs="0" name="passwordResetTimeout" type="be.nabu.libs.types.base.Duration"/>
+        <structure minOccurs="0" name="jwt">
+            <field comment="The keystore to use for the JWT tokens" name="keystore" type="java.lang.String"/>
+            <field comment="The alias to use in the keystore." name="keyAlias" type="java.lang.String"/>
+            <field comment="Defaults to 1 hour. Express in seconds." minOccurs="0" name="validityDuration" type="java.lang.Long"/>
+            <field minOccurs="0" name="algorithm" type="be.nabu.libs.http.jwt.enums.JWTAlgorithm"/>
+        </structure>
+    </structure>
+    <structure minOccurs="0" name="implementations">
+        <field minOccurs="0" name="sendDeviceVerification" type="java.lang.String"/>
+        <field minOccurs="0" name="hasPseudoRole" type="java.lang.String"/>
+        <field minOccurs="0" name="oauth2ProfileCreator" type="java.lang.String"/>
+        <field minOccurs="0" name="permissionHandler" type="java.lang.String"/>
+    </structure>
+    <field minOccurs="0" name="caseInsensitive" type="java.lang.Boolean"/>
+    <structure minOccurs="0" name="tag">
+        <field maxOccurs="unbounded" minOccurs="0" name="taggableCategories" type="java.lang.String"/>
+        <field maxOccurs="unbounded" minOccurs="0" name="editableCategories" type="java.lang.String"/>
+    </structure>
+    <structure minOccurs="0" name="masterdata">
+        <field minOccurs="0" name="amountOfSuggestions" type="java.lang.Integer"/>
+        <field comment="The categories where users can create new entries" maxOccurs="unbounded" minOccurs="0" name="userDefinedCategory" type="java.lang.String"/>
+        <field maxOccurs="unbounded" minOccurs="0" name="preloadedCategories" type="java.lang.String"/>
+    </structure>
+    <structure minOccurs="0" name="emails">
+        <field name="smtpClientId" type="java.lang.String"/>
+        <field minOccurs="0" name="from" type="java.lang.String"/>
+        <structure minOccurs="0" name="forgot">
+            <field minOccurs="0" name="url" type="java.lang.String"/>
+            <field minOccurs="0" name="subject" type="java.lang.String"/>
+        </structure>
+        <structure minOccurs="0" name="verify">
+            <field minOccurs="0" name="url" type="java.lang.String"/>
+            <field minOccurs="0" name="subject" type="java.lang.String"/>
+            <field minOccurs="0" name="includePassword" type="java.lang.Boolean"/>
+            <field minOccurs="0" name="route" type="java.lang.String"/>
+        </structure>
+    </structure>
+    <structure minOccurs="0" name="texts">
+        <field name="textProviderId" type="java.lang.String"/>
+        <field minOccurs="0" name="configurationId" type="java.lang.String"/>
+        <structure minOccurs="0" name="messages">
+            <field minOccurs="0" name="verify" type="java.lang.String"/>
+            <field minOccurs="0" name="forgot" type="java.lang.String"/>
+        </structure>
+    </structure>
+    <structure maxOccurs="unbounded" minOccurs="0" name="context">
+        <field minOccurs="0" name="type" type="java.lang.String"/>
+        <field name="contextResolver" type="java.lang.String"/>
+    </structure>
+    <structure maxOccurs="unbounded" minOccurs="0" name="notifications">
+        <field comment="Could be &quot;forgot&quot; or &quot;verify&quot;" name="notificationType" type="java.lang.String"/>
+        <field comment="Could be &quot;email&quot; or &quot;text&quot;" name="aliasType" type="java.lang.String"/>
+        <field name="provider" type="java.lang.String"/>
+    </structure>
+</structure>

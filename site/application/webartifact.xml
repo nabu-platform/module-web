@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<webApplication>
+    <virtualHost>moduleWeb.shared.host</virtualHost>
+    <realm>moduleWeb</realm>
+    <bearerAuthenticator>nabu.cms.core.providers.security.opaqueAuthenticator</bearerAuthenticator>
+    <temporaryAuthenticator>nabu.authentication.temporary.providers.temporaryAuthenticator</temporaryAuthenticator>
+    <temporaryAuthenticationGenerator>nabu.authentication.temporary.providers.newTemporaryLogin</temporaryAuthenticationGenerator>
+    <temporaryAuthenticationRevoker>nabu.authentication.temporary.providers.revokeTemporaryAuthentication</temporaryAuthenticationRevoker>
+    <typedAuthenticationService>nabu.cms.core.providers.security.typedAuthenticator</typedAuthenticationService>
+    <permissionService>moduleImpl.providers.permissionHandler</permissionService>
+    <potentialPermissionService>moduleImpl.providers.potentialPermissionHandler</potentialPermissionService>
+    <roleService>nabu.cms.core.providers.security.roleHandler</roleService>
+    <translationService>nabu.cms.core.providers.translation.translationService</translationService>
+    <supportedLanguagesService>nabu.cms.core.providers.translation.supportedLanguages</supportedLanguagesService>
+    <languageProviderService>nabu.cms.core.providers.translation.languageProvider</languageProviderService>
+    <addCacheHeaders>true</addCacheHeaders>
+    <allowJwtBearer>false</allowJwtBearer>
+    <allowContentEncoding>true</allowContentEncoding>
+    <webFragments>moduleWeb.site.apiOtr</webFragments>
+    <webFragments>moduleWeb.site.swagger</webFragments>
+    <webFragments>nabu.web.swagger.swaggerui</webFragments>
+    <webFragments>nabu.web.map.rest.component</webFragments>
+    <webFragments>nabu.cms.blog.rest.component</webFragments>
+    <webFragments>nabu.web.events.component</webFragments>
+    <webFragments>nabu.cms.attachment.rest.component</webFragments>
+    <webFragments>nabu.cms.core.v2.account.component</webFragments>
+    <webFragments>nabu.web.core.environment</webFragments>
+    <webFragments>nabu.web.core.loader</webFragments>
+    <webFragments>nabu.cms.core.v2.security.initial.component</webFragments>
+    <webFragments>nabu.web.core.passwordProtect</webFragments>
+    <webFragments>nabu.web.core.components</webFragments>
+    <webFragments>nabu.web.robots.rest.component</webFragments>
+    <webFragments>moduleWeb.site.api</webFragments>
+    <html5Mode>true</html5Mode>
+    <optimizedLoad>true</optimizedLoad>
+    <forceRequestLanguage>false</forceRequestLanguage>
+    <ignoreLanguageCookie>false</ignoreLanguageCookie>
+    <testRole>tester</testRole>
+    <testRole>editor</testRole>
+    <stateless>true</stateless>
+</webApplication>

@@ -1,0 +1,81 @@
+// @component form-switch form-flat-component
+
+@mixin form-switch_variant_default {
+	// we don't want to size to the full width, otherwise our checkbox might be floating all the way on the right if we order reverse
+	// even if we order "normally", our label would have a large invisible hit target
+	align-self: flex-start;
+	display: inline-block;
+	.is-content-wrapper {
+		// check calculation for top on the label
+		height: calc(#{$font-size-large} * 1.34);
+	}
+	input {
+		opacity: 0;
+		position: absolute;
+	}
+	label {
+		cursor: pointer;
+		line-height: calc(1.25rem * 1.34);
+	}
+	position: relative;
+	input + label {
+		cursor: pointer;
+		line-height: 1.5rem;
+		margin-left: calc(#{$font-size-large} * 2.5);
+		display: inline-block;
+		height: $font-size-large;
+		&:before {
+			border: solid 1px $color-neutral-darker;
+			display: inline-block;
+			content: "";
+			height: $font-size-large;
+			width: calc(#{$font-size-large} * 2);
+			position: absolute;
+			left: 0;
+			top: calc(#{$font-size-large} * 0.17);
+			background-color: $color-neutral-lightest;
+			border-radius: $border-radius-large;
+		}
+		&:after {
+			top: calc(#{$font-size-large} * 0.275);
+			content: "";
+			background-color: $color-neutral-base;
+			border-radius: $border-radius-large;
+			position: absolute;
+			left: calc(#{$font-size-large} * 0.15);
+			width: calc(#{$font-size-large} * 0.73);
+			height: calc(#{$font-size-large} * 0.73);
+			transition: all 0.3s ease-in 0s;
+		}
+	}
+	input:checked + label {
+		&:after {
+			background-color: $color-success-base;
+			left: calc(#{$font-size-large} * 1.1);
+		}
+		&:before {
+			background: $color-neutral-lightest;
+			border: solid 1px $color-neutral-darker;
+		}
+	}
+}
+
+@mixin form-switch_order_reverse {
+	input + label {
+		margin-left: 0;
+		margin-right: calc(#{$font-size-large} * 2);
+		&:before {
+			left: unset;
+			right: calc(0px - (#{$font-size-large} * 3.1));
+		}
+		&:after {
+			left: unset;
+			right: calc(0px - (#{$font-size-large} * 2));
+		}
+	}
+	input:checked + label {
+		&:after {
+			right: calc(0px - (#{$font-size-large} * 2.9));
+		}
+	}
+}

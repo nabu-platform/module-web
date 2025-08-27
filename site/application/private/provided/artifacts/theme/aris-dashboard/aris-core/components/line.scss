@@ -1,0 +1,68 @@
+// ---------------------------------------------------------------------------------------------------------------------------
+// ----------------------------------------- LINE
+// ---------------------------------------------------------------------------------------------------------------------------
+
+// ----------------------------------------- COLOR
+@mixin template_line_color {
+	// Regular browsers
+	background-color: $color-neutral-darker;
+	// IE
+	color: $color-neutral-darker;
+}
+@mixin line_color_neutral {
+	@include template_line_color;
+}
+@mixin line_color_danger {
+	background-color: $color-danger-darker;
+	color: $color-danger-darker;
+}
+@mixin line_color_warning {
+	background-color: $color-warning-darker;
+	color: $color-warning-darker;
+}
+@mixin line_color_info {
+	background-color: $color-info-darker;
+	color: $color-info-darker;
+}
+@mixin line_color_success {
+	background-color: $color-success-darker;
+	color: $color-success-darker;
+}
+@mixin line_color_primary {
+	background-color: $color-primary-darker;
+	color: $color-primary-darker;
+}
+@mixin line_color_secondary {
+	background-color: $color-secondary-darker;
+	color: $color-secondary-darker;
+}
+
+@mixin template_line_size {
+	height: 1px;
+}
+@mixin line_size_default {
+	@include template_line_size;
+}
+@mixin line_size_xsmall {
+	height: $spacing-xsmall;
+}
+@mixin line_size_small {
+	height: $spacing-small;
+}
+@mixin line_size_medium {
+	height: $spacing-medium;
+}
+@mixin line_size_large {
+	height: $spacing-large;
+}
+@mixin line_size_xlarge {
+	height: $spacing-xlarge;
+}
+
+// ----------------------------------------- VARIANT
+@mixin line_variant_default {
+	border: none;
+	width: 100%;
+	@include line_size_default;
+	@include line_color_neutral;
+}

@@ -1,0 +1,7 @@
+{ 
+	"category": "Row Layouts",
+	"name": "Two Cell Layout",
+	"description": "Two cells in a row",
+	"icon": "align-justify",
+	"content":  {"type":"page-row","content":{"id":1,"state":{},"cells":[{"id":2,"rows":[],"alias":null,"bindings":{},"name":"Left","state":{},"target":"page","on":null,"class":null,"customId":null,"width":null,"height":null,"condition":null,"devices":[],"clickEvent":null,"aris":{"components":{"page-column":{"variant":null,"modifiers":[],"options":["width_column-6"],"conditions":{},"defaultVariant":"page-column"}}}},{"id":3,"rows":[],"alias":null,"bindings":{},"name":"Right","state":{},"target":"page","on":null,"class":null,"customId":null,"width":null,"height":null,"condition":null,"devices":[],"clickEvent":null,"aris":{"components":{"page-column":{"variant":null,"modifiers":[],"options":["width_column-6"],"conditions":{},"defaultVariant":"page-column"}}}}],"class":null,"customId":null,"condition":null,"direction":null,"align":null,"on":null,"collapsed":false,"name":"Two cell row","aris":{"components":{"page-row":{"variant":null,"modifiers":[],"options":["content-width_large","align_main-center"],"conditions":{}}}}}}
+}

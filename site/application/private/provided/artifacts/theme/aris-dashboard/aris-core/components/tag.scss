@@ -1,0 +1,18 @@
+@mixin tag_variant_default {
+	display: inline-flex;
+	align-items: center;
+	@include badge_variant_default;
+	@include content_size_small;
+	@include padded-content_size_small;
+	.is-icon {
+		cursor: pointer;
+	}
+	.is-text-subscript {
+		opacity: 0.8;
+		transform: scale(0.9);
+		display: inline-block;
+		// if you set emphasis on the whole tag, we still (likely) want a normal font weight for the subscript
+		// in the future we might add a modifier for this?
+		font-weight: normal;
+	}
+}

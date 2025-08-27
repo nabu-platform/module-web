@@ -1,0 +1,113 @@
+// Content is a generic type that serves as the basis for any component that displays some content in one way or the other
+// It requires something like this though there are many variations possible
+// <div class='is-content'>some text</div>
+// <div class='is-content'><span class="is-icon"></span></div>
+// <div class='is-content'><span class="is-text"></span></div>
+// <div class='is-content'><span class="is-icon"></span><span class="is-text"></span></div>
+// Note that we assume the icon is on the _left_ side of the text if both are present though we try to hard to not be aware of this fact
+
+@mixin content_align_left {
+	text-align: left;
+	justify-content: start;
+}
+@mixin content_align_center {
+	text-align: center;
+	justify-content: center;
+}
+@mixin content_align_right {
+	text-align: right;
+	justify-content: end;
+}
+
+@mixin template_content_wrap {
+	white-space: wrap;
+}
+@mixin content_wrap_none {
+	white-space: nowrap;
+}
+@mixin content_wrap_wrap {
+	white-space: wrap;
+}
+@mixin content_wrap_pre-wrap {
+	white-space: pre-wrap;
+}
+@mixin content_wrap_wrap-force {
+	white-space: wrap;
+	word-break: break-word;
+}
+
+// some tiny corrections
+@mixin content-fix-icon {
+	> .is-icon {
+		// make sure it fills the max space and no bigger
+		max-height: 100%;
+		line-height: 100%;
+		// otherwise images etc do not register correctly width-wise
+		min-width: 1rem;
+		// otherwise images might blow up
+		max-width: 3rem;
+	}
+	> .is-text {
+		//flex-grow: 1;
+	}
+}
+
+@mixin content_variant_default {
+	@include content-fix-icon;
+}
+@mixin content_variant_neutral {
+	@include content_variant_default;
+	@include component_color_neutral;
+}
+@mixin content_variant_neutral-outline {
+	@include component_color_neutral-outline;
+}
+@mixin content_variant_primary {
+	@include component_color_primary;
+}
+@mixin content_variant_primary-outline {
+	@include component_color_primary-outline;
+}
+@mixin content_variant_secondary {
+	@include component_color_secondary;
+}
+@mixin content_variant_secondary-outline {
+	@include component_color_secondary-outline;
+}
+@mixin content_variant_ghost {
+	@include content_variant_neutral-outline;
+	@include component_border_none;
+}
+@mixin content_variant_info {
+	@include component_color_info;
+}
+@mixin content_variant_info-outline {
+	@include component_color_info-outline;
+}
+@mixin content_variant_warning {
+	@include component_color_warning;
+}
+@mixin content_variant_warning-outline {
+	@include component_color_warning-outline;
+}
+@mixin content_variant_danger {
+	@include component_color_danger;
+}
+@mixin content_variant_danger-outline {
+	@include component_color_danger-outline;
+}
+@mixin content_variant_success {
+	@include component_color_success;
+}
+@mixin content_variant_success-outline {
+	@include component_color_success-outline;
+}
+@mixin content_variant_subscript {
+	font-size: $font-size-xsmall;
+	color: $color-neutral-base;
+}
+@mixin content_variant_placeholder {
+	color: $color-neutral-base;
+	font-style: italic;
+}
+

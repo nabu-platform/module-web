@@ -1,0 +1,7 @@
+@mixin component_disabled_default {
+	&[disabled], &.is-disabled {
+		background-color: $color-neutral-dark;
+		color: $color-neutral-lighter;
+		border-color: $color-neutral-dark;
+	}
+}

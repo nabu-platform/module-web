@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<collection>
+    <largeIcon>application/application-consumer-large.png</largeIcon>
+    <mediumIcon>application/application-consumer-medium.png</mediumIcon>
+    <name>Site</name>
+    <smallIcon>application/application-consumer-small.png</smallIcon>
+    <subType>consumer</subType>
+    <type>application</type>
+</collection>

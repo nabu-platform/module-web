@@ -1,0 +1,52 @@
+// @component modal
+@mixin modal_variant_default {
+	position: fixed;
+    top: 0;
+    left: 0;
+    // sidebar is 500
+    z-index: 600;
+    display: flex;
+	align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+	background-color: rgba($color-neutral-darker, 0.7);
+	// especially on mobile, we want the content to overflow if it doesn't fit
+	overflow: auto;
+	:is-modal-content {
+		min-width: 30%;
+		max-width: 90%;
+		max-height: 90%;
+		// don't force this
+		//@include component_color_background;
+		position: relative;
+	}
+}
+
+@mixin modal_variant_confirm {
+	.is-modal-content {
+		@include component_color_background;
+		@include component_spacing_large;
+		@include component_shadow_xsmall;
+		.is-confirm {
+			@include column_variant_default;
+			@include component_spacing_vertical-gap-large;
+		}
+		.is-confirm-buttons {
+			@include row_variant_default;
+			@include layout_align_space-between;
+			.is-confirm-button-cancel {
+				@include button_variant_default;
+				@include button_variant_link;
+			}
+			.is-confirm-button-ok {
+				@include content_variant_default;
+				@include button_variant_default;
+				@include content_variant_primary;
+				@include button_variant_primary;
+			}
+		}
+	}
+}

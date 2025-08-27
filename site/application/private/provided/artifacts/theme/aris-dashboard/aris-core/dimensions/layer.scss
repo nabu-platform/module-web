@@ -1,0 +1,44 @@
+// we define different layers to make sure content correctly layers over each other
+// we leave gaps in between the layers to allow for customization
+// the base layer
+
+
+@mixin component_layer_0 {
+	z-index: $layer-0-z;
+}
+@mixin component_layer_1 {
+	z-index: $layer-1-z;
+}
+@mixin component_layer_2 {
+	z-index: $layer-2-z;
+}
+@mixin component_layer_3 {
+	z-index: $layer-3-z;
+}
+@mixin component_layer_4 {
+	z-index: $layer-4-z;
+}
+@mixin component_layer_5 {
+	z-index: $layer-5-z;
+}
+@mixin component_layer_6 {
+	z-index: $layer-6-z;
+}
+@mixin component_layer_7 {
+	z-index: $layer-7-z;
+}
+@mixin component_layer_8 {
+	z-index: $layer-8-z;
+}
+@mixin component_layer_9 {
+	z-index: $layer-9-z;
+}
+@mixin component_layer_10 {
+	z-index: $layer-10-z;
+}
+@mixin component_layer_11 {
+	z-index: $layer-11-z;
+}
+@mixin component_layer_12 {
+	z-index: $layer-12-z;
+}

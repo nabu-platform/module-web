@@ -1,0 +1,52 @@
+$menu-sidebar-width-medium: 300px !default;
+$menu-sidebar-width-small: 250px !default;
+$menu-sidebar-width-collapsed: 48px !default;
+
+@mixin menu_variant_sidebar {
+	width: $menu-sidebar-width-medium;
+	// full screen on mobile devices
+	@media screen and (max-width: map-get($breakpoints, "below-tablet")) {
+		width: 100vw;
+	}
+	flex-direction: column;
+	min-height: 100%;
+	@include component_spacing_vertical_xsmall;
+	:is-row {
+		flex-direction: column;
+		margin: 0;
+		padding: 0;
+	}
+}
+@mixin menu_variant_sidebar--collapsed {
+	> .is-column {
+		> span {
+			padding: 4px;
+		}
+	}
+	width: $menu-sidebar-width-collapsed;
+	// simply unset all the locational padding, also in static titles etc
+	:is-row, :is-cell, :is-typography {
+		padding-left: 0;
+		padding-right: 0;
+		justify-content: center;
+	}
+	:is-typography {
+		// any typography without icon is simply hidden
+		&:not(.has-icon) {
+			display: none;
+		}
+		// if we have an icon and text, hide the text
+		&.has-icon.has-text {
+			.is-text {
+				display: none;
+			}
+		}
+	}
+}
+
+@mixin menu-sidebar_modifier_small {
+	width: $menu-sidebar-width-small;
+}
+@mixin menu-sidebar_modifier_small--collapsed {
+	width: $menu-sidebar-width-collapsed;
+}

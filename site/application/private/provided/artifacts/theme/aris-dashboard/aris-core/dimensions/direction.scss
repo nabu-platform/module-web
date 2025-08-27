@@ -1,0 +1,19 @@
+@mixin component_direction_horizontal {
+	flex-direction: row;
+}
+@mixin component_direction_horizontal-reverse {
+	flex-direction: row-reverse;
+}
+@mixin component_direction_vertical {
+	flex-direction: column;
+}
+@mixin component_direction_vertical-reverse {
+	flex-direction: column-reverse;
+}
+
+@mixin row_direction_reverse {
+	flex-direction: row-reverse;
+}
+@mixin column_direction_reverse {
+	flex-direction: column-reverse;
+}

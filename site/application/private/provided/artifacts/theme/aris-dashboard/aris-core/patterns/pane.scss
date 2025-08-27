@@ -1,0 +1,54 @@
+// the pane layer is aimed at being a part of the page on normal screens but pop out like a sidebar on smaller screens
+// combine this with flex-grow 1 to get good layouts on all sizes
+// this is an alternative to column based layout where you shift content to the next row if it no longer fits
+// @component pane-layer layout
+$pane-layer-offset: 48px;
+// editing intrusion
+.is-editing .is-pane-layer .is-button.is-variant-close {
+	display: inline-flex;
+}
+@mixin pane-layer_variant_default {
+	.is-button.is-variant-close {
+		display: none;
+	}
+	@media only screen and (max-width: map-get($breakpoints, "below-tablet")) {
+		.is-button.is-variant-close {
+			display: inline-flex;
+		}
+		position: absolute;
+		top: 0;
+		flex-grow: 1;
+		max-width: 100vw;
+		min-height: 100vh;
+		&.is-pane-layer-1 {
+			left: calc(#{$pane-layer-offset} * 1);
+			width: calc(100vw - #{$pane-layer-offset} * 1);
+			@include component_layer_1;
+		}
+		&.is-pane-layer-2 {
+			left: calc(#{$pane-layer-offset} * 2);
+			width: calc(100vw - #{$pane-layer-offset} * 2);
+			@include component_layer_2;
+		}
+		&.is-pane-layer-3 {
+			left: calc(#{$pane-layer-offset} * 3);
+			width: calc(100vw - #{$pane-layer-offset} * 3);
+			@include component_layer_3;
+		}
+		&.is-pane-layer-4 {
+			left: calc(#{$pane-layer-offset} * 4);
+			width: calc(100vw - #{$pane-layer-offset} * 4);
+			@include component_layer_4;
+		}
+		&.is-pane-layer-5 {
+			left: calc(#{$pane-layer-offset} * 5);
+			width: calc(100vw - #{$pane-layer-offset} * 5);
+			@include component_layer_5;
+		}
+		&.is-pane-layer-6 {
+			left: calc(#{$pane-layer-offset} * 6);
+			width: calc(100vw - #{$pane-layer-offset} * 6);
+			@include component_layer_6;
+		}
+	}
+}

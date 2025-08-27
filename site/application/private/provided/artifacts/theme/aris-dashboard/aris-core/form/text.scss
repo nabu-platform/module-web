@@ -1,0 +1,29 @@
+// @component form-text form-labelled-component
+
+@mixin form-text_variant_default {
+	@include form-component_variant_default;
+
+	textarea {
+		width: 100%;
+		min-height: 10rem;
+	}
+	// in read-only we want it to work mostly like a normal label
+	&.is-read-only {
+		input, textarea {
+			background-color: $color-neutral-lightest;
+			border: none;
+		}
+	}
+}
+
+// @component form-richtext form-labelled-component
+@mixin form-richtext_variant_form-component {
+	.is-inline-editor {
+		padding: $spacing-medium;
+		color: $color-neutral-darkest;
+		border-color: $color-neutral-light;
+		border-width: 1px;
+		border-style: solid;
+		border-radius: $form-component-border-radius;
+	}
+}

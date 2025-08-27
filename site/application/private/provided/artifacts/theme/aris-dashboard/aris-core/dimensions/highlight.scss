@@ -1,0 +1,307 @@
+// Primary
+@mixin component_highlight_primary {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: $color-primary-light;
+		color: $color-neutral-lightest;
+		border-color: $color-primary-light;
+	}
+}
+@mixin component_highlight_primary-lighter {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: $color-primary-lightest;
+		color: $color-neutral-darker;
+		border-color: $color-primary-lightest;
+	}
+}
+@mixin component_highlight_primary-darker {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: $color-primary-dark;
+		color: $color-neutral-lightest;
+		border-color: $color-primary-dark;
+	}
+}
+@mixin component_highlight_primary-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: transparent;
+		color: $color-primary-light;
+		border-color: $color-primary-light;
+	}
+}
+@mixin component_highlight_primary-lighter-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: transparent;
+		color: $color-primary-lightest;
+		border-color: $color-primary-lightest;
+	}
+}
+@mixin component_highlight_primary-darker-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: transparent;
+		color: $color-primary-dark;
+		border-color: $color-primary-dark;
+	}
+}
+
+// Secondary
+@mixin component_highlight_secondary {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: $color-secondary-light;
+		color: $color-neutral-lightest;
+		border-color: $color-secondary-light;
+	}
+}
+@mixin component_highlight_secondary-lighter {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: $color-secondary-lightest;
+		color: $color-neutral-darker;
+		border-color: $color-secondary-lightest;
+	}
+}
+@mixin component_highlight_secondary-darker {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: $color-secondary-dark;
+		color: $color-neutral-lightest;
+		border-color: $color-secondary-dark;
+	}
+}
+@mixin component_highlight_secondary-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: transparent;
+		color: $color-secondary-light;
+		border-color: $color-secondary-light;
+	}
+}
+@mixin component_highlight_secondary-lighter-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: transparent;
+		color: $color-secondary-lightest;
+		border-color: $color-secondary-lightest;
+	}
+}
+@mixin component_highlight_secondary-darker-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: transparent;
+		color: $color-secondary-dark;
+		border-color: $color-secondary-dark;
+	}
+}
+
+// Neutral
+@mixin component_highlight_neutral {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: $color-neutral-light;
+		color: $color-neutral-lightest;
+		border-color: $color-neutral-light;
+	}
+}
+@mixin component_highlight_neutral-lighter {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: $color-neutral-lightest;
+		color: $color-neutral-darker;
+		border-color: $color-neutral-lightest;
+	}
+}
+@mixin component_highlight_neutral-darker {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: $color-neutral-dark;
+		color: $color-neutral-lightest;
+		border-color: $color-neutral-dark;
+	}
+}
+@mixin component_highlight_neutral-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: transparent;
+		color: $color-neutral-light;
+		border-color: $color-neutral-light;
+	}
+}
+@mixin component_highlight_neutral-lighter-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: transparent;
+		color: $color-neutral-lightest;
+		border-color: $color-neutral-lightest;
+	}
+}
+@mixin component_highlight_neutral-darker-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: transparent;
+		color: $color-neutral-dark;
+		border-color: $color-neutral-dark;
+	}
+}
+
+// Danger
+@mixin component_highlight_danger {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: $color-danger-light;
+		color: $color-neutral-lightest;
+		border-color: $color-danger-light;
+	}
+}
+@mixin component_highlight_danger-lighter {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: $color-danger-lightest;
+		color: $color-neutral-darker;
+		border-color: $color-danger-lightest;
+	}
+}
+@mixin component_highlight_danger-darker {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: $color-danger-dark;
+		color: $color-neutral-lightest;
+		border-color: $color-danger-dark;
+	}
+}
+@mixin component_highlight_danger-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: transparent;
+		color: $color-danger-light;
+		border-color: $color-danger-light;
+	}
+}
+@mixin component_highlight_danger-lighter-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: transparent;
+		color: $color-danger-lightest;
+		border-color: $color-danger-lightest;
+	}
+}
+@mixin component_highlight_danger-darker-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: transparent;
+		color: $color-danger-dark;
+		border-color: $color-danger-dark;
+	}
+}
+
+// Warning
+@mixin component_highlight_warning {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: $color-warning-light;
+		color: $color-neutral-lightest;
+		border-color: $color-warning-light;
+	}
+}
+@mixin component_highlight_warning-lighter {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: $color-warning-lightest;
+		color: $color-neutral-darker;
+		border-color: $color-warning-lightest;
+	}
+}
+@mixin component_highlight_warning-darker {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: $color-warning-dark;
+		color: $color-neutral-lightest;
+		border-color: $color-warning-dark;
+	}
+}
+@mixin component_highlight_warning-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: transparent;
+		color: $color-warning-light;
+		border-color: $color-warning-light;
+	}
+}
+@mixin component_highlight_warning-lighter-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: transparent;
+		color: $color-warning-lightest;
+		border-color: $color-warning-lightest;
+	}
+}
+@mixin component_highlight_warning-darker-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: transparent;
+		color: $color-warning-dark;
+		border-color: $color-warning-dark;
+	}
+}
+
+// Info
+@mixin component_highlight_info {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: $color-info-light;
+		color: $color-neutral-lightest;
+		border-color: $color-info-light;
+	}
+}
+@mixin component_highlight_info-lighter {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: $color-info-lightest;
+		color: $color-neutral-darker;
+		border-color: $color-info-lightest;
+	}
+}
+@mixin component_highlight_info-darker {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: $color-info-dark;
+		color: $color-neutral-lightest;
+		border-color: $color-info-dark;
+	}
+}
+@mixin component_highlight_info-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: transparent;
+		color: $color-info-light;
+		border-color: $color-info-light;
+	}
+}
+@mixin component_highlight_info-lighter-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: transparent;
+		color: $color-info-lightest;
+		border-color: $color-info-lightest;
+	}
+}
+@mixin component_highlight_info-darker-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: transparent;
+		color: $color-info-dark;
+		border-color: $color-info-dark;
+	}
+}
+
+// Success
+@mixin component_highlight_success {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: $color-success-light;
+		color: $color-neutral-lightest;
+		border-color: $color-success-light;
+	}
+}
+@mixin component_highlight_success-lighter {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: $color-success-lightest;
+		color: $color-neutral-darker;
+		border-color: $color-success-lightest;
+	}
+}
+@mixin component_highlight_success-darker {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: $color-success-dark;
+		color: $color-neutral-lightest;
+		border-color: $color-success-dark;
+	}
+}
+@mixin component_highlight_success-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: transparent;
+		color: $color-success-light;
+		border-color: $color-success-light;
+	}
+}
+@mixin component_highlight_success-lighter-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: transparent;
+		color: $color-success-lightest;
+		border-color: $color-success-lightest;
+	}
+}
+@mixin component_highlight_success-darker-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		background-color: transparent;
+		color: $color-success-dark;
+		border-color: $color-success-dark;
+	}
+}

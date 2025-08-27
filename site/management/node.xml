@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.web.component.WebComponentManager" created="2025-08-14T11:04:28.342+02:00" lastModified="2025-08-14T11:19:02.037+02:00" leaf="true" version="5">
+    <environmentId>ares</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.cms.core.v2.manage.security.component</references>
+    <references>nabu.frameworks.tasks.rest.component</references>
+    <references>nabu.frameworks.tasks.manage.v2</references>
+</node>

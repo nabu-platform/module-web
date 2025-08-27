@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.web.application.WebApplicationManager" created="2025-08-12T15:49:38.676+02:00" lastModified="2025-08-19T11:30:54.562+02:00" leaf="true" name="Application" version="14">
+    <environmentId>ares</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>moduleWeb.shared.host</references>
+    <references>nabu.cms.core.providers.security.opaqueAuthenticator</references>
+    <references>nabu.authentication.temporary.providers.temporaryAuthenticator</references>
+    <references>nabu.authentication.temporary.providers.newTemporaryLogin</references>
+    <references>nabu.authentication.temporary.providers.revokeTemporaryAuthentication</references>
+    <references>nabu.cms.core.providers.security.typedAuthenticator</references>
+    <references>moduleImpl.providers.permissionHandler</references>
+    <references>moduleImpl.providers.potentialPermissionHandler</references>
+    <references>nabu.cms.core.providers.security.roleHandler</references>
+    <references>nabu.cms.core.providers.translation.translationService</references>
+    <references>nabu.cms.core.providers.translation.supportedLanguages</references>
+    <references>nabu.cms.core.providers.translation.languageProvider</references>
+    <references>moduleWeb.site.apiOtr</references>
+    <references>moduleWeb.site.swagger</references>
+    <references>nabu.web.swagger.swaggerui</references>
+    <references>nabu.web.map.rest.component</references>
+    <references>nabu.cms.blog.rest.component</references>
+    <references>nabu.web.events.component</references>
+    <references>nabu.cms.attachment.rest.component</references>
+    <references>nabu.cms.core.v2.account.component</references>
+    <references>nabu.web.core.environment</references>
+    <references>nabu.web.core.loader</references>
+    <references>nabu.cms.core.v2.security.initial.component</references>
+    <references>nabu.web.core.passwordProtect</references>
+    <references>nabu.web.core.components</references>
+    <references>nabu.web.robots.rest.component</references>
+    <references>moduleWeb.site.api</references>
+    <references>nabu.web.page.core.types.configuration</references>
+    <references>nabu.cms.attachment.configuration</references>
+    <references>nabu.web.core.types.environmentConfiguration</references>
+    <references>nabu.cms.core.v2.translation.translationConfiguration</references>
+    <references>nabu.web.core.types.passwordProtect</references>
+    <references>nabu.authentication.temporary.providers.configuration</references>
+    <references>nabu.web.page.core.types.environmentConfiguration</references>
+    <references>nabu.cms.core.configuration</references>
+    <references>nabu.cms.core.v2.security.configuration</references>
+    <references>nabu.web.events.configuration</references>
+</node>

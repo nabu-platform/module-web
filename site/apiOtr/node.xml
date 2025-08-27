@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.web.component.WebComponentManager" created="2025-08-12T15:49:38.510+02:00" lastModified="2025-08-14T11:04:33.830+02:00" leaf="true" name="API-otr" version="5">
+    <environmentId>ares</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.cms.core.v2.security.web.component</references>
+    <references>nabu.cms.core.v2.language.component</references>
+    <references>nabu.cms.core.v2.masterdata.component</references>
+    <references>nabu.cms.core.v2.translation.component</references>
+    <references>nabu.cms.oauth2.client.web.component</references>
+    <references>nabu.web.page.core.v2.component</references>
+    <references>moduleWeb.site.management</references>
+    <tags>Api</tags>
+</node>

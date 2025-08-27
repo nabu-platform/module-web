@@ -1,0 +1,61 @@
+@mixin content_size_2xsmall {
+	font-size: $font-size-2xsmall;
+	line-height: $font-size-xsmall;
+}
+@mixin content_size_xsmall {
+	font-size: $font-size-xsmall;
+	line-height: $font-size-small;
+}
+@mixin content_size_small {
+	font-size: $font-size-small;
+	line-height: $font-size-medium;
+}
+@mixin content_size_medium {
+	font-size: $font-size-medium;
+	line-height: $font-size-large;
+}
+@mixin content_size_large {
+	font-size: $font-size-large;
+	line-height: $font-size-xlarge;
+}
+@mixin content_size_xlarge {
+	font-size: $font-size-xlarge;
+	line-height: $font-size-2xlarge;
+}
+@mixin content_size_2xlarge {
+	font-size: $font-size-2xlarge;
+	line-height: calc(#{$font-size-2xlarge} * 1.15);
+}
+@mixin content_size_3xlarge {
+	font-size: calc(#{$font-size-2xlarge} * 1.5);
+	line-height: calc(#{$font-size-2xlarge} * 1.65);
+}
+@mixin content_size_4xlarge {
+	font-size: calc(#{$font-size-2xlarge} * 2);
+	line-height: calc(#{$font-size-2xlarge} * 2.15);
+}
+
+@mixin padded-content_size_2xsmall {
+	@include component_spacing_horizontal-2xsmall;
+	@include component_spacing_vertical-none;
+}
+@mixin padded-content_size_xsmall {
+	@include component_spacing_horizontal-xsmall;
+	@include component_spacing_vertical-2xsmall;
+}
+@mixin padded-content_size_small {
+	@include component_spacing_horizontal-small;
+	@include component_spacing_vertical-xsmall;
+}
+@mixin padded-content_size_medium {
+	@include component_spacing_horizontal-medium;
+	@include component_spacing_vertical-small;
+}
+@mixin padded-content_size_large {
+	@include component_spacing_horizontal-large;
+	@include component_spacing_vertical-medium;
+}
+@mixin padded-content_size_xlarge {
+	@include component_spacing_horizontal-xlarge;
+	@include component_spacing_vertical-large;
+}

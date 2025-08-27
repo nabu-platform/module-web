@@ -1,0 +1,423 @@
+// a button is assumed to be one of these:
+// <button>some text</button>
+// <button><span class="is-icon"></span></button>
+// <button><span class="is-label"></span></button>
+// <button><span class="is-icon"></span><span class="is-label"></span></button>
+
+// Note that we assume the icon is on the _left_ side of the label if both are present though we try to hard to not be aware of this fact
+
+// ----------------------------------------- COLORS
+
+$button-link-color: $color-primary-darker;
+
+@mixin button_color_link {
+	background-color: transparent;
+	color: $button-link-color;
+	border-color: transparent;
+	&:not([disabled]):not(.is-disabled):hover, &.is-active {
+		background-color: transparent;
+		color: darken($button-link-color, 30%);
+		border-color: transparent;
+	}
+}
+
+// overwrite the default border width of 1px, that way it matches visualize when combined with buttons that only have a single border of 1px at the top as well
+@mixin button_border_underline {
+	border-width: 2px;
+}
+
+// ----------------------------------------- VARIANTS
+
+@mixin button_variant_default {
+	cursor: pointer;
+	* {
+		cursor: pointer;
+	}
+	// we use inline flex so we can easily position the icon and text with a gap without having to know which are present
+	// additionally it makes it easy to reverse the order
+	display: inline-flex;
+	align-items: center;
+
+	// some default browser styling resets the inherited font-family
+	font-family: $font-family-default;
+	
+	@include content_size_medium;
+	@include padded-content_size_medium;
+	
+	@include content_decoration_normal;
+	
+	@include content-fix-icon;
+	@include component_color_neutral;
+	@include component_border_full;
+
+	&:disabled {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+
+	// buttons have default centering logic in (most?) user agent stylesheets whereas links do not.
+	// when we dynamically switch the button to a link, we need the center again
+	.is-icon { // , .is-text
+		text-align: center;
+	}
+
+	@include component_disabled_default;
+	@include component_highlight_neutral;
+	@include component_active_neutral;
+}
+
+@mixin button_variant_link {
+	@include component_spacing_horizontal-left-none;
+	@include component_spacing_horizontal-right-none;
+	@include button_color_link;
+	@include content_decoration_link;
+	column-gap: $spacing-small;
+}
+
+// if we put a badge in a button, we need to counter the padding we add at the top otherwise we slightly stretch the button making it a tiny bit bigger than other buttons
+// TODO: this is not full proof, for example if we absolutely position it etc
+// also, we need to counter the exact padding, so it depends on the chosen size... that's requires some very specific queries
+.is-button {
+	> .is-badge {
+		margin-top: calc(0px - #{$spacing-2xsmall});
+	}
+	> .is-badge.is-size-small {
+		margin-top: calc(0px - #{$spacing-xsmall});
+	}
+	> .is-badge.is-size-medium {
+		margin-top: calc(0px - #{$spacing-small});
+	}
+	> .is-badge.is-size-large {
+		margin-top: calc(0px - #{$spacing-medium});
+	}
+	> .is-badge.is-size-xlarge {
+		margin-top: calc(0px - #{$spacing-large});
+	}
+}
+
+@mixin button_variant_primary {
+	@include component_color_primary;
+	@include component_highlight_primary;
+	@include component_active_primary;
+}
+@mixin button_variant_primary-lighter {
+	@include component_color_primary-lighter;
+	@include component_highlight_primary-lighter;
+	@include component_active_primary-lighter;
+}
+@mixin button_variant_primary-darker {
+	@include component_color_primary-darker;
+	@include component_highlight_primary-darker;
+	@include component_active_primary-darker;
+}
+@mixin button_variant_primary-outline {
+	@include component_color_primary-outline;
+	@include component_highlight_primary-outline;
+	@include component_active_primary-outline;
+}
+@mixin button_variant_primary-darker-outline {
+	@include component_color_primary-darker-outline;
+	@include component_highlight_primary-darker-outline;
+	@include component_active_primary-darker-outline;
+}
+@mixin button_variant_primary-lighter-outline {
+	@include component_color_primary-lighter-outline;
+	@include component_highlight_primary-lighter-outline;
+	@include component_active_primary-lighter-outline;
+}
+
+@mixin button_variant_secondary {
+	@include component_color_secondary;
+	@include component_highlight_secondary;
+	@include component_active_secondary;
+}
+@mixin button_variant_secondary-lighter {
+	@include component_color_secondary-lighter;
+	@include component_highlight_secondary-lighter;
+	@include component_active_secondary-lighter;
+}
+@mixin button_variant_secondary-darker {
+	@include component_color_secondary-darker;
+	@include component_highlight_secondary-darker;
+	@include component_active_secondary-darker;
+}
+@mixin button_variant_secondary-outline {
+	@include component_color_secondary-outline;
+	@include component_highlight_secondary-outline;
+	@include component_active_secondary-outline;
+}
+@mixin button_variant_secondary-darker-outline {
+	@include component_color_secondary-darker-outline;
+	@include component_highlight_secondary-darker-outline;
+	@include component_active_secondary-darker-outline;
+}
+@mixin button_variant_secondary-lighter-outline {
+	@include component_color_secondary-lighter-outline;
+	@include component_highlight_secondary-lighter-outline;
+	@include component_active_secondary-lighter-outline;
+}
+
+@mixin button_variant_neutral {
+	@include component_color_neutral;
+	@include component_highlight_neutral;
+	@include component_active_neutral;
+}
+@mixin button_variant_neutral-lighter {
+	@include component_color_neutral-lighter;
+	@include component_highlight_neutral-lighter;
+	@include component_active_neutral-lighter;
+}
+@mixin button_variant_neutral-darker {
+	@include component_color_neutral-darker;
+	@include component_highlight_neutral-darker;
+	@include component_active_neutral-darker;
+}
+@mixin button_variant_neutral-outline {
+	@include component_color_neutral-outline;
+	@include component_highlight_neutral-outline;
+	@include component_active_neutral-outline;
+}
+@mixin button_variant_neutral-darker-outline {
+	@include component_color_neutral-darker-outline;
+	@include component_highlight_neutral-darker-outline;
+	@include component_active_neutral-darker-outline;
+}
+@mixin button_variant_neutral-lighter-outline {
+	@include component_color_neutral-lighter-outline;
+	@include component_highlight_neutral-lighter-outline;
+	@include component_active_neutral-lighter-outline;
+}
+
+@mixin button_variant_info {
+	@include component_color_info;
+	@include component_highlight_info;
+	@include component_active_info;
+}
+@mixin button_variant_info-lighter {
+	@include component_color_info-lighter;
+	@include component_highlight_info-lighter;
+	@include component_active_info-lighter;
+}
+@mixin button_variant_info-darker {
+	@include component_color_info-darker;
+	@include component_highlight_info-darker;
+	@include component_active_info-darker;
+}
+@mixin button_variant_info-outline {
+	@include component_color_info-outline;
+	@include component_highlight_info-outline;
+	@include component_active_info-outline;
+}
+@mixin button_variant_info-darker-outline {
+	@include component_color_info-darker-outline;
+	@include component_highlight_info-darker-outline;
+	@include component_active_info-darker-outline;
+}
+@mixin button_variant_info-lighter-outline {
+	@include component_color_info-lighter-outline;
+	@include component_highlight_info-lighter-outline;
+	@include component_active_info-lighter-outline;
+}
+
+@mixin button_variant_warning {
+	@include component_color_warning;
+	@include component_highlight_warning;
+	@include component_active_warning;
+}
+@mixin button_variant_warning-lighter {
+	@include component_color_warning-lighter;
+	@include component_highlight_warning-lighter;
+	@include component_active_warning-lighter;
+}
+@mixin button_variant_warning-darker {
+	@include component_color_warning-darker;
+	@include component_highlight_warning-darker;
+	@include component_active_warning-darker;
+}
+@mixin button_variant_warning-outline {
+	@include component_color_warning-outline;
+	@include component_highlight_warning-outline;
+	@include component_active_warning-outline;
+}
+@mixin button_variant_warning-darker-outline {
+	@include component_color_warning-darker-outline;
+	@include component_highlight_warning-darker-outline;
+	@include component_active_warning-darker-outline;
+}
+@mixin button_variant_warning-lighter-outline {
+	@include component_color_warning-lighter-outline;
+	@include component_highlight_warning-lighter-outline;
+	@include component_active_warning-lighter-outline;
+}
+
+@mixin button_variant_danger {
+	@include component_color_danger;
+	@include component_highlight_danger;
+	@include component_active_danger;
+}
+@mixin button_variant_danger-lighter {
+	@include component_color_danger-lighter;
+	@include component_highlight_danger-lighter;
+	@include component_active_danger-lighter;
+}
+@mixin button_variant_danger-darker {
+	@include component_color_danger-darker;
+	@include component_highlight_danger-darker;
+	@include component_active_danger-darker;
+}
+@mixin button_variant_danger-outline {
+	@include component_color_danger-outline;
+	@include component_highlight_danger-outline;
+	@include component_active_danger-outline;
+}
+@mixin button_variant_danger-darker-outline {
+	@include component_color_danger-darker-outline;
+	@include component_highlight_danger-darker-outline;
+	@include component_active_danger-darker-outline;
+}
+@mixin button_variant_danger-lighter-outline {
+	@include component_color_danger-lighter-outline;
+	@include component_highlight_danger-lighter-outline;
+	@include component_active_danger-lighter-outline;
+}
+
+@mixin button_variant_success {
+	@include component_color_success;
+	@include component_highlight_success;
+	@include component_active_success;
+}
+@mixin button_variant_success-lighter {
+	@include component_color_success-lighter;
+	@include component_highlight_success-lighter;
+	@include component_active_success-lighter;
+}
+@mixin button_variant_success-darker {
+	@include component_color_success-darker;
+	@include component_highlight_success-darker;
+	@include component_active_success-darker;
+}
+@mixin button_variant_success-outline {
+	@include component_color_success-outline;
+	@include component_highlight_success-outline;
+	@include component_active_success-outline;
+}
+@mixin button_variant_success-darker-outline {
+	@include component_color_success-darker-outline;
+	@include component_highlight_success-darker-outline;
+	@include component_active_success-darker-outline;
+}
+@mixin button_variant_success-lighter-outline {
+	@include component_color_success-lighter-outline;
+	@include component_highlight_success-lighter-outline;
+	@include component_active_success-lighter-outline;
+}
+
+@mixin button_variant_ghost {
+	@include button_variant_neutral-outline;
+	@include component_border_none;
+}
+@mixin button_variant_ghost-lighter {
+	@include button_variant_neutral-lighter-outline;
+	@include component_border_none;
+}
+@mixin button_variant_ghost-darker {
+	@include button_variant_neutral-darker-outline;
+	@include component_border_none;
+}
+
+// only update the text color!
+@mixin button-ghost_modifier_danger {
+	color: $color-danger-base;
+}
+
+@mixin button_variant_tab {
+	color: $color-neutral-darker;
+	border-style: none none solid none;
+	border-radius: 0;
+	border-bottom-color: $color-secondary-base;
+	border-bottom-width: 2px;
+	background-color: transparent;
+	&.is-active {
+		border-bottom-color: $color-primary-base;
+		background-color: transparent;
+		color: $color-neutral-darkest;
+	}
+}
+
+@mixin button_variant_close {
+	@include button_variant_ghost-darker;
+	// by default a small button
+	@include content_size_small;
+	@include padded-content_size_small;
+	// need to layer it above the standard content
+	z-index: 1;
+	position: absolute;
+	top: $spacing-small;
+	right: $spacing-small;
+}
+
+.has-button-close {
+	position: relative;
+}
+
+
+@mixin button_variant_default--collapsed {
+	// make the buttons small (if they aren't already)
+	@include content_size_small;
+	padding: 4px;
+	line-height: unset;
+	justify-content: center;
+	&:not(.has-icon).has-text {
+		.is-text {
+			font-size: 0;
+			display: inline-block;
+			&:first-letter {
+				font-size: $font-size-medium;
+				text-transform: uppercase;
+			}
+			background-color: $color-secondary-base;
+			color: $color-secondary-lightest;
+			border-radius: $font-size-small;
+			padding: $spacing-xsmall $spacing-small;
+			height: calc(#{$font-size-large} + #{$spacing-small});
+			width: calc(#{$font-size-large} + #{$spacing-small});
+			line-height: $font-size-large;
+			text-align: center;
+		}
+	}
+	&.has-icon.has-text {
+		.is-text {
+			display: none;
+		}
+	}
+	&.is-active:after {
+		top: calc((#{$font-size-large} + #{$spacing-small}) / 2 - 2px);
+		border-width: 6px;
+	}
+	// if it is also a label, give it a different color
+	&.is-label {
+		&:after {
+			display: none;
+		}
+		.is-text {
+			background-color: $color-primary-base;
+			color: $color-primary-lightest;
+			border-radius: $font-size-small;
+		}
+	}
+	// hide any badges
+	.is-badge {
+		display: none;
+	}
+	.is-icon {
+		background-color: $color-secondary-base;
+		color: $color-secondary-lightest;
+		border-radius: $font-size-small;
+		padding: $spacing-xsmall $spacing-small;
+		font-size: $font-size-xsmall;
+		height: calc(#{$font-size-large} + #{$spacing-small});
+		width: calc(#{$font-size-large} + #{$spacing-small});
+		line-height: $font-size-large;
+		text-align: center;
+	}
+}

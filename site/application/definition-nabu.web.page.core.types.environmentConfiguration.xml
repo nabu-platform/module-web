@@ -1,0 +1,10 @@
+<structure comment="Nabu Page Builder environment specific configuration options" name="configuration">
+    <structure maxOccurs="unbounded" minOccurs="0" name="properties">
+        <field minOccurs="0" name="key" type="java.lang.String"/>
+        <field minOccurs="0" name="value" type="java.lang.String"/>
+        <field minOccurs="0" name="key" type="java.lang.String"/>
+        <field minOccurs="0" name="value" type="java.lang.String"/>
+        <field name="key" nillable="false" type="java.lang.String"/>
+        <field minOccurs="0" name="value" type="java.lang.String"/>
+    </structure>
+</structure>

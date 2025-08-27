@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<webModule>
+    <webFragments>nabu.cms.core.v2.manage.security.component</webFragments>
+    <webFragments>nabu.frameworks.tasks.rest.component</webFragments>
+    <webFragments>nabu.frameworks.tasks.manage.v2</webFragments>
+</webModule>

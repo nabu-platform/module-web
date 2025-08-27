@@ -1,0 +1,7 @@
+.is-no-outline {
+	outline: none;
+}
+
+@mixin component_cursor_pointer {
+	cursor: pointer;
+}

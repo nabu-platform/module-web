@@ -1,0 +1,70 @@
+@mixin component_border_none {
+	border-width: 0px;
+	border-style: $border-style-default;
+	border-radius: 0px;
+}
+@mixin component_border_side-top {
+	border-top-style: $border-style-default;
+	border-top-width: $border-width-default;
+}
+@mixin component_border_side-right {
+	border-right-style: $border-style-default;
+	border-right-width: $border-width-default;
+}
+@mixin component_border_side-bottom {
+	border-bottom-style: $border-style-default;
+	border-bottom-width: $border-width-default;
+}
+@mixin component_border_side-left {
+	border-left-style: $border-style-default;
+	border-left-width: $border-width-default;
+}
+
+@mixin component_border_radius-none {
+	border-radius: 0px;
+}
+@mixin component_border_radius-xsmall {
+	border-radius: $border-radius-xsmall;
+}
+@mixin component_border_radius-small {
+	border-radius: $border-radius-small;
+}
+@mixin component_border_radius-medium {
+	border-radius: $border-radius-medium;
+}
+@mixin component_border_radius-large {
+	border-radius: $border-radius-large;
+}
+@mixin component_border_radius-xlarge {
+	border-radius: $border-radius-xlarge;
+}
+@mixin component_border_radius-full {
+	border-radius: 9999px;
+}
+
+@mixin component_border_full {
+	border-radius: $border-radius-default;
+	border-width: $border-width-default;
+	border-style: $border-style-default;
+}
+@mixin component_border_underline {
+	border-radius: 0px;
+	border-width: $border-width-default;
+	border-style: none none $border-style-default none;
+}
+
+@mixin component_border_width-small {
+	border-width: $border-width-small;
+}
+@mixin component_border_width-medium {
+	border-width: $border-width-medium;
+}
+@mixin component_border_width-large {
+	border-width: $border-width-large;
+}
+@mixin component_border_width-xlarge {
+	border-width: $border-width-xlarge;
+}
+@mixin component_border_width-2xlarge {
+	border-width: $border-width-2xlarge;
+}

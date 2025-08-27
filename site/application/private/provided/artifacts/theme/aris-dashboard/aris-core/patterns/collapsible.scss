@@ -1,0 +1,139 @@
+@mixin collapsible_variant_default {
+	// we want a 0-selector for easy overriding of the default values
+	> :where(.is-title) {
+		cursor: pointer;
+		@include h6_variant_default;
+		padding: $spacing-small;
+		padding-right: 0;
+		> .is-icon {
+			margin-right: $spacing-small;
+			margin-left: $spacing-small;
+			font-size: $font-size-2xsmall;
+		}
+		.is-text-after {
+			margin-left: $spacing-small;
+			@include content_size_xsmall;
+		}
+		// we rarely want the buttons to be flat against the side?
+		// actually, when combined with other elements, we might!
+		//.is-title-buttons {
+		//	padding-right: $spacing-small;
+		//}
+		.is-text-after, .is-text-before {
+			color: $color-neutral-base;
+		}
+		> .is-title-buttons {
+			margin-left: auto;
+		}
+	}
+	// default transparent
+	background-color: transparent;
+}
+
+@mixin component_color_primary--collapsible {
+	&.is-collapsible {
+		> .is-title {
+			background-color: $color-primary-darkest;
+			color: $color-primary-lightest;
+			.is-text-after, .is-text-before {
+				color: $color-primary-light;
+			}
+		}
+	}
+}
+
+@mixin component_color_neutral-darker--collapsible {
+	&.is-collapsible {
+		> .is-title {
+			background-color: $color-neutral-darkest;
+			color: $color-neutral-lightest;
+			.is-text-after, .is-text-before {
+				color: $color-neutral-light;
+			}
+		}
+	}
+}
+@mixin component_color_neutral--collapsible {
+	&.is-collapsible {
+		> .is-title {
+			background-color: $color-neutral-light;
+			color: $color-neutral-darkest;
+			.is-text-after, .is-text-before {
+				color: $color-neutral-base;
+			}
+		}
+	}
+}
+@mixin component_color_neutral-lighter--collapsible {
+	&.is-collapsible {
+		> .is-title {
+			background-color: $color-neutral-lighter;
+			color: $color-neutral-darkest;
+			.is-text-after, .is-text-before {
+				color: $color-neutral-base;
+			}
+		}
+	}
+}
+@mixin component_color_primary-lighter--collapsible {
+	&.is-collapsible {
+		border-color: $color-primary-lighter;
+		background-color: transparent;
+		> .is-title {
+			background-color: $color-primary-lightest;
+			color: $color-primary-darker;
+			.is-text-after, .is-text-before {
+				color: $color-primary-base;
+			}
+		}
+	}
+}
+@mixin component_color_secondary-lighter--collapsible {
+	&.is-collapsible {
+		border-color: $color-secondary-lighter;
+		> .is-title {
+			background-color: $color-secondary-lightest;
+			color: $color-secondary-darker;
+			.is-text-after, .is-text-before {
+				color: $color-secondary-base;
+			}
+		}
+	}
+}
+
+// @extension collapsible-content layout
+@mixin collapsible-content_variant_default {
+	display: flex;
+	flex-direction: column;
+}
+
+@mixin collapsible-content_spacing_default {
+	@include component_spacing_vertical-large;
+	@include component_spacing_horizontal-large;
+	padding-right: 0;
+}
+
+// @component accordion
+@mixin accordion_variant_default {
+	// the first two rules are actually meant for when the collapsible has border-basic instead of border-underline
+	.is-collapsible:not(:first-child) {
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		border-top-color: transparent;
+	}
+	.is-collapsible:not(:last-child) {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+	// this is meant for border-underline
+	.is-collapsible:last-child {
+		border-bottom: none;
+	}
+}
+
+@mixin accordion_highlight_left {
+	.is-collapsible-content {
+		border-left: solid 10px $color-primary-lightest;
+		border-radius: 0 $border-radius-default $border-radius-default 0;
+	}
+}

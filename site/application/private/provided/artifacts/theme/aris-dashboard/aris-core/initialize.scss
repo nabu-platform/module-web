@@ -1,0 +1,15 @@
+// Apply the defaults to the application
+html:root, body {
+    background-color: $color-uses-body;
+    color: $font-color-default;
+    font-size: $font-size-default;
+	font-family: $font-family-default;
+	font-weight: $font-weight-default;
+    margin: 0;
+    padding: 0;
+}
+
+// We enable box sizing by default
+*, *:before, *:after {
+    box-sizing: border-box;
+}

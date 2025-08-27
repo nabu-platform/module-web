@@ -1,0 +1,368 @@
+// make sure we can differentiate as needed
+// @component page-row row
+// @component page-column column
+// a grid is a series of rows, in a way that is a column
+// @component grid column
+
+// make sure anchors etc always grow to the full width, otherwise they may artificially limit the content
+.is-page, .is-anchor {
+	flex-grow: 1;
+}
+// in case we do absolutely positioned rows, we want it to be to the grid
+// if the row is the first in the grid, it is either at the top of a page, or relative to another row/cell which _is_ relative
+// the downside of making the grid relative is that it is hard to position nested rows/columns to one another!
+//.is-grid {
+	//position: relative;
+//}
+.is-column-content {
+	// make sure it sizes
+	// no! this breaks positioning in aris cause it is always full width
+	//height: 100%;
+	//width: 100%;
+}
+
+@mixin grid_variant_default {
+	@include column_variant_default;
+}
+
+// a basic content page
+@mixin grid_variant_basic-content {
+	@include component_spacing_xlarge;
+	// any nested basic content does not need the padding
+	:where(.is-variant-basic-content) {
+		padding: 0;
+	}
+}
+
+
+@mixin page-column_variant_default {
+	position: relative;
+	// without this, we can get some really weird sizing...
+	@include column_variant_default;
+}
+// to make sure the wrapping occurs rather than scrolling
+// we don't want to enforce the max-width:100% when nested however
+// we use this setup (actual css rather than mixin) to guarantee the order in which these two statements are generated
+// we want to allow you to easily set a max-width that will win from this one (hence the where) so we do it with minimal targetting
+.is-page-row {
+	max-width: 100%;
+}
+:where(.is-page-column > .is-grid) .is-page-row {
+	max-width: unset;
+}
+@mixin page-row_variant_default {
+	position: relative;
+	@include row_variant_default;
+	// default wrap so we can easily do responsive
+	flex-wrap: wrap;
+	// when we have multiple rows, we want to cancel out any spacing you might have set so it doesn't double up
+//	+ .is-page-row {
+//		padding-top: 0;
+//	}
+}
+// the edit menu that floats at the top...
+.is-page-edit-menu {
+	position: absolute;
+	padding: $spacing-small $spacing-medium;
+	background-color: $color-neutral-lightest;
+	color: $color-neutral-darker;
+	border: dashed 1px $color-neutral-darker;
+	border-radius: $border-radius-default;
+	font-size: $font-size-small;
+	z-index: 1000;
+	&.is-bookmarkable {
+		border-style: solid;
+		background-color: $color-neutral-lighter;
+	}
+}
+// empty effect for row
+:where(.page-row).empty {
+	position: relative;
+	min-height: 15rem;
+	background-color: $color-primary-lightest;
+	border: dashed 1px $color-primary-lighter;
+	&:not([placeholder]):after {
+		content: 'ROW';
+	}
+	&[placeholder]:after {
+		content: attr(placeholder);
+	}
+	&:after {
+		position: absolute;
+		left: 0;
+		top: 0;
+		text-align: center;
+		color: $color-neutral-darker;
+		font-size: 20pt;
+		font-weight: bold;
+		padding: 0.7rem;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+// the menu that floats inside a row
+.page-row .is-row-menu {
+	display: none;
+	position: absolute;
+	width: auto !important;
+	min-width: unset !important;
+	max-width: unset !important;
+	//background-color: rgba($color-primary-base, 0.2);
+	// don't annoy people that are hovering over it
+	//&:hover {
+	//	background-color: transparent;
+	//}
+	//width: 100%;
+	right: 0;
+	top: calc(100% - 2px);
+	z-index: 10;
+	pointer-events: none;
+	.is-button {
+		pointer-events: auto;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	}
+}
+// hover effect for row
+.page-row.is-hovering {
+	position: relative;
+	border-style: solid;
+	border-width: 2px;
+	border-color: $color-primary-light;
+	> .is-row-menu {
+		display: flex;
+	}
+}
+
+// the menu that floats inside a column
+.page-column .is-column-menu {
+	display: none;
+	position: absolute;
+	//background-color: rgba($color-secondary-base, 0.2);
+	width: auto !important;
+	min-width: auto !important;
+	max-width: auto !important;
+	left: 0;
+	top: calc(100% - 2px);
+	z-index: 10;
+	pointer-events: none;
+	// make sure it doesn't take click events away from whats under it
+	.is-button {
+		pointer-events: auto;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	}
+}
+.is-page-column .is-column-content {
+	display: flex;
+}
+
+// empty effect for column
+:where(.page-column).empty {
+	min-width: 20rem;
+	position: relative;
+	// these two combine to make sure it shrinks if the row is explicitly shorter
+	aspect-ratio: 1/1;
+	max-height: 100%;
+	background-color: $color-secondary-lightest;
+	border: dashed 1px $color-secondary-lighter;
+	&:not([placeholder]):after {
+		content: 'CELL';
+	}
+	&[placeholder]:after {
+		content: attr(placeholder);
+	}
+	&:after {
+		position: absolute;
+		left: 0;
+		top: 0;
+		text-align: center;
+		padding: 0.7rem;
+		color: $color-secondary-darker;
+		font-size: 20pt;
+		font-weight: bold;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+// hover effect for column
+.page-column.is-hovering {
+	border-style: solid;
+	border-width: 2px;
+	border-color: $color-secondary-light;
+	> .is-column-menu {
+		display: flex;
+	}
+}
+
+// highlight all menus when we want
+.is-page.is-editing.is-active-view .page-column > .is-column-menu {
+	display: flex;
+}
+
+.page-row.is-hover-top {
+	border: solid 2px $color-success-base;
+	border-style: solid none none none;
+	&:after {
+		content: ' ';
+		background: linear-gradient(180deg, $color-success-base 0%, transparent 50%);
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+.page-row.is-hover-bottom {
+	border: solid 2px $color-success-base;
+	border-style: none none solid none;
+	&:after {
+		content: ' ';
+		background: linear-gradient(0deg, $color-success-base 0%, transparent 50%);
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+.page-row.is-hover-left {
+	border: solid 2px $color-success-base;
+	border-style: solid none none none;
+	&:after {
+		content: ' ';
+		background: linear-gradient(90deg, $color-success-base 0%, transparent 50%);
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+.page-row.is-hover-right {
+	border: solid 2px $color-success-base;
+	border-style: solid none none none;
+	&:after {
+		content: ' ';
+		background: linear-gradient(270deg, $color-success-base 0%, transparent 50%);
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+
+// if we are editing, we want to add a dropzone to the page so you can always drop items
+.is-page.is-editing {
+	// room for the drop zone
+	padding-bottom: 100px;
+	position: relative;
+	&:after {
+		position: absolute;
+		content: 'Dropzone';
+		height: 80px;
+		width: calc(100% - 20px);
+		background-color: $color-secondary-lightest;
+		bottom: 0;
+		line-height: 80px;
+		text-align: center;
+		font-weight: bold;
+		color: $color-secondary-base;
+		font-size: 20pt;
+		border: dashed 2px $color-secondary-light;
+		margin: 10px;
+	}
+
+	// any actually empty though configured cell should have a minimum height
+	.page-column[placeholder]:not(.empty):empty {
+		min-height: 1.2rem;
+		&:before {
+			content: attr(placeholder);
+			color: #555;
+			margin-left: 0.2rem;
+		}
+	}	
+}
+
+.is-empty-component {
+	min-height: 1.2rem;
+	min-width: 5rem;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	&:after {
+		content: attr(placeholder);
+		color: #555; 
+		position: absolute;
+		left: 0.2rem;
+	}
+}
+
+.has-inline-component-menu {
+	position: relative;
+	&:hover {
+		.is-variant-inline-component-menu {
+			display: flex;
+		}
+	}
+}
+@mixin menu_variant_inline-component-menu {
+	display: none;
+	position: absolute;
+	bottom: 100%;
+	left: 0;
+}
+
+// make sure it is at the forefront
+.n-absolute {
+	@include component_layer_10;
+}
+
+// notifier
+.global-notifications {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	flex-direction: column-reverse;
+	height: auto;
+	width: auto;
+	// the sidebar is set at 500, this should layer over the sidebar...
+	z-index: 600;
+	padding: $spacing-medium;
+	row-gap: $spacing-small;
+}
+
+@mixin button_variant_page-button-sort {
+	@include button_variant_ghost;
+	@include component_direction_horizontal-reverse;
+	// counteract the reverse direction whitespace on the wrong side in a column situation
+	@include component_position_start;
+}
+
+// needed for fancier things like rotate
+.is-typography:where(.is-span) {
+	display: inline-flex;
+}
+
+.is-page-column, .is-page-row {
+	position: relative;
+}
+
+html[data-useragent*="JavaFX"] {
+	:where(.page-column).empty {
+		// the inline browser sadly does not support aspect-ratio squishing the empty cells together
+		min-height: 5rem;
+	}
+	// buttons have default margins?!
+	button {
+		margin: 0;
+	}
+}

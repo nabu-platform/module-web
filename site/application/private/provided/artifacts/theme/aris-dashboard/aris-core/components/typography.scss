@@ -1,0 +1,82 @@
+@mixin typography_variant_default {
+	display: inline-flex;
+	align-items: center;
+	column-gap: $spacing-small;
+}
+
+@mixin h1_variant_default {
+	font-size: calc(#{$font-size-xlarge} + 0.4vw);
+	margin: 0;
+	display: flex;
+	align-items: center;
+	@include content-fix-icon;
+	@include content_decoration_normal;
+}
+
+@mixin h2_variant_default {
+	font-size: calc(#{$font-size-xlarge} + 0.2vw);
+	margin: 0;
+	display: flex;
+	align-items: center;
+	@include content-fix-icon;
+	@include content_decoration_normal;
+}
+@mixin h3_variant_default {
+	font-size: calc(#{$font-size-large} + 0.2vw);
+	margin: 0;
+	display: flex;
+	align-items: center;
+	@include content-fix-icon;
+	@include content_decoration_normal;
+}
+
+@mixin h4_variant_default {
+	font-size: calc(#{$font-size-medium} + 0.2vw);
+	margin: 0;
+	display: flex;
+	align-items: center;
+	@include content-fix-icon;
+	@include content_decoration_normal;
+}
+
+@mixin h5_variant_default {
+	font-size: calc(#{$font-size-medium} + 0.1vw);
+	margin: 0;
+	display: flex;
+	align-items: center;
+	@include content-fix-icon;
+	@include content_decoration_normal;
+}
+
+@mixin h6_variant_default {
+	font-size: calc(#{$font-size-medium});
+	margin: 0;
+	display: flex;
+	align-items: center;
+	@include content-fix-icon;
+	@include content_decoration_normal;
+}
+
+@mixin p_variant_default {
+	font-size: $font-size-medium;
+	margin: 0;
+	display: flex;
+	@include content-fix-icon;
+	@include content_decoration_normal;
+}
+
+.is-placeholder {
+	color: $color-neutral-base;
+	font-style: italic;
+}
+
+@mixin typography_variant_key {
+	font-weight: bold;
+	font-size: 0.875rem;
+	padding: 0;
+}
+@mixin typography_variant_value {
+	font-weight: normal;
+	font-size: 1rem;
+	padding: 0;
+}

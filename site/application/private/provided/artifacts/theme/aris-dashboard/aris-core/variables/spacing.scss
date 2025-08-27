@@ -1,0 +1,13 @@
+// Spacing used for padding, margin, gaps,...
+$spacing-base: $font-size-default !default; // 1rem
+
+$spacing-3xsmall: calc(#{$spacing-base} / 16) !default;
+$spacing-2xsmall: calc(#{$spacing-base} / 8) !default;
+$spacing-xsmall: calc(#{$spacing-base} / 4) !default;
+$spacing-small: calc(#{$spacing-base} / 2) !default;
+$spacing-medium: #{$spacing-base} !default;
+$spacing-large: calc(#{$spacing-base} * 2) !default;
+$spacing-xlarge: calc(#{$spacing-base} * 3) !default;
+$spacing-2xlarge: calc(#{$spacing-base} * 4) !default;
+$spacing-3xlarge: calc(#{$spacing-base} * 6) !default;
+$spacing-4xlarge: calc(#{$spacing-base} * 8) !default;

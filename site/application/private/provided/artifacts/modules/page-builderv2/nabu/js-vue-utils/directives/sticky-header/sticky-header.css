@@ -1,0 +1,6 @@
+[n-sticky-header=true] {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	transition: position 0.3s linear, top 0.3s linear;
+}

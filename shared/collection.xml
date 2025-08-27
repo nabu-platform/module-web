@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<collection>
+    <largeIcon>shared/shared-big.png</largeIcon>
+    <mediumIcon>shared/shared-medium.png</mediumIcon>
+    <name>Shared</name>
+    <smallIcon>shared/shared-small.png</smallIcon>
+    <subType>shared</subType>
+    <type>folder</type>
+</collection>
