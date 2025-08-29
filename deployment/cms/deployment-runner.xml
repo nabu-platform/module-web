@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<deploymentRunner>
+    <properties>
+        <property key="connectionId">moduleWeb.databases.main.connection</property>
+        <property key="includeRoles">true</property>
+        <property key="includeExternalIds">true</property>
+    </properties>
+    <source>nabu.cms.core.v2.deployment.source</source>
+    <target>nabu.cms.core.v2.deployment.target</target>
+</deploymentRunner>

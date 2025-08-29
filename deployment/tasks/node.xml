@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.deployment.action.DeploymentActionManager" created="2025-08-29T11:27:41.961+02:00" lastModified="2025-08-29T11:27:55.251+02:00" leaf="true" version="4">
+    <environmentId>ares</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.tasks.deployment.source</references>
+    <references>nabu.frameworks.tasks.deployment.target</references>
+</node>

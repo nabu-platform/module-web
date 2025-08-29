@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<deploymentRunner>
+    <properties>
+        <property key="connectionId">moduleWeb.databases.main.connection</property>
+    </properties>
+    <source>nabu.frameworks.tasks.deployment.source</source>
+    <target>nabu.frameworks.tasks.deployment.target</target>
+</deploymentRunner>

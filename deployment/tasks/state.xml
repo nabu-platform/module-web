@@ -1,0 +1,47 @@
+<input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<connectionId>moduleWeb.databases.main.connection</connectionId>
+	<taskMetadatas>
+		<id>e840310a14fe4aed848d3859c8b97125</id>
+		<created>2025-08-14T10:36:20.156+00:00</created>
+		<modified>2025-08-14T10:39:53.431+00:00</modified>
+		<task>moduleImpl.services.organisation.requestCreate</task>
+		<taskType>human</taskType>
+		<name>New Organisation</name>
+		<title>New Organisation</title>
+		<permission>inbox.manage</permission>
+		<context>context:$global</context>
+	</taskMetadatas>
+	<taskMetadatas>
+		<id>9f6d340cf3d24e82ab17123530b7d3e8</id>
+		<created>2025-08-14T15:18:08.754+00:00</created>
+		<modified>2025-08-20T12:07:21.817+00:00</modified>
+		<task>moduleImpl.services.organisation.requestNamespace</task>
+		<taskType>human</taskType>
+		<name>New Namespace</name>
+		<title>New Namespace</title>
+		<permission>inbox.manage</permission>
+		<context>context:$global</context>
+	</taskMetadatas>
+	<taskMetadatas>
+		<id>6c959d96795c4babb8d1650bd06b50ca</id>
+		<created>2025-08-20T09:52:32.200+00:00</created>
+		<modified>2025-08-20T11:57:40.655+00:00</modified>
+		<task>moduleImpl.services.organisation.requestModuleApproval</task>
+		<taskType>human</taskType>
+		<name>Approve Module</name>
+		<title>Approve module</title>
+		<permission>inbox.manage</permission>
+		<context>context:$global</context>
+	</taskMetadatas>
+	<taskMetadatas>
+		<id>58297ed034b943c59239881975a6e477</id>
+		<created>2025-08-20T12:10:21.193+00:00</created>
+		<modified>2025-08-20T12:10:21.193+00:00</modified>
+		<task>moduleImpl.services.organisation.requestAccountVerification</task>
+		<taskType>human</taskType>
+		<name>Verify Account</name>
+		<title>Verify Account</title>
+		<permission>inbox.manage</permission>
+		<context>context:$global</context>
+	</taskMetadatas>
+</input>
