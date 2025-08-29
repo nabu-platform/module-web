@@ -124,6 +124,42 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<slug>build.manage.application</slug>
 		<componentId>6b6ee05dbfb34ddb844ad87316bc747e</componentId>
 	</contexts>
+	<contexts>
+		<id>a0c1c65c4b5a4f71b6e435e302dfa319</id>
+		<created>2025-08-29T12:22:02.612+00:00</created>
+		<modified>2025-08-29T12:22:02.612+00:00</modified>
+		<started>2025-08-29T12:22:02.612+00:00</started>
+		<verified>2025-08-29T12:22:02.612+00:00</verified>
+		<enabled>true</enabled>
+		<version>1</version>
+		<priority>0</priority>
+		<name>moduleWeb.site.application</name>
+		<description>Alias: null
+Services: nabu.cms.core.utils.security.describeContext, nabu.cms.core.utils.security.getContext, nabu.cms.core.services.context.getApplication, nabu.cms.core.providers.environment.environmentLanguage, nabu.web.core.specifications.environmentLanguage, nabu.web.core.services.environment.getLanguage, nabu.web.core.rest.environment
+Context: moduleWeb.site.application
+Correlation Id: 2541b03da37940ddb08038f03b8046ab</description>
+		<path>a0c1c65c4b5a4f71b6e435e302dfa319</path>
+		<slug>moduleWeb.site.application</slug>
+		<componentId>6b6ee05dbfb34ddb844ad87316bc747e</componentId>
+	</contexts>
+	<contexts>
+		<id>70182f2a4b2541b79ff63a06d6ca06c7</id>
+		<created>2025-08-29T12:26:25.933+00:00</created>
+		<modified>2025-08-29T12:26:25.933+00:00</modified>
+		<started>2025-08-29T12:26:25.933+00:00</started>
+		<verified>2025-08-29T12:26:25.933+00:00</verified>
+		<enabled>true</enabled>
+		<version>1</version>
+		<priority>0</priority>
+		<name>moduleWeb</name>
+		<description>Alias: null
+Services: nabu.cms.core.utils.security.describeContext, nabu.cms.core.utils.security.getContext, nabu.cms.core.services.context.getRealm
+Context: shared
+Correlation Id: 56d2c227ae39428d84ed9fede446db92</description>
+		<path>70182f2a4b2541b79ff63a06d6ca06c7</path>
+		<slug>moduleWeb</slug>
+		<componentId>22b95352f0784d0d853cffe0471efcdd</componentId>
+	</contexts>
 	<connections>
 		<id>091e6d615cd64a1e9d5cefec535a62f9</id>
 		<created>2023-10-04T20:40:01.132+00:00</created>
@@ -158,6 +194,20 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<modified>2023-10-07T16:08:17.088+00:00</modified>
 		<sourceId>86a7e251cad54c5ba9f07d3a5b4441f3</sourceId>
 		<targetId>b538d4800bde42779b876e035e8c45a5</targetId>
+	</connections>
+	<connections>
+		<id>f7d6639dbdf044e9ac851fdcacce4577</id>
+		<created>2025-08-29T12:22:03.424+00:00</created>
+		<modified>2025-08-29T12:22:03.424+00:00</modified>
+		<sourceId>86a7e251cad54c5ba9f07d3a5b4441f3</sourceId>
+		<targetId>a0c1c65c4b5a4f71b6e435e302dfa319</targetId>
+	</connections>
+	<connections>
+		<id>27efcd67d53148929c01e7483319bec8</id>
+		<created>2025-08-29T12:26:25.953+00:00</created>
+		<modified>2025-08-29T12:26:25.953+00:00</modified>
+		<sourceId>86a7e251cad54c5ba9f07d3a5b4441f3</sourceId>
+		<targetId>70182f2a4b2541b79ff63a06d6ca06c7</targetId>
 	</connections>
 	<ownedComponents>
 		<id>b2c2927725244ba4a6e5aab5f0e5be47</id>
@@ -1019,6 +1069,38 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<ownerId>86a7e251cad54c5ba9f07d3a5b4441f3</ownerId>
 	</actions>
 	<actions>
+		<id>a24b585f0cd7496dbb56f39960435f97</id>
+		<created>2025-08-29T12:22:02.919+00:00</created>
+		<modified>2025-08-29T12:22:02.919+00:00</modified>
+		<name>translationBundle.translate</name>
+		<audit>false</audit>
+		<ownerId>86a7e251cad54c5ba9f07d3a5b4441f3</ownerId>
+	</actions>
+	<actions>
+		<id>7e4dedab97e94ce484a6503cb2b40f83</id>
+		<created>2025-08-29T12:22:02.920+00:00</created>
+		<modified>2025-08-29T12:22:02.920+00:00</modified>
+		<name>translationBundle.validate</name>
+		<audit>false</audit>
+		<ownerId>86a7e251cad54c5ba9f07d3a5b4441f3</ownerId>
+	</actions>
+	<actions>
+		<id>a505ae150ccf474daa1d92a7a099fe13</id>
+		<created>2025-08-29T12:22:03.136+00:00</created>
+		<modified>2025-08-29T12:22:03.136+00:00</modified>
+		<name>notification.list</name>
+		<audit>false</audit>
+		<ownerId>86a7e251cad54c5ba9f07d3a5b4441f3</ownerId>
+	</actions>
+	<actions>
+		<id>fc6858fb08fd4eb9a8894defa329bae2</id>
+		<created>2025-08-29T12:22:03.137+00:00</created>
+		<modified>2025-08-29T12:22:03.137+00:00</modified>
+		<name>notification.manage</name>
+		<audit>false</audit>
+		<ownerId>86a7e251cad54c5ba9f07d3a5b4441f3</ownerId>
+	</actions>
+	<actions>
 		<id>0f7f0410a8fc46af85524f3689826fb4</id>
 		<created>2023-10-04T20:41:27.559+00:00</created>
 		<modified>2023-10-04T20:41:27.559+00:00</modified>
@@ -1145,6 +1227,118 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<name>user.remember</name>
 		<audit>false</audit>
 		<ownerId>93e74910f687459a814be73651067a4f</ownerId>
+	</actions>
+	<actions>
+		<id>dd4e8563c63f489183d34dc9aa2e7861</id>
+		<created>2025-08-29T12:22:02.617+00:00</created>
+		<modified>2025-08-29T12:22:02.617+00:00</modified>
+		<name>user.manage</name>
+		<audit>false</audit>
+		<ownerId>a0c1c65c4b5a4f71b6e435e302dfa319</ownerId>
+	</actions>
+	<actions>
+		<id>674d108b0168436c916f5e19498eb3c9</id>
+		<created>2025-08-29T12:22:02.618+00:00</created>
+		<modified>2025-08-29T12:22:02.618+00:00</modified>
+		<name>user.list</name>
+		<audit>false</audit>
+		<ownerId>a0c1c65c4b5a4f71b6e435e302dfa319</ownerId>
+	</actions>
+	<actions>
+		<id>fc9dfb8912144bd0866a6e48349f85bf</id>
+		<created>2025-08-29T12:22:02.620+00:00</created>
+		<modified>2025-08-29T12:22:02.620+00:00</modified>
+		<name>role.list</name>
+		<audit>false</audit>
+		<ownerId>a0c1c65c4b5a4f71b6e435e302dfa319</ownerId>
+	</actions>
+	<actions>
+		<id>e8ef2c40ea9b4332aa08ec8881e14bd7</id>
+		<created>2025-08-29T12:22:02.621+00:00</created>
+		<modified>2025-08-29T12:22:02.621+00:00</modified>
+		<name>role.manage</name>
+		<audit>false</audit>
+		<ownerId>a0c1c65c4b5a4f71b6e435e302dfa319</ownerId>
+	</actions>
+	<actions>
+		<id>c6f2cec0bde64bdebd6cf21dd6e3a3cd</id>
+		<created>2025-08-29T12:22:02.622+00:00</created>
+		<modified>2025-08-29T12:22:02.622+00:00</modified>
+		<name>masterdata.list</name>
+		<audit>false</audit>
+		<ownerId>a0c1c65c4b5a4f71b6e435e302dfa319</ownerId>
+	</actions>
+	<actions>
+		<id>ce9e1a5d35394544ba57454d88148fcf</id>
+		<created>2025-08-29T12:22:02.623+00:00</created>
+		<modified>2025-08-29T12:22:02.623+00:00</modified>
+		<name>masterdata.manage</name>
+		<audit>false</audit>
+		<ownerId>a0c1c65c4b5a4f71b6e435e302dfa319</ownerId>
+	</actions>
+	<actions>
+		<id>9b744170762d4335ba061ef9d3d56929</id>
+		<created>2025-08-29T12:22:02.668+00:00</created>
+		<modified>2025-08-29T12:22:02.668+00:00</modified>
+		<name>user.authenticate</name>
+		<audit>false</audit>
+		<ownerId>a0c1c65c4b5a4f71b6e435e302dfa319</ownerId>
+	</actions>
+	<actions>
+		<id>0e0855fb7fed40afba7b4636118fcd6e</id>
+		<created>2025-08-29T12:22:02.671+00:00</created>
+		<modified>2025-08-29T12:22:02.671+00:00</modified>
+		<name>user.register</name>
+		<audit>false</audit>
+		<ownerId>a0c1c65c4b5a4f71b6e435e302dfa319</ownerId>
+	</actions>
+	<actions>
+		<id>2f19ad90952949e181f41fbff46b4050</id>
+		<created>2025-08-29T12:22:02.673+00:00</created>
+		<modified>2025-08-29T12:22:02.673+00:00</modified>
+		<name>user.remember</name>
+		<audit>false</audit>
+		<ownerId>a0c1c65c4b5a4f71b6e435e302dfa319</ownerId>
+	</actions>
+	<actions>
+		<id>69568d6d3d6e48baacd3a8d7cbde0d68</id>
+		<created>2025-08-29T12:22:02.676+00:00</created>
+		<modified>2025-08-29T12:22:02.676+00:00</modified>
+		<name>user.impersonate</name>
+		<audit>false</audit>
+		<ownerId>a0c1c65c4b5a4f71b6e435e302dfa319</ownerId>
+	</actions>
+	<actions>
+		<id>803eccfe56034c73a3179499c1b901e5</id>
+		<created>2025-08-29T12:22:02.678+00:00</created>
+		<modified>2025-08-29T12:22:02.678+00:00</modified>
+		<name>component.list</name>
+		<audit>false</audit>
+		<ownerId>a0c1c65c4b5a4f71b6e435e302dfa319</ownerId>
+	</actions>
+	<actions>
+		<id>da6cf19e29464e11944d8de7d2b72079</id>
+		<created>2025-08-29T12:22:03.095+00:00</created>
+		<modified>2025-08-29T12:22:03.095+00:00</modified>
+		<name>application.test</name>
+		<audit>false</audit>
+		<ownerId>a0c1c65c4b5a4f71b6e435e302dfa319</ownerId>
+	</actions>
+	<actions>
+		<id>bf0875772c81495d8f61d5c66c6e0c5b</id>
+		<created>2025-08-29T12:22:03.096+00:00</created>
+		<modified>2025-08-29T12:22:03.096+00:00</modified>
+		<name>application.edit</name>
+		<audit>false</audit>
+		<ownerId>a0c1c65c4b5a4f71b6e435e302dfa319</ownerId>
+	</actions>
+	<actions>
+		<id>1dd45fd87d01497c91bba6eeae0d4479</id>
+		<created>2025-08-29T12:22:03.097+00:00</created>
+		<modified>2025-08-29T12:22:03.097+00:00</modified>
+		<name>context.switch</name>
+		<audit>false</audit>
+		<ownerId>a0c1c65c4b5a4f71b6e435e302dfa319</ownerId>
 	</actions>
 	<actions>
 		<id>8763996b01b74a0e9662f035a061672d</id>
@@ -1570,6 +1764,100 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<audit>false</audit>
 		<ownerId>2ad8ec39e0c948e0afb093bde02b040f</ownerId>
 	</actions>
+	<actions>
+		<id>5f8e682538444a92a10fab030473be35</id>
+		<created>2025-08-29T12:26:25.936+00:00</created>
+		<modified>2025-08-29T12:26:25.936+00:00</modified>
+		<name>user.manage</name>
+		<audit>false</audit>
+		<ownerId>70182f2a4b2541b79ff63a06d6ca06c7</ownerId>
+	</actions>
+	<actions>
+		<id>28be61c2d4914ca59780d0f934035bb4</id>
+		<created>2025-08-29T12:26:25.938+00:00</created>
+		<modified>2025-08-29T12:26:25.938+00:00</modified>
+		<name>user.list</name>
+		<audit>false</audit>
+		<ownerId>70182f2a4b2541b79ff63a06d6ca06c7</ownerId>
+	</actions>
+	<actions>
+		<id>d137ae3544a1465bbeb74b92b2e52be8</id>
+		<created>2025-08-29T12:26:25.939+00:00</created>
+		<modified>2025-08-29T12:26:25.939+00:00</modified>
+		<name>role.list</name>
+		<audit>false</audit>
+		<ownerId>70182f2a4b2541b79ff63a06d6ca06c7</ownerId>
+	</actions>
+	<actions>
+		<id>6dd96dcf90024635923967c6467bcc26</id>
+		<created>2025-08-29T12:26:25.940+00:00</created>
+		<modified>2025-08-29T12:26:25.940+00:00</modified>
+		<name>role.manage</name>
+		<audit>false</audit>
+		<ownerId>70182f2a4b2541b79ff63a06d6ca06c7</ownerId>
+	</actions>
+	<actions>
+		<id>07dac80953c047fab7a519641bf2437f</id>
+		<created>2025-08-29T12:26:25.941+00:00</created>
+		<modified>2025-08-29T12:26:25.941+00:00</modified>
+		<name>masterdata.list</name>
+		<audit>false</audit>
+		<ownerId>70182f2a4b2541b79ff63a06d6ca06c7</ownerId>
+	</actions>
+	<actions>
+		<id>3aada90c4f154c9cbbacc2be7e1e7958</id>
+		<created>2025-08-29T12:26:25.942+00:00</created>
+		<modified>2025-08-29T12:26:25.942+00:00</modified>
+		<name>masterdata.manage</name>
+		<audit>false</audit>
+		<ownerId>70182f2a4b2541b79ff63a06d6ca06c7</ownerId>
+	</actions>
+	<actions>
+		<id>98ce7a3c8e72430e8864da4caf27658c</id>
+		<created>2025-08-29T12:26:25.958+00:00</created>
+		<modified>2025-08-29T12:26:25.958+00:00</modified>
+		<name>user.create</name>
+		<audit>false</audit>
+		<ownerId>70182f2a4b2541b79ff63a06d6ca06c7</ownerId>
+	</actions>
+	<actions>
+		<id>142ef8cea2f449c2a698f1876244e9c0</id>
+		<created>2025-08-29T12:26:25.959+00:00</created>
+		<modified>2025-08-29T12:26:25.959+00:00</modified>
+		<name>user.update</name>
+		<audit>false</audit>
+		<ownerId>70182f2a4b2541b79ff63a06d6ca06c7</ownerId>
+	</actions>
+	<actions>
+		<id>2b2e444595614817a4d94e5b9be4d6e0</id>
+		<created>2025-08-29T12:26:25.960+00:00</created>
+		<modified>2025-08-29T12:26:25.960+00:00</modified>
+		<name>user.block</name>
+		<audit>false</audit>
+		<ownerId>70182f2a4b2541b79ff63a06d6ca06c7</ownerId>
+	</actions>
+	<actions>
+		<id>a58ad65d9bb847d8a16056c04c3e810e</id>
+		<created>2025-08-29T12:26:25.961+00:00</created>
+		<modified>2025-08-29T12:26:25.961+00:00</modified>
+		<name>user.delete</name>
+		<audit>false</audit>
+		<ownerId>70182f2a4b2541b79ff63a06d6ca06c7</ownerId>
+	</actions>
+	<actionRoles>
+		<id>e93f6fa0a9664eddb01c31ce5eca2638</id>
+		<created>2025-08-29T12:22:02.679+00:00</created>
+		<modified>2025-08-29T12:22:02.679+00:00</modified>
+		<actionId>803eccfe56034c73a3179499c1b901e5</actionId>
+		<roleId>80600bf872234722a4d0ef9e57f67e11</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>68063f81a5f24489b3b28fbb934a89df</id>
+		<created>2025-08-29T12:22:02.694+00:00</created>
+		<modified>2025-08-29T12:22:02.694+00:00</modified>
+		<actionId>803eccfe56034c73a3179499c1b901e5</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
 	<actionRoles>
 		<id>96cca5dfe5af40848f27dcfe1b363e79</id>
 		<created>2024-01-19T14:25:59.081+00:00</created>
@@ -1725,6 +2013,27 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
 	</actionRoles>
 	<actionRoles>
+		<id>9af80084022947b9b0d424dcce859813</id>
+		<created>2025-08-29T12:26:25.959+00:00</created>
+		<modified>2025-08-29T12:26:25.959+00:00</modified>
+		<actionId>98ce7a3c8e72430e8864da4caf27658c</actionId>
+		<roleId>80600bf872234722a4d0ef9e57f67e11</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>8092b63b8677401aaa399d61d2aeeeb3</id>
+		<created>2025-08-29T12:26:55.071+00:00</created>
+		<modified>2025-08-29T12:26:55.071+00:00</modified>
+		<actionId>98ce7a3c8e72430e8864da4caf27658c</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>6721b5fa579c490e920a6ca629b0c64f</id>
+		<created>2025-08-29T12:26:55.097+00:00</created>
+		<modified>2025-08-29T12:26:55.097+00:00</modified>
+		<actionId>98ce7a3c8e72430e8864da4caf27658c</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
 		<id>1272c0bc7d354ce198878386e30307ff</id>
 		<created>2023-10-04T20:40:00.325+00:00</created>
 		<modified>2023-10-04T20:40:00.325+00:00</modified>
@@ -1743,6 +2052,20 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<created>2025-08-11T08:47:10.082+00:00</created>
 		<modified>2025-08-11T08:47:10.082+00:00</modified>
 		<actionId>98fbbb063c45466e867edd9f213f638f</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>4c198297ea00435aab74d99e249ee6a5</id>
+		<created>2025-08-29T12:22:02.670+00:00</created>
+		<modified>2025-08-29T12:22:02.670+00:00</modified>
+		<actionId>9b744170762d4335ba061ef9d3d56929</actionId>
+		<roleId>146cdf0cbaeb42289febe3ea643ad37c</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>8ea6f402af9c4ebea941d463af0bbf80</id>
+		<created>2025-08-29T12:22:02.690+00:00</created>
+		<modified>2025-08-29T12:22:02.690+00:00</modified>
+		<actionId>9b744170762d4335ba061ef9d3d56929</actionId>
 		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
 	</actionRoles>
 	<actionRoles>
@@ -1806,6 +2129,55 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<created>2025-08-11T08:47:10.064+00:00</created>
 		<modified>2025-08-11T08:47:10.064+00:00</modified>
 		<actionId>9d7123734fc44108ac36f09e520457a8</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>91331cf1f290498296544176e9c07e10</id>
+		<created>2025-08-29T12:22:02.920+00:00</created>
+		<modified>2025-08-29T12:22:02.920+00:00</modified>
+		<actionId>a24b585f0cd7496dbb56f39960435f97</actionId>
+		<roleId>80600bf872234722a4d0ef9e57f67e11</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>2246714c4a1c428394c5f0cea86a95cf</id>
+		<created>2025-08-29T12:22:02.922+00:00</created>
+		<modified>2025-08-29T12:22:02.922+00:00</modified>
+		<actionId>a24b585f0cd7496dbb56f39960435f97</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>a41868a725c34e948721b7de6d0599f0</id>
+		<created>2025-08-29T12:22:03.137+00:00</created>
+		<modified>2025-08-29T12:22:03.137+00:00</modified>
+		<actionId>a505ae150ccf474daa1d92a7a099fe13</actionId>
+		<roleId>80600bf872234722a4d0ef9e57f67e11</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>8ee2e8aed224464db4c4acec3969b250</id>
+		<created>2025-08-29T12:22:03.139+00:00</created>
+		<modified>2025-08-29T12:22:03.139+00:00</modified>
+		<actionId>a505ae150ccf474daa1d92a7a099fe13</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>a876e2f13ffb43f3b37227a1d2073640</id>
+		<created>2025-08-29T12:26:25.962+00:00</created>
+		<modified>2025-08-29T12:26:25.962+00:00</modified>
+		<actionId>a58ad65d9bb847d8a16056c04c3e810e</actionId>
+		<roleId>80600bf872234722a4d0ef9e57f67e11</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>1123bd22d6ad473c8051ccdd8ca4b3ae</id>
+		<created>2025-08-29T12:26:55.073+00:00</created>
+		<modified>2025-08-29T12:26:55.073+00:00</modified>
+		<actionId>a58ad65d9bb847d8a16056c04c3e810e</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>88fbf87f366443fc98577c693ee65d3c</id>
+		<created>2025-08-29T12:26:55.098+00:00</created>
+		<modified>2025-08-29T12:26:55.098+00:00</modified>
+		<actionId>a58ad65d9bb847d8a16056c04c3e810e</actionId>
 		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
 	</actionRoles>
 	<actionRoles>
@@ -1984,6 +2356,20 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
 	</actionRoles>
 	<actionRoles>
+		<id>bcadc4b53e8444158b2c8a3312f22a87</id>
+		<created>2025-08-29T12:22:03.097+00:00</created>
+		<modified>2025-08-29T12:22:03.097+00:00</modified>
+		<actionId>bf0875772c81495d8f61d5c66c6e0c5b</actionId>
+		<roleId>44443b54cc7f43399e2e797ed8994f59</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>e76efa53ec9b481abf6932f356c60afa</id>
+		<created>2025-08-29T12:22:03.103+00:00</created>
+		<modified>2025-08-29T12:22:03.103+00:00</modified>
+		<actionId>bf0875772c81495d8f61d5c66c6e0c5b</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
 		<id>482a50529d614b5bb069de4f5ce67ee1</id>
 		<created>2023-10-07T16:08:16.353+00:00</created>
 		<modified>2023-10-07T16:08:16.353+00:00</modified>
@@ -2065,6 +2451,20 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<created>2025-08-11T08:47:10.063+00:00</created>
 		<modified>2025-08-11T08:47:10.063+00:00</modified>
 		<actionId>c6f2757f52fc4e1e8214e1deb5a27e45</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>25aaf5d2f7f345a091866dbd79d4d48e</id>
+		<created>2025-08-29T12:22:02.622+00:00</created>
+		<modified>2025-08-29T12:22:02.622+00:00</modified>
+		<actionId>c6f2cec0bde64bdebd6cf21dd6e3a3cd</actionId>
+		<roleId>80600bf872234722a4d0ef9e57f67e11</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>7ca5887ce2254e72a93f6243c3b586ce</id>
+		<created>2025-08-29T12:22:02.630+00:00</created>
+		<modified>2025-08-29T12:22:02.630+00:00</modified>
+		<actionId>c6f2cec0bde64bdebd6cf21dd6e3a3cd</actionId>
 		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
 	</actionRoles>
 	<actionRoles>
@@ -2278,6 +2678,20 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
 	</actionRoles>
 	<actionRoles>
+		<id>5be61c2927c7408b8c2807a4cafb4fb5</id>
+		<created>2025-08-29T12:22:02.624+00:00</created>
+		<modified>2025-08-29T12:22:02.624+00:00</modified>
+		<actionId>ce9e1a5d35394544ba57454d88148fcf</actionId>
+		<roleId>80600bf872234722a4d0ef9e57f67e11</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>18ed797c1cad4e7daa825330c92a66b4</id>
+		<created>2025-08-29T12:22:02.644+00:00</created>
+		<modified>2025-08-29T12:22:02.644+00:00</modified>
+		<actionId>ce9e1a5d35394544ba57454d88148fcf</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
 		<id>85b225b664024cb19549cd88fc56e604</id>
 		<created>2024-01-19T14:32:04.611+00:00</created>
 		<modified>2024-01-19T14:32:04.611+00:00</modified>
@@ -2296,6 +2710,20 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<created>2025-08-11T08:47:10.069+00:00</created>
 		<modified>2025-08-11T08:47:10.069+00:00</modified>
 		<actionId>cfb9ebd10a204150bdd43cdaefd32612</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>d4c1399bc87b438e8aaa18d5ab857859</id>
+		<created>2025-08-29T12:26:25.939+00:00</created>
+		<modified>2025-08-29T12:26:25.939+00:00</modified>
+		<actionId>d137ae3544a1465bbeb74b92b2e52be8</actionId>
+		<roleId>80600bf872234722a4d0ef9e57f67e11</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>8868b9e566e84bad88e78d02b8e06878</id>
+		<created>2025-08-29T12:26:25.945+00:00</created>
+		<modified>2025-08-29T12:26:25.945+00:00</modified>
+		<actionId>d137ae3544a1465bbeb74b92b2e52be8</actionId>
 		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
 	</actionRoles>
 	<actionRoles>
@@ -2380,6 +2808,34 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<created>2025-08-11T08:47:10.079+00:00</created>
 		<modified>2025-08-11T08:47:10.079+00:00</modified>
 		<actionId>da08685d6c194791bfb38791fec43ceb</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>18127c7347f24048a1279a1c046b0b3d</id>
+		<created>2025-08-29T12:22:03.095+00:00</created>
+		<modified>2025-08-29T12:22:03.095+00:00</modified>
+		<actionId>da6cf19e29464e11944d8de7d2b72079</actionId>
+		<roleId>1cd798725386463a9fa2b653b7ac36b3</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>22064a06245548ea98773ec20cabc99d</id>
+		<created>2025-08-29T12:22:03.103+00:00</created>
+		<modified>2025-08-29T12:22:03.103+00:00</modified>
+		<actionId>da6cf19e29464e11944d8de7d2b72079</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>15b7d89f3aec4f07862b73d38191cba9</id>
+		<created>2025-08-29T12:22:02.618+00:00</created>
+		<modified>2025-08-29T12:22:02.618+00:00</modified>
+		<actionId>dd4e8563c63f489183d34dc9aa2e7861</actionId>
+		<roleId>80600bf872234722a4d0ef9e57f67e11</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>7d4e08de7c854afab25d4daa0c2617e2</id>
+		<created>2025-08-29T12:22:02.627+00:00</created>
+		<modified>2025-08-29T12:22:02.627+00:00</modified>
+		<actionId>dd4e8563c63f489183d34dc9aa2e7861</actionId>
 		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
 	</actionRoles>
 	<actionRoles>
@@ -2527,6 +2983,20 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<created>2025-08-11T08:47:10.056+00:00</created>
 		<modified>2025-08-11T08:47:10.056+00:00</modified>
 		<actionId>e767751ba8764d15b4d4b76e1e4c7917</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>a34b88e48c9841779184b8b483769f8b</id>
+		<created>2025-08-29T12:22:02.621+00:00</created>
+		<modified>2025-08-29T12:22:02.621+00:00</modified>
+		<actionId>e8ef2c40ea9b4332aa08ec8881e14bd7</actionId>
+		<roleId>80600bf872234722a4d0ef9e57f67e11</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>539241bffbc94c29b4a44498c97841d1</id>
+		<created>2025-08-29T12:22:02.629+00:00</created>
+		<modified>2025-08-29T12:22:02.629+00:00</modified>
+		<actionId>e8ef2c40ea9b4332aa08ec8881e14bd7</actionId>
 		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
 	</actionRoles>
 	<actionRoles>
@@ -2698,6 +3168,34 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
 	</actionRoles>
 	<actionRoles>
+		<id>44ac55e926994e49b57564f2ea989691</id>
+		<created>2025-08-29T12:22:03.138+00:00</created>
+		<modified>2025-08-29T12:22:03.138+00:00</modified>
+		<actionId>fc6858fb08fd4eb9a8894defa329bae2</actionId>
+		<roleId>80600bf872234722a4d0ef9e57f67e11</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>29e9ff9b0b614439ad85d9d7a8efdf64</id>
+		<created>2025-08-29T12:22:03.140+00:00</created>
+		<modified>2025-08-29T12:22:03.140+00:00</modified>
+		<actionId>fc6858fb08fd4eb9a8894defa329bae2</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>85e704cf4870433a8439d5f1dd2c41a0</id>
+		<created>2025-08-29T12:22:02.620+00:00</created>
+		<modified>2025-08-29T12:22:02.620+00:00</modified>
+		<actionId>fc9dfb8912144bd0866a6e48349f85bf</actionId>
+		<roleId>80600bf872234722a4d0ef9e57f67e11</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>49c479252afe4ce1b3db9709e16b4b9a</id>
+		<created>2025-08-29T12:22:02.628+00:00</created>
+		<modified>2025-08-29T12:22:02.628+00:00</modified>
+		<actionId>fc9dfb8912144bd0866a6e48349f85bf</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
 		<id>e05f2d4a111540d59f2053e1222c9f61</id>
 		<created>2023-10-01T13:39:30.738+00:00</created>
 		<modified>2023-10-01T13:39:30.738+00:00</modified>
@@ -2782,6 +3280,20 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
 	</actionRoles>
 	<actionRoles>
+		<id>f022154da6f646c8871911b95da1a357</id>
+		<created>2025-08-29T12:26:25.941+00:00</created>
+		<modified>2025-08-29T12:26:25.941+00:00</modified>
+		<actionId>07dac80953c047fab7a519641bf2437f</actionId>
+		<roleId>80600bf872234722a4d0ef9e57f67e11</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>dc4511c508fe46fe90e6ce3d79ae630b</id>
+		<created>2025-08-29T12:26:25.946+00:00</created>
+		<modified>2025-08-29T12:26:25.946+00:00</modified>
+		<actionId>07dac80953c047fab7a519641bf2437f</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
 		<id>1444cf6a70ef4f85913dfd1368fdfac8</id>
 		<created>2023-10-04T20:40:00.283+00:00</created>
 		<modified>2023-10-04T20:40:00.283+00:00</modified>
@@ -2800,6 +3312,20 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<created>2025-08-11T08:47:10.081+00:00</created>
 		<modified>2025-08-11T08:47:10.081+00:00</modified>
 		<actionId>0949b263a61849ecbf27db3b623fb852</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>fef1f8b954044a189481f58d0125598d</id>
+		<created>2025-08-29T12:22:02.672+00:00</created>
+		<modified>2025-08-29T12:22:02.672+00:00</modified>
+		<actionId>0e0855fb7fed40afba7b4636118fcd6e</actionId>
+		<roleId>146cdf0cbaeb42289febe3ea643ad37c</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>2a7cd22ec3a546f88d6890ccf3a9273f</id>
+		<created>2025-08-29T12:22:02.691+00:00</created>
+		<modified>2025-08-29T12:22:02.691+00:00</modified>
+		<actionId>0e0855fb7fed40afba7b4636118fcd6e</actionId>
 		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
 	</actionRoles>
 	<actionRoles>
@@ -2908,6 +3434,27 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
 	</actionRoles>
 	<actionRoles>
+		<id>e1f479fc5d02440099acf4a951d40078</id>
+		<created>2025-08-29T12:26:25.960+00:00</created>
+		<modified>2025-08-29T12:26:25.960+00:00</modified>
+		<actionId>142ef8cea2f449c2a698f1876244e9c0</actionId>
+		<roleId>80600bf872234722a4d0ef9e57f67e11</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>ed92c7e1222b478182409443d8e954ed</id>
+		<created>2025-08-29T12:26:55.072+00:00</created>
+		<modified>2025-08-29T12:26:55.072+00:00</modified>
+		<actionId>142ef8cea2f449c2a698f1876244e9c0</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>737412a5a1424eeaa8bda46f31f12d96</id>
+		<created>2025-08-29T12:26:55.098+00:00</created>
+		<modified>2025-08-29T12:26:55.098+00:00</modified>
+		<actionId>142ef8cea2f449c2a698f1876244e9c0</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
 		<id>058c21efb6fe4355bf8740a5499df5d4</id>
 		<created>2023-10-01T13:39:30.675+00:00</created>
 		<modified>2023-10-01T13:39:30.675+00:00</modified>
@@ -3013,6 +3560,20 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
 	</actionRoles>
 	<actionRoles>
+		<id>284355e7bf4b4cb59f61e6289adde0c1</id>
+		<created>2025-08-29T12:22:03.098+00:00</created>
+		<modified>2025-08-29T12:22:03.098+00:00</modified>
+		<actionId>1dd45fd87d01497c91bba6eeae0d4479</actionId>
+		<roleId>80600bf872234722a4d0ef9e57f67e11</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>182a3d922d6d4210ac2e1593f06acb18</id>
+		<created>2025-08-29T12:22:03.104+00:00</created>
+		<modified>2025-08-29T12:22:03.104+00:00</modified>
+		<actionId>1dd45fd87d01497c91bba6eeae0d4479</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
 		<id>70a253b99dfb4ed9ba65be640f057f18</id>
 		<created>2023-10-07T16:08:16.388+00:00</created>
 		<modified>2023-10-07T16:08:16.388+00:00</modified>
@@ -3073,6 +3634,41 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<created>2025-08-11T08:47:10.067+00:00</created>
 		<modified>2025-08-11T08:47:10.067+00:00</modified>
 		<actionId>2623867a5a104f69a3e8a9c92cd50873</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>cbe4347d95754dd3b6ecb2ce70f5e338</id>
+		<created>2025-08-29T12:26:25.938+00:00</created>
+		<modified>2025-08-29T12:26:25.938+00:00</modified>
+		<actionId>28be61c2d4914ca59780d0f934035bb4</actionId>
+		<roleId>80600bf872234722a4d0ef9e57f67e11</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>0bff6b30eeb948748ccfcbf31ba5cab3</id>
+		<created>2025-08-29T12:26:25.945+00:00</created>
+		<modified>2025-08-29T12:26:25.945+00:00</modified>
+		<actionId>28be61c2d4914ca59780d0f934035bb4</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>2f4f6fa0402846ccb31ae6bd8d72c8b7</id>
+		<created>2025-08-29T12:26:25.961+00:00</created>
+		<modified>2025-08-29T12:26:25.961+00:00</modified>
+		<actionId>2b2e444595614817a4d94e5b9be4d6e0</actionId>
+		<roleId>80600bf872234722a4d0ef9e57f67e11</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>2f212a76c9af444b8b73eaeceb3516ab</id>
+		<created>2025-08-29T12:26:55.073+00:00</created>
+		<modified>2025-08-29T12:26:55.073+00:00</modified>
+		<actionId>2b2e444595614817a4d94e5b9be4d6e0</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>7aa47b7cdddc448c87a623d8d564bb40</id>
+		<created>2025-08-29T12:26:55.098+00:00</created>
+		<modified>2025-08-29T12:26:55.098+00:00</modified>
+		<actionId>2b2e444595614817a4d94e5b9be4d6e0</actionId>
 		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
 	</actionRoles>
 	<actionRoles>
@@ -3157,6 +3753,20 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<created>2025-08-11T08:47:10.072+00:00</created>
 		<modified>2025-08-11T08:47:10.072+00:00</modified>
 		<actionId>2eb23aaa3e58419dac37dc1328b760a0</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>d3ced72ecb3949c2a2679305a15debe0</id>
+		<created>2025-08-29T12:22:02.674+00:00</created>
+		<modified>2025-08-29T12:22:02.674+00:00</modified>
+		<actionId>2f19ad90952949e181f41fbff46b4050</actionId>
+		<roleId>146cdf0cbaeb42289febe3ea643ad37c</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>10eb9d4c3bb54547a573a8dc3fc354eb</id>
+		<created>2025-08-29T12:22:02.692+00:00</created>
+		<modified>2025-08-29T12:22:02.692+00:00</modified>
+		<actionId>2f19ad90952949e181f41fbff46b4050</actionId>
 		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
 	</actionRoles>
 	<actionRoles>
@@ -3346,6 +3956,20 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<created>2025-08-11T08:47:10.058+00:00</created>
 		<modified>2025-08-11T08:47:10.058+00:00</modified>
 		<actionId>3a9730ed39d04b87b7025a82a81af440</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>2a73d054a6fc489891edd4a299f56f54</id>
+		<created>2025-08-29T12:26:25.942+00:00</created>
+		<modified>2025-08-29T12:26:25.942+00:00</modified>
+		<actionId>3aada90c4f154c9cbbacc2be7e1e7958</actionId>
+		<roleId>80600bf872234722a4d0ef9e57f67e11</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>517d221d0147453bbbaddbff33367f42</id>
+		<created>2025-08-29T12:26:25.947+00:00</created>
+		<modified>2025-08-29T12:26:25.947+00:00</modified>
+		<actionId>3aada90c4f154c9cbbacc2be7e1e7958</actionId>
 		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
 	</actionRoles>
 	<actionRoles>
@@ -3832,6 +4456,20 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
 	</actionRoles>
 	<actionRoles>
+		<id>cc65d4d701fe4f50986fc80af2b94068</id>
+		<created>2025-08-29T12:26:25.937+00:00</created>
+		<modified>2025-08-29T12:26:25.937+00:00</modified>
+		<actionId>5f8e682538444a92a10fab030473be35</actionId>
+		<roleId>80600bf872234722a4d0ef9e57f67e11</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>84228721fdb7431eb34ae43c179a96f6</id>
+		<created>2025-08-29T12:26:25.944+00:00</created>
+		<modified>2025-08-29T12:26:25.944+00:00</modified>
+		<actionId>5f8e682538444a92a10fab030473be35</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
 		<id>b443ca4425cb4fdf9457ed07e5b16e12</id>
 		<created>2023-10-01T13:39:32.010+00:00</created>
 		<modified>2023-10-01T13:39:32.010+00:00</modified>
@@ -3934,6 +4572,20 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<created>2025-08-11T08:47:10.056+00:00</created>
 		<modified>2025-08-11T08:47:10.056+00:00</modified>
 		<actionId>6530b973f01e46e7816a32b463b06c2e</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>98b36af3cf1349d3a0c0ce25d53ac300</id>
+		<created>2025-08-29T12:22:02.619+00:00</created>
+		<modified>2025-08-29T12:22:02.619+00:00</modified>
+		<actionId>674d108b0168436c916f5e19498eb3c9</actionId>
+		<roleId>80600bf872234722a4d0ef9e57f67e11</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>a0cace8e08b94377bb7bf013b05f8864</id>
+		<created>2025-08-29T12:22:02.628+00:00</created>
+		<modified>2025-08-29T12:22:02.628+00:00</modified>
+		<actionId>674d108b0168436c916f5e19498eb3c9</actionId>
 		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
 	</actionRoles>
 	<actionRoles>
@@ -4042,6 +4694,20 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
 	</actionRoles>
 	<actionRoles>
+		<id>6ecf4687272749fbbff8765b7e894ddb</id>
+		<created>2025-08-29T12:22:02.677+00:00</created>
+		<modified>2025-08-29T12:22:02.677+00:00</modified>
+		<actionId>69568d6d3d6e48baacd3a8d7cbde0d68</actionId>
+		<roleId>80600bf872234722a4d0ef9e57f67e11</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>e11efdcfcd644b6092c1ea8dfdd455a6</id>
+		<created>2025-08-29T12:22:02.693+00:00</created>
+		<modified>2025-08-29T12:22:02.693+00:00</modified>
+		<actionId>69568d6d3d6e48baacd3a8d7cbde0d68</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
 		<id>b788251b00a146fea58a2441d07160e8</id>
 		<created>2023-10-04T20:40:00.323+00:00</created>
 		<modified>2023-10-04T20:40:00.323+00:00</modified>
@@ -4137,6 +4803,20 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<created>2025-08-11T08:47:10.077+00:00</created>
 		<modified>2025-08-11T08:47:10.077+00:00</modified>
 		<actionId>6d0d011a06464cb29c71fd320fd63070</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>89d0062bcaeb4ab8a54ddd6c4ab6bc4f</id>
+		<created>2025-08-29T12:26:25.940+00:00</created>
+		<modified>2025-08-29T12:26:25.940+00:00</modified>
+		<actionId>6dd96dcf90024635923967c6467bcc26</actionId>
+		<roleId>80600bf872234722a4d0ef9e57f67e11</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>f7c34aa39ae94bb5bc7cb4140d889cbf</id>
+		<created>2025-08-29T12:26:25.946+00:00</created>
+		<modified>2025-08-29T12:26:25.946+00:00</modified>
+		<actionId>6dd96dcf90024635923967c6467bcc26</actionId>
 		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
 	</actionRoles>
 	<actionRoles>
@@ -4371,6 +5051,20 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
 	</actionRoles>
 	<actionRoles>
+		<id>c4ddc5570dc6457ca00439c0b4446508</id>
+		<created>2025-08-29T12:22:02.921+00:00</created>
+		<modified>2025-08-29T12:22:02.921+00:00</modified>
+		<actionId>7e4dedab97e94ce484a6503cb2b40f83</actionId>
+		<roleId>80600bf872234722a4d0ef9e57f67e11</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>08b2d8c37d8947128d0ac9803091a28a</id>
+		<created>2025-08-29T12:22:02.923+00:00</created>
+		<modified>2025-08-29T12:22:02.923+00:00</modified>
+		<actionId>7e4dedab97e94ce484a6503cb2b40f83</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
 		<id>5038fdfce0ed4ea7a0f49462c8d37c92</id>
 		<created>2023-10-01T13:39:31.922+00:00</created>
 		<modified>2023-10-01T13:39:31.922+00:00</modified>
@@ -4446,6 +5140,38 @@ Correlation Id: bf7348bc3dac4bffad0a233b3803542a</description>
 		<name>Manager</name>
 		<pseudo>false</pseudo>
 		<ownerId>93e74910f687459a814be73651067a4f</ownerId>
+	</roles>
+	<roles>
+		<id>4fe4947018d74f7d96ca6e64b7306053</id>
+		<created>2025-08-29T12:22:02.653+00:00</created>
+		<modified>2025-08-29T12:22:02.653+00:00</modified>
+		<name>$guest</name>
+		<pseudo>true</pseudo>
+		<ownerId>a0c1c65c4b5a4f71b6e435e302dfa319</ownerId>
+	</roles>
+	<roles>
+		<id>146cdf0cbaeb42289febe3ea643ad37c</id>
+		<created>2025-08-29T12:22:02.654+00:00</created>
+		<modified>2025-08-29T12:22:02.654+00:00</modified>
+		<name>$user</name>
+		<pseudo>true</pseudo>
+		<ownerId>a0c1c65c4b5a4f71b6e435e302dfa319</ownerId>
+	</roles>
+	<roles>
+		<id>1cd798725386463a9fa2b653b7ac36b3</id>
+		<created>2025-08-29T12:22:02.655+00:00</created>
+		<modified>2025-08-29T12:22:02.655+00:00</modified>
+		<name>Application Tester</name>
+		<pseudo>false</pseudo>
+		<ownerId>a0c1c65c4b5a4f71b6e435e302dfa319</ownerId>
+	</roles>
+	<roles>
+		<id>44443b54cc7f43399e2e797ed8994f59</id>
+		<created>2025-08-29T12:22:02.656+00:00</created>
+		<modified>2025-08-29T12:22:02.656+00:00</modified>
+		<name>Application Editor</name>
+		<pseudo>false</pseudo>
+		<ownerId>a0c1c65c4b5a4f71b6e435e302dfa319</ownerId>
 	</roles>
 	<roles>
 		<id>077c8a48d85a4f7bb9675626f9933f00</id>
