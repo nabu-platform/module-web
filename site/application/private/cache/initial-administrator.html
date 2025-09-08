@@ -1,0 +1,170 @@
+<html>
+	<head>
+		<style>
+			/**
+ * Main CSS files
+ */
+
+
+html {
+	font-family: "Arial", "Open Sans", sans-serif;
+	font-size: 16px;
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+
+main {
+	background-color: #f3f4f4;
+	height: 100%;
+	position: relative;
+	width: 100%;
+	display: block;
+}
+
+main .container {
+	background-color: #fff;
+	border-radius: 5px;
+    box-shadow: 0px 1px 3px #788889;
+	padding: 2rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: calc(100% - 6rem);
+	max-width: 32em;
+}
+
+main .container form {
+	padding: 0rem;
+	margin-top: 3rem;
+}
+main .container form label {
+	display: block;
+}
+main .container form label input {
+	border: none;
+	border-bottom: 1px solid #bababa;
+	box-shadow: none;
+	margin: 0 0 1rem;
+	padding: 0 0.375rem;
+	outline: none;
+	width: 100%;
+    line-height: 0.75rem;
+    height: calc(0.875rem * 2);
+    font-size: 0.75rem;
+    color: #252a2a;
+    border-color: #cad0d1;
+}
+main .container form label input:focus {
+	border-bottom: 1px solid #5295bb;
+}
+main input::-webkit-input-placeholder {
+	color: #999;
+	font-weight: 300;
+	font-size: 0.75rem;
+}
+main input::-moz-placeholder {
+	color: #999;
+	font-weight: 300;
+	font-size: 0.9rem;
+}
+main .container form .submit {
+	border: none;
+	border-radius: 3px;
+	box-shadow: none;
+	color: #fafafa;
+	cursor: pointer;
+	float: right;
+	font-weight: normal;
+	font-size: 1rem;
+	margin-top: 1.5rem;
+	outline: none;
+	padding: 0.5rem 1rem;
+	background-color: #9CC923;
+	/*text-transform: uppercase;*/
+}
+main .container form .submit[disabled] {
+	background-color: #888;
+}
+
+
+/**
+ * Media Queries
+ */
+
+@media screen and (max-width: 40em) {
+	main .container {
+		width: 90%;
+		max-width: 90%;
+		margin: auto;
+		padding: 1rem;
+	}
+}
+
+h1, h2 {
+	text-align: left;
+	margin: 1rem 0;
+}
+h1 {
+	color: #333;
+	font-size: calc(1.25rem + 0.2vw);
+	font-weight:normal;
+	padding: 0;
+	margin: 0;
+}
+h2 {
+	color: #aaa;
+	font-size: calc(0.9rem + 0.1vw);
+	font-weight: normal;
+}
+p {
+	color: #aaa;
+	font-size: 0.8rem;
+	text-align: center;
+}
+		</style>
+		<meta charset="UTF-8"> 
+		<title>Nabu - Create Administrator</title>
+	</head>
+
+	<body>
+	
+		<main>
+			
+			<div class="container">
+				
+				<h1>Nabu</h1>
+				<h2>Create Administrator</h2>
+				
+				<form method="post" id="create">
+					
+					<label for="email">
+						<input type="text" name="email" placeholder="email" autofocus>
+					</label>
+					<label for="password1">
+						<input type="password" name="password1" placeholder="password">
+					</label>
+					<label for="password2">
+						<input type="password" name="password2" placeholder="password again">
+					</label>
+
+					<button class="submit" type="submit">Create</button>
+
+				</form>
+
+			</div>
+
+		</main>
+		
+	</body>
+</html>

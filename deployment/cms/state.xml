@@ -92,7 +92,7 @@ Services: nabu.cms.core.utils.security.describeContext, nabu.cms.core.utils.secu
 Context: portal.site.application
 Correlation Id: 21aeb0cb05ae4f34a4648488956bd60c</description>
 		<path>d1ba8a946b4949a697aa76e4552d0a77</path>
-		<slug>portal</slug>
+		<slug>nabu</slug>
 		<componentId>22b95352f0784d0d853cffe0471efcdd</componentId>
 	</contexts>
 	<contexts>
@@ -207,6 +207,13 @@ Correlation Id: 56d2c227ae39428d84ed9fede446db92</description>
 		<created>2025-08-29T12:26:25.953+00:00</created>
 		<modified>2025-08-29T12:26:25.953+00:00</modified>
 		<sourceId>86a7e251cad54c5ba9f07d3a5b4441f3</sourceId>
+		<targetId>70182f2a4b2541b79ff63a06d6ca06c7</targetId>
+	</connections>
+	<connections>
+		<id>237648bc9d4745949af9dcc5170f4c11</id>
+		<created>2025-08-29T13:28:45.609+00:00</created>
+		<modified>2025-08-29T13:28:45.609+00:00</modified>
+		<sourceId>d1ba8a946b4949a697aa76e4552d0a77</sourceId>
 		<targetId>70182f2a4b2541b79ff63a06d6ca06c7</targetId>
 	</connections>
 	<ownedComponents>
@@ -1097,6 +1104,14 @@ Correlation Id: 56d2c227ae39428d84ed9fede446db92</description>
 		<created>2025-08-29T12:22:03.137+00:00</created>
 		<modified>2025-08-29T12:22:03.137+00:00</modified>
 		<name>notification.manage</name>
+		<audit>false</audit>
+		<ownerId>86a7e251cad54c5ba9f07d3a5b4441f3</ownerId>
+	</actions>
+	<actions>
+		<id>ce0e343073644a279d39981ccde767ff</id>
+		<created>2025-08-29T13:30:14.374+00:00</created>
+		<modified>2025-08-29T13:30:14.374+00:00</modified>
+		<name>inbox.manage</name>
 		<audit>false</audit>
 		<ownerId>86a7e251cad54c5ba9f07d3a5b4441f3</ownerId>
 	</actions>
@@ -2675,6 +2690,13 @@ Correlation Id: 56d2c227ae39428d84ed9fede446db92</description>
 		<created>2025-08-11T08:47:10.084+00:00</created>
 		<modified>2025-08-11T08:47:10.084+00:00</modified>
 		<actionId>ccc9bc84898b43848a73c896d62fca16</actionId>
+		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
+	</actionRoles>
+	<actionRoles>
+		<id>abe84f00271845649f929ae6c42ffdc7</id>
+		<created>2025-08-29T13:30:24.132+00:00</created>
+		<modified>2025-08-29T13:30:24.132+00:00</modified>
+		<actionId>ce0e343073644a279d39981ccde767ff</actionId>
 		<roleId>e1191faf111d4554af01ae618b03da5e</roleId>
 	</actionRoles>
 	<actionRoles>
